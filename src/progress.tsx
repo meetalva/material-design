@@ -9,7 +9,7 @@ export interface ProgressProps {
 
 /**
  * @name Progress
- * @description Express an unspecified wait time or display the length of a process.
+ * @description Express an unspecified wait time or display the length of a process
  * @icon RotateCw
  */
 export const Progress: React.SFC<ProgressProps> = props => {

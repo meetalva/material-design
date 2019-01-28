@@ -5,7 +5,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import Switch from '@material-ui/core/Switch';
 import { LabelPlacement } from './types';
 
-export interface RadioProps {
+export interface SelectionControlProps {
     /** @name Type @default Switch */
     type: SelectionControlType;
 
@@ -33,7 +33,7 @@ export enum SelectionControlType {
  * @description Allow the user to select options
  * @icon ToggleLeft
  */
-export const SelectionControl: React.SFC<RadioProps> = props => {
+export const SelectionControl: React.SFC<SelectionControlProps> = props => {
     return (
         <FormComponent {...props} control={getType(props.type)} />
     )
