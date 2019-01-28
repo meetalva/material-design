@@ -24,6 +24,7 @@ export interface MenuItemProps {
 /**
  * @name Menu
  * @description Menus display a list of choices on temporary surfaces
+ * @icon Menu
  */
 export const Menu: React.SFC<MenuProps> = props => {
     return (
@@ -35,6 +36,7 @@ export const Menu: React.SFC<MenuProps> = props => {
 
 /**
  * @name Menu Item
+ * @icon Minus
  */
 export const MenuItem: React.SFC<MenuItemProps> = props => {
     return (

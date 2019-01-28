@@ -15,6 +15,7 @@ export interface CardProps {
 /**
  * @name Card
  * @description Cards contain content and actions about a single subject
+ * @icon Square
  */
 export const Card: React.SFC<CardProps> = props => {
     return (
