@@ -8,6 +8,9 @@ export interface MenuProps {
 }
 
 export interface MenuItemProps {
+    /** @name Label @default Menu Item */
+    label?: string;
+
     /** @name Selected */
     selected?: boolean;
 
@@ -41,7 +44,7 @@ export const Menu: React.SFC<MenuProps> = props => {
 export const MenuItem: React.SFC<MenuItemProps> = props => {
     return (
         <MenuItemComponent {...props}>
-            {props.children}
+            {props.label}
         </MenuItemComponent>
     )
 }

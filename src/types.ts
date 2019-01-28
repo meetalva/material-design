@@ -3,3 +3,10 @@ export enum Color {
     Secondary = 'secondary',
     Default = 'default'
 }
+
+export enum LabelPlacement {
+    Start = 'start',
+    End = 'end',
+    Top = 'top',
+    Bottom = 'bottom'
+}
