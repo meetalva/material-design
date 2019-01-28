@@ -1,6 +1,5 @@
 import * as React from 'react';
 import CircularProgressComponent from '@material-ui/core/CircularProgress';
-import { Color } from './types';
 
 export interface ProgressProps {
     /** @name Color */

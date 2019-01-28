@@ -9,6 +9,9 @@ export interface AppBarProps {
 
     /** @name Position @default Sticky */
     position?: AppBarPosition;
+
+    /** @name Toolbar @default true */
+    toolbar?: boolean;
 }
 
 export enum AppBarPosition {
@@ -27,9 +30,11 @@ export enum AppBarPosition {
 export const AppBar: React.SFC<AppBarProps> = props => {
     return (
         <AppBarComponent {...props}>
-            <Toolbar>
+            {props.toolbar ? (
+                <Toolbar>
                 {props.children}
             </Toolbar>
+            ) : props.children}
         </AppBarComponent>
     )
 }
