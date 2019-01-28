@@ -1,7 +1,6 @@
 export enum Color {
     Primary = 'primary',
-    Secondary = 'secondary',
-    Default = 'default'
+    Secondary = 'secondary'
 }
 
 export enum LabelPlacement {
