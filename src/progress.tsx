@@ -4,7 +4,12 @@ import { Color } from './types';
 
 export interface ProgressProps {
     /** @name Color */
-    color: Color;
+    color: ProgressColor;
+}
+
+export enum ProgressColor {
+    Primary = 'primary',
+    Secondary = 'secondary'
 }
 
 /**

@@ -1,3 +1,4 @@
+export * from './app-bar';
 export * from './card';
 export * from './chip';
 export * from './dialog';
