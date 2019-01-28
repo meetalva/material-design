@@ -1,9 +1,9 @@
 import * as React from 'react';
 import FormComponent from '@material-ui/core/FormControlLabel';
-import RadioComponent from '@material-ui/core/Radio';
+import CheckboxComponent from '@material-ui/core/Checkbox';
 import { LabelPlacement } from './types';
 
-export interface RadioProps {
+export interface CheckboxProps {
     /** @name Label @default Label */
     label: string;
 
@@ -18,12 +18,12 @@ export interface RadioProps {
 }
 
 /**
- * @name Radio Button
- * @description Allow the selection of a single option from a set
- * @icon Disc
+ * @name Checkbox
+ * @description Allow the selection of multiple options from a set
+ * @icon CheckSquare
  */
-export const Radio: React.SFC<RadioProps> = props => {
+export const Checkbox: React.SFC<CheckboxProps> = props => {
     return (
-        <FormComponent {...props} control={<RadioComponent />} />
+        <FormComponent {...props} control={<CheckboxComponent />} />
     )
 }

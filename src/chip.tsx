@@ -23,7 +23,7 @@ export enum ChipVariant {
 
 /**
  * @name Chip
- * @description Chips are compact elements that represent an input, attribute, or action
+ * @description Compact elements that represent an input, attribute, or action
  * @icon ToggleLeft
  */
 export const Chip: React.SFC<ChipProps> = props => {
