@@ -1,4 +1,6 @@
 export * from './app-bar';
+export * from './avatar';
+export * from './badge';
 export * from './bottom-navigation'
 export * from './button';
 export * from './card';

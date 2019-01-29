@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Component from '@material-ui/core/Chip';
+import ChipComponent from '@material-ui/core/Chip';
 import { Color } from './types';
 
 export interface ChipProps {
@@ -28,6 +28,6 @@ export enum ChipVariant {
  */
 export const Chip: React.SFC<ChipProps> = props => {
     return (
-        <Component {...props} onDelete={props.delete ? (() => console.log): undefined} />
+        <ChipComponent {...props} onDelete={props.delete ? (() => console.log): undefined} />
     )
 }

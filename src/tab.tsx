@@ -2,9 +2,10 @@ import * as React from 'react';
 import TabsComponent from '@material-ui/core/Tabs';
 import TabItemComponent from '@material-ui/core/Tab';
 import { Color } from './types';
+import ShoppingBasket from '@material-ui/icons/ShoppingBasket';
 
 export interface TabsProps {
-    /** @name Number @description Set the selected item. 0 for the first, 1 for the second, etc @default 0 @group Active Item */
+    /** @name Selected @description Set the selected item. 0 for the first, 1 for the second, etc @default 0 @group Active Item */
     value: number;
 
     /** @name Indicator Color @default Secondary @group Active Item  */
@@ -54,6 +55,6 @@ export const Tabs: React.SFC<TabsProps> = props => {
  */
 export const TabItem: React.SFC<TabItemProps> = props => {
     return (
-        <TabItemComponent {...props} />
+        <TabItemComponent icon={<ShoppingBasket />} {...props} />
     )
 }

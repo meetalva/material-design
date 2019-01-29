@@ -1,0 +1,40 @@
+import * as React from 'react';
+import BadgeComponent from '@material-ui/core/Badge';
+import { ColorWithError } from './types';
+
+export interface BadgeProps {
+    /** @name Color @default Primary */
+    color?: ColorWithError;
+
+    /** @name Content @default 1 */
+    badgeContent?: string;
+   
+    /** @name Invisible */
+    invisible?: boolean;
+
+    /** @name Maximum @default 99 */
+    max?: number;
+
+    /** @name Show Zero */
+    showZero?: boolean;
+
+    /** @name Variant @default Standard */
+    variant?: BadgeVariant;
+}
+
+export enum BadgeVariant {
+    Standard = 'standard',
+    Dot = 'dot'
+}
+
+/**
+ * @name Badge
+ * @description Small badge to the top-right of its child(ren)
+ */
+export const Badge: React.SFC<BadgeProps> = props => {
+    return (
+        <BadgeComponent {...props}>
+            {props.children}
+        </BadgeComponent>
+    )
+}
