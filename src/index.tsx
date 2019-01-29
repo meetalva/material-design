@@ -1,4 +1,5 @@
 export * from './app-bar';
+export * from './bottom-navigation'
 export * from './button';
 export * from './card';
 export * from './chip';
