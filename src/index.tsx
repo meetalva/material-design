@@ -6,3 +6,4 @@ export * from './menu';
 export * from './progress';
 export * from './selection-control';
 export * from './tab';
+export * from './text-field'
