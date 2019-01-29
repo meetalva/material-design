@@ -4,32 +4,36 @@ import TabItemComponent from '@material-ui/core/Tab';
 import { Color } from './types';
 
 export interface TabsProps {
-    /** @name Centered */
+    /** @name Number @description Set the selected item. 0 for the first, 1 for the second, etc @default 0 @group Active Item */
+    value: number;
+
+    /** @name Indicator Color @default Secondary @group Active Item  */
+    indicatorColor?: TabsIndicatorColor;
+
+    /** @name Text Color @default Inherit @group Active Item */
+    textColor?: Color;
+    
+    /** @name Centered @default true @group Style */
     centered?: boolean;
 
-    /** @name Full Width @default true */
+    /** @name Full Width @group Style */
     fullWidth?: boolean;
+
+    /** @name Scrollable @group Style */
+    scrollable?: boolean; 
 }
 
 export enum TabsIndicatorColor {
     Primary = 'primary',
     Secondary = 'secondary'
 }
+
 export interface TabItemProps {
     /** @name Label @default Tab */
     label?: string;
 
-    /** @name Text Color @default Primary */
-    textColor: Color;
-
-    /** @name Selected */
-    selected?: boolean;
-
     /** @name Disabled */
     disabled?: boolean;
-
-    /** @name Full Width */
-    fullWidth?: boolean;
 }
 
 /**
@@ -38,7 +42,7 @@ export interface TabItemProps {
  */
 export const Tabs: React.SFC<TabsProps> = props => {
     return (
-        <TabsComponent value="" {...props}>
+        <TabsComponent {...props}>
             {props.children}
         </TabsComponent>
     )
