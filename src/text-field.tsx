@@ -45,7 +45,8 @@ export enum TextFieldVariant {
 
 /**
  * @name TextField
- * @description Inform users about a task and can contain critical information, require decisions, or involve multiple tasks
+ * @description Let users enter and edit text
+ * @icon MessageSquare
  */
 export const TextField: React.SFC<TextFieldProps> = props => {
     return (
