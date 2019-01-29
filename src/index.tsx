@@ -5,5 +5,6 @@ export * from './dialog';
 export * from './menu';
 export * from './progress';
 export * from './selection-control';
+export * from './stepper';
 export * from './tab';
 export * from './text-field'
