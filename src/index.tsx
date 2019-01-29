@@ -9,6 +9,7 @@ export * from './dialog';
 export * from './drawer';
 export * from './link';
 export * from './menu';
+export * from './paper';
 export * from './progress';
 export * from './selection-control';
 export * from './stepper';
