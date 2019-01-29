@@ -1,7 +1,32 @@
+export interface BaseProps {
+    /** @name Width @group Style */
+    width?: string;
+
+    /** @name Height @group Style */
+    height?: string;
+
+    /** @name Margin @group Style */
+    margin?: string;
+
+    /** @name Color @group Style */
+    color?: string;
+
+    /** @name Background Color @group Style */
+    backgroundColor?: string;
+}
+
 export enum Color {
     Primary = 'primary',
     Secondary = 'secondary',
     Default = 'default',
+    Inherit = 'inherit'
+}
+
+export enum ColorWithError {
+    Primary = 'primary',
+    Secondary = 'secondary',
+    Default = 'default',
+    Error = 'error',
     Inherit = 'inherit'
 }
 
