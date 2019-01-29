@@ -1,7 +1,6 @@
 import * as React from 'react';
 import BottomNavigationComponent from '@material-ui/core/BottomNavigation';
 import BottomNavigationActionComponent from '@material-ui/core/BottomNavigationAction';
-import { Style } from './types';
 
 export interface BottomNavigationProps {   
 
