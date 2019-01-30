@@ -46,3 +46,8 @@ export enum Style {
     Headline6 = 'h6',
     Default = 'body1'
 }
+
+export enum Orientation {
+    Horizontal = 'horizontal',
+    Vertical = 'vertical'
+}
