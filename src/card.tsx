@@ -59,7 +59,6 @@ export const Card: React.SFC<CardProps> = props => {
     )
 }
 
-
 /**
  * @name Card Header
  * @icon Square
@@ -79,6 +78,7 @@ export const CardHeader: React.SFC<CardHeaderProps> = props => {
 /**
  * @name Card Content
  * @icon Square
+ * @group Card
  */
 export const CardContent: React.SFC = props => {
     return (

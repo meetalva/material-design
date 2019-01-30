@@ -40,6 +40,7 @@ export interface TabItemProps {
 /**
  * @name Tabs
  * @description Make it easy to explore and switch between different views
+ * @group Tabs
  */
 export const Tabs: React.SFC<TabsProps> = props => {
     return (
@@ -52,6 +53,7 @@ export const Tabs: React.SFC<TabsProps> = props => {
 
 /**
  * @name Tab Item
+ * @group Tabs
  */
 export const TabItem: React.SFC<TabItemProps> = props => {
     return (

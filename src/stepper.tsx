@@ -38,6 +38,7 @@ export enum StepperOrientation {
  * @name Stepper
  * @description Convey progress through numbered steps
  * @icon MoreHorizontal
+ * @group Stepper
  */
 export const Stepper: React.SFC<StepperProps> = props => {
     return (
@@ -50,6 +51,7 @@ export const Stepper: React.SFC<StepperProps> = props => {
 /**
  * @name Stepper Item
  * @icon MoreHorizontal
+ * @group Stepper
  */
 export const StepperItem: React.SFC<StepperItemProps> = props => {
     return (

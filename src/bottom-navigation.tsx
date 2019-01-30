@@ -17,6 +17,7 @@ export interface BottomNavigationActionProps {
 
 /**
  * @name Bottom Navigation
+ * @group Bottom Navigation
  */
 export const BottomNavigation: React.SFC<BottomNavigationProps> = props => {
     return (
@@ -26,7 +27,10 @@ export const BottomNavigation: React.SFC<BottomNavigationProps> = props => {
     )
 }
 
-
+/**
+ * @name Bottom Navigation Action
+ * @group Bottom Navigation
+ */
 export const BottomNavigationAction: React.SFC<BottomNavigationActionProps> = props => {
     return (
         <BottomNavigationActionComponent {...props} />

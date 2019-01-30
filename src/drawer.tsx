@@ -1,6 +1,5 @@
 import * as React from 'react';
 import DrawerComponent from '@material-ui/core/Drawer';
-import { Color } from './types';
 
 export interface DrawerProps {
     /** @name Anchor @default Left */

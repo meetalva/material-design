@@ -15,4 +15,5 @@ export * from './selection-control';
 export * from './stepper';
 export * from './tab';
 export * from './text-field';
+export * from './tooltip';
 export * from './typography';
