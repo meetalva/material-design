@@ -13,6 +13,8 @@ export * from './expansion-panel';
 export * from './fab';
 export * from './filled-input';
 export * from './form';
+export * from './grid';
+export * from './hidden';
 export * from './icon';
 export * from './link';
 export * from './menu';
