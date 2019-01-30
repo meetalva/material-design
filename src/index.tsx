@@ -8,6 +8,7 @@ export * from './chip';
 export * from './dialog';
 export * from './divider';
 export * from './drawer';
+export * from './grid';
 export * from './expansion-panel';
 export * from './fab';
 export * from './filled-input';
