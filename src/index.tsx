@@ -12,6 +12,7 @@ export * from './expansion-panel';
 export * from './fab';
 export * from './filled-input';
 export * from './form';
+export * from './icon';
 export * from './link';
 export * from './menu';
 export * from './paper';
