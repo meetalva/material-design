@@ -13,6 +13,8 @@ export interface DrawerProps {
     
     /** @name Variant @default Temporary */
     variant?: DrawerVariant;
+
+    children?: React.ReactNode;
 }
 
 export enum DrawerAnchor {

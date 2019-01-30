@@ -17,6 +17,11 @@ export interface DialogProps {
 
     /** @name Max Width */
     maxWidth: DialogMaxWidth;
+
+    /** @name Scroll */
+    scroll?: DialogScroll;
+
+    children?: React.ReactNode;
 }
 
 export interface DialogTitleProps {
@@ -27,6 +32,11 @@ export interface DialogTitleProps {
 export interface DialogActionProps {
     /** @name Disable Action Spacing */
     disableActionSpacing?: boolean;
+}
+
+export enum DialogScroll {
+    Body = 'body',
+    Paper = 'paper'
 }
 
 export enum DialogMaxWidth {
@@ -48,6 +58,18 @@ export const Dialog: React.SFC<DialogProps> = props => {
         <DialogComponent {...props}>
             {props.children}
         </DialogComponent>
+    )
+}
+
+/**
+ * @name Dialog Actions
+ * @group Dialog
+ */
+export const DialogActions: React.SFC<DialogActionProps> = props => {
+    return (
+        <DialogActionsComponent {...props}>
+            {props.children}
+        </DialogActionsComponent>
     )
 }
 
@@ -84,17 +106,5 @@ export const DialogContentText: React.SFC = props => {
         <DialogContentTextComponent {...props}>
             {props.children}
         </DialogContentTextComponent>
-    )
-}
-
-/**
- * @name Dialog Content Text
- * @group Dialog
- */
-export const DialogActions: React.SFC<DialogActionProps> = props => {
-    return (
-        <DialogActionsComponent {...props}>
-            {props.children}
-        </DialogActionsComponent>
     )
 }

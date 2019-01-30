@@ -15,10 +15,10 @@ export interface CardProps {
 
 export interface CardHeaderProps {
     /** @name Title @default Headline */
-    title: React.ReactNode;
+    title?: React.ReactNode;
 
     /** @name Subtitle @default Subtitle */
-    subheader: string;
+    subheader?: React.ReactNode;
 
     /** @name Action */
     action?: React.ReactNode;

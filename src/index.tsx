@@ -8,6 +8,7 @@ export * from './chip';
 export * from './dialog';
 export * from './divider';
 export * from './drawer';
+export * from './expansion-panel';
 export * from './link';
 export * from './menu';
 export * from './paper';
