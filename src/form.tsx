@@ -1,6 +1,9 @@
 import * as React from 'react';
 import FormControlComponent from '@material-ui/core/FormControl';
 import FormControlLabelComponent from '@material-ui/core/FormControlLabel';
+import FormGroupComponent from '@material-ui/core/FormGroup';
+import FormHelperTextComponent from '@material-ui/core/FormHelperText';
+import FormLabelComponent from '@material-ui/core/FormLabel';
 import { Margin } from './types';
 
 export interface FormControlProps {
@@ -26,7 +29,7 @@ export interface FormControlProps {
     required?: boolean;
 
     /** @name Variant */
-    variant?: FormControlVariant;
+    variant?: FormVariant;
 }
 
 export interface FormControlLabelProps {
@@ -58,7 +61,49 @@ export interface FormControlLabelProps {
     value?: string;
 }
 
-export enum FormControlVariant {
+export interface FormGroupProps {
+    /** @name Row */
+    row?: boolean;
+}
+
+export interface FormHelperTextProps {
+    /** @name Disabled */
+    disabled?: boolean;
+
+    /** @name Error */
+    error?: boolean;
+
+    /** @name Filled */
+    filled?: boolean;
+
+    /** @name Focused */
+    focused?: boolean;
+
+    /** @name Required */
+    required?: boolean;
+
+    /** @name Variant */
+    variant?: FormVariant;
+}
+
+export interface FormLabelProps {
+    /** @name Disabled */
+    disabled?: boolean;
+
+    /** @name Error */
+    error?: boolean;
+
+    /** @name Filled */
+    filled?: boolean;
+
+    /** @name Focused */
+    focused?: boolean;
+
+    /** @name Required */
+    required?: boolean;
+}
+
+export enum FormVariant {
     Standard = 'standard',
     Outlined = 'outlined',
     Filled = 'filled'
@@ -69,11 +114,11 @@ export enum FormControlLabelPlacement {
     Start = 'start',
     Top = 'top',
     Bottom ='bottom'
- }
+}
 
 /**
  * @name Form Control
- * @group Form Control
+ * @group Form
  */
 export const FormControl: React.SFC<FormControlProps> = props => {
     return (
@@ -85,12 +130,48 @@ export const FormControl: React.SFC<FormControlProps> = props => {
 
 /**
  * @name Form Control Label
- * @group Form Control
+ * @group Form
  */
 export const FormControlLabel: React.SFC<FormControlLabelProps> = props => {
     return (
         <FormControlLabelComponent {...props}>
             {props.children}
         </FormControlLabelComponent>
+    )
+}
+
+/**
+ * @name Form Group
+ * @group Form
+ */
+export const FormGroup: React.SFC<FormGroupProps> = props => {
+    return (
+        <FormGroupComponent {...props}>
+            {props.children}
+        </FormGroupComponent>
+    )
+}
+
+/**
+ * @name Form Helper Text
+ * @group Form
+ */
+export const FormHelperText: React.SFC<FormHelperTextProps> = props => {
+    return (
+        <FormHelperTextComponent {...props}>
+            {props.children}
+        </FormHelperTextComponent>
+    )
+}
+
+/**
+ * @name Form Label
+ * @group Form
+ */
+export const FormLabel: React.SFC<FormLabelProps> = props => {
+    return (
+        <FormLabelComponent {...props}>
+            {props.children}
+        </FormLabelComponent>
     )
 }
