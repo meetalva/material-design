@@ -19,6 +19,7 @@ export * from './icon';
 export * from './input';
 export * from './linear-progress';
 export * from './link';
+export * from './list';
 export * from './menu';
 export * from './paper';
 export * from './progress';
