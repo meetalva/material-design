@@ -1,7 +1,7 @@
 import * as React from 'react';
 import TabsComponent from '@material-ui/core/Tabs';
 import TabItemComponent from '@material-ui/core/Tab';
-import { Color } from './types';
+import { ColorWithInherit } from './types';
 import ShoppingBasket from '@material-ui/icons/ShoppingBasket';
 
 export interface TabsProps {
@@ -12,7 +12,7 @@ export interface TabsProps {
     indicatorColor?: TabsIndicatorColor;
 
     /** @name Text Color @default Inherit @group Active Item */
-    textColor?: Color;
+    textColor?: ColorWithInherit;
     
     /** @name Centered @default true @group Style */
     centered?: boolean;

@@ -12,6 +12,7 @@ export * from './link';
 export * from './menu';
 export * from './paper';
 export * from './progress';
+export * from './select';
 export * from './selection-control';
 export * from './step';
 export * from './tab';

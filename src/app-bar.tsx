@@ -1,17 +1,13 @@
 import * as React from 'react';
 import AppBarComponent from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import { Color } from './types';
+import { ColorWithInherit } from './types';
 
 export interface AppBarProps {
     /** @name Color @default Primary */
-    color: Color;
+    color: ColorWithInherit;
 
     /** @name Position @default Sticky */
     position?: AppBarPosition;
-
-    /** @name Toolbar @default true */
-    toolbar?: boolean;
 }
 
 export enum AppBarPosition {
@@ -30,11 +26,7 @@ export enum AppBarPosition {
 export const AppBar: React.SFC<AppBarProps> = props => {
     return (
         <AppBarComponent {...props}>
-            {props.toolbar ? (
-                <Toolbar>
-                {props.children}
-            </Toolbar>
-            ) : props.children}
+            {props.children}
         </AppBarComponent>
     )
 }

@@ -1,10 +1,10 @@
 import * as React from 'react';
 import BadgeComponent from '@material-ui/core/Badge';
-import { ColorWithError } from './types';
+import { ColorWithInheritAndError } from './types';
 
 export interface BadgeProps {
     /** @name Color @default Primary */
-    color?: ColorWithError;
+    color?: ColorWithInheritAndError;
 
     /** @name Content @default 1 */
     badgeContent?: string;

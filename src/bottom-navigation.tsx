@@ -8,11 +8,34 @@ export interface BottomNavigationProps {
 
     /** @name Show Labels @default true @group Style */  
     showLabels?: boolean;
+
+    children: React.ReactNode;
+
+    /** @name On Change */
+    onChange?: (event: React.ChangeEvent<{}>, value: any) => void;
 }
 
 export interface BottomNavigationActionProps {   
     /** @name Label @default Action */
     label?: string;
+
+    /** @name On Click */
+    onClick?: React.ReactEventHandler<any>;
+
+    /** @name Selected */
+    selected?: boolean;
+
+    /** @name Show Label */
+    showLabel?: boolean;
+
+    /** @name Value */
+    value?: any;
+
+    /** @name Icon */
+    icon?: string | React.ReactElement<any>;
+
+    /** @name On Change */
+    onChange?: (event: React.ChangeEvent<{}>, value: any) => void;
 }
 
 /**

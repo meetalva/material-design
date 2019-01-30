@@ -1,6 +1,6 @@
 import * as React from 'react';
 import ChipComponent from '@material-ui/core/Chip';
-import { Color } from './types';
+import { ColorWithInherit } from './types';
 
 export interface ChipProps {
     /** @name Label */
@@ -10,7 +10,7 @@ export interface ChipProps {
     delete?: boolean;
 
     /** @name Color */
-    color?: Color;
+    color?: ColorWithInherit;
 
     /** @name Style */
     variant?: ChipVariant;

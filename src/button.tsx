@@ -1,19 +1,34 @@
 import * as React from 'react';
 import ButtonComponent from '@material-ui/core/Button';
-import { Color } from './types';
+import { ColorWithInherit } from './types';
 
 export interface ButtonProps {
     /** @name Color @default Primary */
-    color?: Color;
+    color?: ColorWithInherit;
 
     /** @name Disabled */
     disabled?: boolean;
 
+    /** @name Disable Focus Ripple */
+    disableFocusRipple?: boolean;
+
+    /** @name Disable Ripple */
+    disableRipple?: boolean;
+
     /** @name Full Width */
     fullWidth?: boolean;
 
+    /** @name Href */
+    href?: string;
+
+    /** @name Mini */
+    mini?: boolean;
+
     /** @name Size @default Medium */
     size?: ButtonSize;
+
+    /** @name Type */
+    type?: string;
 
     /** @name Variant @default Contained */
     variant?: ButtonVariant;

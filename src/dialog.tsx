@@ -9,12 +9,6 @@ export interface DialogProps {
     /** @name Open @default true */
     open: boolean;
 
-    /** @name Title @default Dialog */
-    title?: string;
-
-    /** @name Content @default Hey! You just opened this dialog. */
-    contentText?: string;
-
     /** @name Full Width @default true */
     fullWidth?: boolean;
 
@@ -23,16 +17,16 @@ export interface DialogProps {
 
     /** @name Max Width */
     maxWidth: DialogMaxWidth;
-
-    /** @name Content */
-    content?: React.ReactNode;
-
-    /** @name Actions */
-    actions?: React.ReactNode;
 }
 
 export interface DialogTitleProps {
-    title?: string;
+    /** @name Disable Typography */
+    disableTypography?: boolean;
+}
+
+export interface DialogActionProps {
+    /** @name Disable Action Spacing */
+    disableActionSpacing?: boolean;
 }
 
 export enum DialogMaxWidth {
@@ -52,21 +46,35 @@ export enum DialogMaxWidth {
 export const Dialog: React.SFC<DialogProps> = props => {
     return (
         <DialogComponent {...props}>
-            <DialogTitleComponent>{props.title}</DialogTitleComponent>
-            <DialogContentComponent>
-                <DialogContentTextComponent>
-                    {props.contentText}
-                </DialogContentTextComponent>
-                {props.content}
-            </DialogContentComponent>
-            <DialogActionsComponent>
-                {props.actions}
-            </DialogActionsComponent>
             {props.children}
         </DialogComponent>
     )
 }
 
+/**
+ * @name Dialog Title
+ * @group Dialog
+ */
+export const DialogTitle: React.SFC<DialogTitleProps> = props => {
+    return (
+        <DialogTitleComponent>
+            {props.children}
+        </DialogTitleComponent>
+    )
+}
+
+/**
+ * @name Dialog Content
+ * @group Dialog
+ */
+export const DialogContent: React.SFC = props => {
+    return (
+        <DialogContentComponent>
+            {props.children}
+        </DialogContentComponent>
+    )
+}
+ 
 /**
  * @name Dialog Content Text
  * @group Dialog
@@ -76,5 +84,17 @@ export const DialogContentText: React.SFC = props => {
         <DialogContentTextComponent {...props}>
             {props.children}
         </DialogContentTextComponent>
+    )
+}
+
+/**
+ * @name Dialog Content Text
+ * @group Dialog
+ */
+export const DialogActions: React.SFC<DialogActionProps> = props => {
+    return (
+        <DialogActionsComponent {...props}>
+            {props.children}
+        </DialogActionsComponent>
     )
 }

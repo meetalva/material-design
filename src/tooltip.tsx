@@ -8,9 +8,6 @@ export interface TooltipProps {
     /** @name Placement */
     placement: TooltipPlacement;
 
-    /** @default hello */
-    className: string;
-
     disableFocusListener?: boolean;
     disableHoverListener?: boolean;
     disableTouchListener?: boolean;

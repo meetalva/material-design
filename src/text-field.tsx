@@ -1,6 +1,7 @@
 
 import * as React from 'react';
 import TextFieldComponent from '@material-ui/core/TextField';
+import { InputVariant } from './types';
 
 export interface TextFieldProps {
     /** @name Label @default Label */
@@ -28,19 +29,13 @@ export interface TextFieldProps {
     fullWidth?: boolean;
 
     /** @name Variant @default Filled */
-    variant: TextFieldVariant;
+    variant: InputVariant;
 
     /** @name Disabled @group State */
     disabled?: boolean;
 
     /** @name Error @group State */
     error?: boolean;
-}
-
-export enum TextFieldVariant {
-    Standard = 'standard',
-    Filled = 'filled',
-    Outlined = 'outlined'
 }
 
 /**

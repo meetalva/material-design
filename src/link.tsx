@@ -1,13 +1,13 @@
 import * as React from 'react';
 import LinkComponent from '@material-ui/core/Link';
-import { Color } from './types';
+import { ColorWithInherit } from './types';
 
 export interface LinkProps {
     /** @name Block */
     block?: boolean;
 
     /** @name Color */
-    color: Color;
+    color: ColorWithInherit;
 
     /** @name Underline @default Hover */
     underline?: LinkUnderline;

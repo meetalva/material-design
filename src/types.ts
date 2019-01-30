@@ -19,10 +19,16 @@ export enum Color {
     Primary = 'primary',
     Secondary = 'secondary',
     Default = 'default',
+}
+
+export enum ColorWithInherit {
+    Primary = 'primary',
+    Secondary = 'secondary',
+    Default = 'default',
     Inherit = 'inherit'
 }
 
-export enum ColorWithError {
+export enum ColorWithInheritAndError {
     Primary = 'primary',
     Secondary = 'secondary',
     Default = 'default',
@@ -50,4 +56,10 @@ export enum Style {
 export enum Orientation {
     Horizontal = 'horizontal',
     Vertical = 'vertical'
+}
+
+export enum InputVariant {
+    Standard = 'standard',
+    Filled = 'filled',
+    Outlined = 'outlined'
 }

@@ -11,6 +11,9 @@ export interface MenuItemProps {
     /** @name Label @default Menu Item */
     label?: string;
 
+    /** @name Value @description Used to identify this item in selects */
+    value?: string;
+
     /** @name Selected */
     selected?: boolean;
 
