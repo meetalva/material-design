@@ -16,6 +16,8 @@ export * from './form';
 export * from './grid';
 export * from './hidden';
 export * from './icon';
+export * from './input';
+export * from './linear-progress';
 export * from './link';
 export * from './menu';
 export * from './paper';
