@@ -17,13 +17,7 @@ export interface PaperProps extends BaseProps {
  */
 export const Paper: React.SFC<PaperProps> = props => {
     return (
-        <PaperComponent {...props} style={{
-            width: props.width,
-            height: props.height,
-            margin: props.margin,
-            backgroundColor: props.backgroundColor,
-            color: props.color
-        }}>
+        <PaperComponent {...props}>
             {props.children}
         </PaperComponent>
     )

@@ -4,12 +4,38 @@ import SelectComponent from '@material-ui/core/Select';
 import { InputVariant } from './types';
 
 export interface SelectProps {
-    value?: string;
+    /** @name Auto Width */
     autoWidth?: boolean;
+
+    /** @name Display Empty */
     displayEmpty?: boolean;
-    native?: boolean;
+
+    /** @name Open */
     open?: boolean;
+
+    /** @name Variant */
     variant?: InputVariant;
+
+    /** @name Icon Component */
+    IconComponent?: React.ReactType;
+
+    /** @name Input */
+    input?: React.ReactNode;
+
+    /** @name Multiple */
+    multiple?: boolean;
+
+    /** @name Native */
+    native?: boolean;
+
+    /** @name On Close */
+    onClose?: (event: React.ChangeEvent<{}>) => void;
+
+    /** @name On Open */
+    onOpen?: (event: React.ChangeEvent<{}>) => void;
+
+    /** @name Value */
+    value?: Array<string | number | boolean | object> | string | number | boolean | object;
 }
 
 /**
