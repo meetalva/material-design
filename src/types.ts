@@ -63,3 +63,9 @@ export enum InputVariant {
     Filled = 'filled',
     Outlined = 'outlined'
 }
+
+export enum Margin {
+    None = 'none',
+    Dense = 'dense',
+    Normal = 'normal'
+}

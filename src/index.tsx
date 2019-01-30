@@ -11,6 +11,7 @@ export * from './drawer';
 export * from './expansion-panel';
 export * from './fab';
 export * from './filled-input';
+export * from './form-control';
 export * from './link';
 export * from './menu';
 export * from './paper';
