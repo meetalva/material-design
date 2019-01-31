@@ -27,6 +27,7 @@ export * from './radio'
 export * from './select';
 export * from './selection-control';
 export * from './step';
+export * from './switch'
 export * from './tab';
 export * from './table';
 export * from './text-field';
