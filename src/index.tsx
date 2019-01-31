@@ -28,6 +28,6 @@ export * from './selection-control';
 export * from './step';
 export * from './tab';
 export * from './text-field';
+export * from './toolbar';
 export * from './tooltip';
-export * from './touch-ripple';
 export * from './typography';
