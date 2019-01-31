@@ -1,20 +1,17 @@
 
 import * as React from 'react';
 import TextFieldComponent from '@material-ui/core/TextField';
-import { InputVariant } from './types';
+import { Margin } from './types';
 
 export interface TextFieldProps {
     /** @name Label @default Label */
-    label?: string;
-
-    /** @name Value */
-    value?: string;
+    label?: React.ReactNode;
 
     /** @name Placeholder Text */
     placeholder?: string;
 
     /** @name Helper Text */
-    helperText?: string;
+    helperText?: React.ReactNode;
 
     /** @name Multiline */
     multiline?: boolean;
@@ -28,14 +25,46 @@ export interface TextFieldProps {
     /** @name Full Width */
     fullWidth?: boolean;
 
-    /** @name Variant @default Filled */
-    variant: InputVariant;
-
     /** @name Disabled @group State */
     disabled?: boolean;
 
     /** @name Error @group State */
     error?: boolean;
+
+    /** @name Auto Complete */
+    autoComplete?: string;
+
+    children?: React.ReactNode;
+
+    /** @name Default Value */
+    defaultValue?: string;
+
+    /** @name ID */
+    id?: string;
+
+    /** @name Margin */
+    margin?: Margin;
+
+    /** @name Name */
+    name?: string;
+
+    /** @name On Change */
+    onChange?: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>;
+
+    /** @name Number */
+    rows?: number;
+
+    /** @name Rows Max */
+    rowsMax?: number;
+
+    /** @name Select */
+    select?: boolean;
+
+    /** @name Type */
+    type?: string;
+
+    /** @name Value */
+    value?: Array<string | number | boolean> | string | number | boolean;
 }
 
 /**
