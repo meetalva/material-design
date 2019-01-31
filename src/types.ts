@@ -50,7 +50,20 @@ export enum Style {
     Headline4 = 'h4',
     Headline5 = 'h5',
     Headline6 = 'h6',
-    Default = 'body1'
+    Subtitle1 = 'subtitle1',
+    Subtitle2 = 'subtitle2',
+    Body1 = 'body1',
+    Body2 = 'body2',
+    Caption = 'caption',
+    Button = 'button',
+    Overline = 'overline',
+    Display3 = 'display3',
+    Display2 = 'display2',
+    Display1 = 'display1',
+    Headline = 'headline',
+    Title = 'title',
+    Subheading = 'subheading',
+    Inherit = 'inherit'
 }
 
 export enum Orientation {

@@ -6,12 +6,23 @@ export interface TypographyProps {
     /** @name Color @default TextPrimary */
     color?: TypographyColor;
 
+    /** @name Variant */
+    variant?: Style;
+
     /** @name Align @default Left */
     align?: TypographyAlign;
     
     /** @name Gutter Bottom */
     gutterBottom?: boolean;
-    variant?: Style;
+
+    /** @name Inline */
+    inline?: boolean;
+
+    /** @name No Wrap */
+    noWrap?: boolean;
+
+    /** @name Paragraph */
+    paragraph?: boolean;
 }
 
 export enum TypographyColor {
