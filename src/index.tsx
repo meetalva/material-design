@@ -27,6 +27,7 @@ export * from './select';
 export * from './selection-control';
 export * from './step';
 export * from './tab';
+export * from './table';
 export * from './text-field';
 export * from './toolbar';
 export * from './tooltip';

@@ -82,3 +82,11 @@ export enum Margin {
     Dense = 'dense',
     Normal = 'normal'
 }
+
+export enum TypographyAlign {
+    Left = 'left',
+    Center = 'center',
+    Right = 'right',
+    Justify = 'justify',
+    Inherit = 'inherit'
+}

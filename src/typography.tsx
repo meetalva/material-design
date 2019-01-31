@@ -1,6 +1,6 @@
 import * as React from 'react';
 import TypographyComponent from '@material-ui/core/Typography';
-import { Style } from './types';
+import { Style, TypographyAlign } from './types';
 
 export interface TypographyProps {
     /** @name Color @default TextPrimary */
@@ -32,14 +32,6 @@ export enum TypographyColor {
     TextSecondary = 'textSecondary',
     Error = 'error',
     Default = 'default',
-    Inherit = 'inherit'
-}
-
-export enum TypographyAlign {
-    Left = 'left',
-    Center = 'center',
-    Right = 'right',
-    Justify = 'justify',
     Inherit = 'inherit'
 }
 
