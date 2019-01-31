@@ -22,6 +22,7 @@ export * from './link';
 export * from './list';
 export * from './menu';
 export * from './paper';
+export * from './popover';
 export * from './progress';
 export * from './radio'
 export * from './select';
