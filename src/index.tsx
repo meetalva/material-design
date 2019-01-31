@@ -26,6 +26,7 @@ export * from './progress';
 export * from './radio'
 export * from './select';
 export * from './selection-control';
+export * from './snackbar';
 export * from './step';
 export * from './switch'
 export * from './tab';
