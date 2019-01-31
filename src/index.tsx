@@ -23,6 +23,7 @@ export * from './list';
 export * from './menu';
 export * from './paper';
 export * from './progress';
+export * from './radio'
 export * from './select';
 export * from './selection-control';
 export * from './step';
