@@ -1,35 +1,41 @@
 import * as React from 'react';
 import PopoverComponent from '@material-ui/core/Popover';
+import { PaperProps } from './paper';
+import { StandardProps } from './types';
+import { ModalProps } from './modal';
 
-export interface PopoverProps {
-    /** @name Open */
+export interface PopoverProps extends StandardProps<ModalProps> {
+    /** @name Open @group Popover */
     open: boolean;
 
-    /** @name Anchor Origin */
+    /** @name Anchor Origin @group Popover */
     anchorOrigin?: PopoverOrigin;
 
-    /** @name Anchor Position */
+    /** @name Anchor Position @group Popover */
     anchorPosition?: PopoverPosition;
 
-    /** @name Anchor Reference */
+    /** @name Anchor Reference @group Popover */
     anchorReference?: PopoverReference;
 
     children?: React.ReactNode;
 
-    /** @name Elevation */
+    /** @name Elevation @group Popover */
     elevation?: number;
 
-    /** @name Margin Threshold */
+    /** @name Margin Threshold @group Popover */
     marginThreshold?: number;
 
-    /** @name Modal */
+    /** @name Modal @group Popover */
     modal?: boolean;
 
-    /** @name Role */
+    /** @name Role @group Popover */
     role?: string;
 
-    /** @name Transform Origin */
+    /** @name Transform Origin @group Popover */
     transformOrigin?: PopoverOrigin;
+
+    /** @name Paper Props */
+    PaperProps?: Partial<PaperProps>;
 }
 
 export interface PopoverOrigin {

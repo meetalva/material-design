@@ -1,8 +1,10 @@
 import * as React from 'react';
 import LinkComponent from '@material-ui/core/Link';
-import { ColorWithInherit } from './types';
+import { TypographyProps } from './typography';
+import { ColorWithInherit, StandardProps } from './types';
 
-export interface LinkProps {
+
+export interface LinkProps extends StandardProps<TypographyProps> {
     /** @name Block */
     block?: boolean;
 

@@ -7,9 +7,12 @@ import StepConnectorComponent from '@material-ui/core/StepConnector';
 import StepIconComponent from '@material-ui/core/StepIcon';
 import StepContentComponent from '@material-ui/core/StepContent';
 import StepLabelComponent from '@material-ui/core/StepLabel';
-import { Orientation } from './types';
+import { Orientation, StandardProps } from './types';
+import { PaperProps } from './paper';
+import { LinearProgressProps } from './linear-progress';
+import { ButtonBaseProps } from './button';
 
-export interface StepperProps {
+export interface StepperProps extends StandardProps<PaperProps> {
     /** @name Active Step @description Set the selected item. 0 for the first, 1 for the second, etc @default 0 */
     activeStep?: number;
 
@@ -25,7 +28,7 @@ export interface StepperProps {
     children: React.ReactNode;
 }
 
-export interface MobileStepperProps {
+export interface MobileStepperProps extends StandardProps<PaperProps> {
     /** @name Active Step */
     activeStep?: number;
 
@@ -43,6 +46,8 @@ export interface MobileStepperProps {
 
     /** @name Variant */
     variant?: MobileStepperVariant;
+
+    LinearProgressProps?: Partial<LinearProgressProps>;
 }
 
 export interface StepProps {
@@ -70,7 +75,7 @@ export interface StepProps {
     children?: React.ReactNode;
 }
 
-export interface StepButtonProps {
+export interface StepButtonProps extends StandardProps<ButtonBaseProps> {
     /** @name Active */
     active?: boolean;
 
@@ -148,6 +153,9 @@ export interface StepLabelProps {
 
     /** @name Step Icon Component */
     StepIconComponent?: React.ReactType;
+
+    /** @name Step Icon */
+    StepIconProps?: Partial<StepIconProps>;
 }
 
 export interface StepIconProps {

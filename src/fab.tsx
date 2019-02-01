@@ -1,8 +1,9 @@
 import * as React from 'react';
 import FabComponent from '@material-ui/core/Fab';
-import { ColorWithInherit } from './types';
+import { ColorWithInherit, StandardProps } from './types';
+import { ButtonBaseProps } from './button';
 
-export interface FabProps {
+export interface FabProps extends StandardProps<ButtonBaseProps> {
     /** @name Color */
     color?: ColorWithInherit;
 

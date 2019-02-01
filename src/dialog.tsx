@@ -4,8 +4,11 @@ import DialogActionsComponent from '@material-ui/core/DialogActions';
 import DialogContentComponent from '@material-ui/core/DialogContent';
 import DialogContentTextComponent from '@material-ui/core/DialogContentText';
 import DialogTitleComponent from '@material-ui/core/DialogTitle';
+import { ModalProps } from './modal'
+import { TypographyProps } from './typography';
+import { StandardProps } from './types';
 
-export interface DialogProps {
+export interface DialogProps extends StandardProps<ModalProps> {
     /** @name Open @default true */
     open: boolean;
 
@@ -32,6 +35,10 @@ export interface DialogTitleProps {
 export interface DialogActionProps {
     /** @name Disable Action Spacing */
     disableActionSpacing?: boolean;
+}
+
+export interface DialogContentTextProps extends StandardProps<TypographyProps> {
+    
 }
 
 export enum DialogScroll {
@@ -101,7 +108,7 @@ export const DialogContent: React.SFC = props => {
  * @name Dialog Content Text
  * @group Dialog
  */
-export const DialogContentText: React.SFC = props => {
+export const DialogContentText: React.SFC<DialogContentTextProps> = props => {
     return (
         <DialogContentTextComponent {...props}>
             {props.children}

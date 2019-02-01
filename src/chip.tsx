@@ -28,8 +28,7 @@ export interface ChipProps {
     deleteIcon?: React.ReactElement<any>;
 
     /** @name Icon */
-    icon?: React.ReactElement<any>;
-    
+    icon?: React.ReactElement<any>;    
 }
 
 export enum ChipVariant {

@@ -1,12 +1,11 @@
 import * as React from 'react';
 import PaperComponent from '@material-ui/core/Paper';
-import { BaseProps } from './types';
 
-export interface PaperProps extends BaseProps {
-    /** @name Elevation @default 2 */
+export interface PaperProps {
+    /** @name Elevation @default 2 @group Paper */
     elevation?: number;
 
-    /** @name Square @description Do not show rounded corners */
+    /** @name Square @description Do not show rounded corners @group Paper */
     square?: boolean;
 }
 

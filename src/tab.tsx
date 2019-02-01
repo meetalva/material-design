@@ -1,10 +1,11 @@
 import * as React from 'react';
 import TabsComponent from '@material-ui/core/Tabs';
 import TabItemComponent from '@material-ui/core/Tab';
-import { ColorWithInherit } from './types';
-import ShoppingBasket from '@material-ui/icons/ShoppingBasket';
+import { ColorWithInherit, StandardProps } from './types';
+import { ButtonBaseProps } from './button';
+import { TabIndicatorProps } from '@material-ui/core/Tabs/TabIndicator';
 
-export interface TabsProps {
+export interface TabsProps extends StandardProps<ButtonBaseProps> {
     /** @name Selected @description Set the selected item. 0 for the first, 1 for the second, etc @default 0 @group Active Item */
     value: any;
 
@@ -36,6 +37,12 @@ export interface TabsProps {
 
     /** @name Width */
     width?: string;
+
+    /** @name Scroll Button */
+    ScrollButtonComponent?: React.ReactType;
+
+    /** @name Tab Indicator Props */
+    TabIndicatorProps?: Partial<TabIndicatorProps>;
 }
 
 export enum TabsIndicatorColor {
@@ -55,7 +62,7 @@ export enum TabsVariant {
     FullWidth = 'fullWidth'
 }
 
-export interface TabItemProps {
+export interface TabItemProps extends StandardProps<ButtonBaseProps> {
     /** @name Label @default Tab */
     label?: React.ReactNode;
 
@@ -110,6 +117,6 @@ export const Tabs: React.SFC<TabsProps> = props => {
  */
 export const TabItem: React.SFC<TabItemProps> = props => {
     return (
-        <TabItemComponent icon={<ShoppingBasket />} {...props} />
+        <TabItemComponent {...props} />
     )
 }

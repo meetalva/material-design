@@ -1,8 +1,7 @@
 import * as React from 'react';
-import { BaseProps } from './types';
 import AvatarComponent from '@material-ui/core/Avatar';
 
-export interface AvatarProps extends BaseProps {
+export interface AvatarProps  {
     /** @name Alt */
     alt?: string;
 

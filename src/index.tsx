@@ -21,6 +21,7 @@ export * from './linear-progress';
 export * from './link';
 export * from './list';
 export * from './menu';
+export * from './modal';
 export * from './paper';
 export * from './popover';
 export * from './progress';

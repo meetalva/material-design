@@ -5,10 +5,11 @@ import CardMediaComponent from '@material-ui/core/CardMedia';
 import CardHeaderComponent from '@material-ui/core/CardHeader';
 import CardActionAreaComponent from '@material-ui/core/CardActions';
 import CardActionsComponent from '@material-ui/core/CardActions';
+import { PaperProps } from './paper';
+import { TypographyProps } from './typography';
+import { StandardProps } from './types';
 
-import Avatar from '@material-ui/core/Avatar';
-
-export interface CardProps {
+export interface CardProps extends StandardProps<PaperProps> {
     /** @name Raised */
     raised?: boolean;
 }
@@ -28,6 +29,12 @@ export interface CardHeaderProps {
 
     /** @name Disable Typography */
     disableTypography?: boolean;
+
+    /** @name Subheader Typography Props */
+    subheaderTypographyProps?: TypographyProps;
+
+    /** @name Title Typography Props */
+    titleTypographyProps?: TypographyProps;
 }
 
 export interface CardMediaProps {
@@ -73,12 +80,7 @@ export const Card: React.SFC<CardProps> = props => {
  */
 export const CardHeader: React.SFC<CardHeaderProps> = props => {
     return (
-        <CardHeaderComponent
-            avatar={
-                <Avatar>R</Avatar>
-            }
-            {...props}
-        />
+        <CardHeaderComponent {...props} />
     )
 }
 

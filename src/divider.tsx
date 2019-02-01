@@ -13,8 +13,6 @@ export interface DividerProps {
 
     /** @name Variant */
     variant?: DividerVariant;
-
-    children: never;
 }
 
 export enum DividerVariant {

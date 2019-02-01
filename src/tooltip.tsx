@@ -3,7 +3,7 @@ import TooltipComponent from '@material-ui/core/Tooltip';
 
 export interface TooltipProps {
     /** @name Title */
-    title: string;
+    title: React.ReactNode;
 
     /** @name Placement */
     placement: TooltipPlacement;
@@ -68,7 +68,7 @@ export enum TooltipPlacement {
  */
 export const Tooltip: React.SFC<TooltipProps> = props => {
     return (
-        <TooltipComponent className="helloWorld" {...props}>
+        <TooltipComponent {...props}>
             {props.children}
         </TooltipComponent>
     )

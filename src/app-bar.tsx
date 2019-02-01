@@ -1,8 +1,9 @@
 import * as React from 'react';
 import AppBarComponent from '@material-ui/core/AppBar';
-import { ColorWithInherit } from './types';
+import { ColorWithInherit, StandardProps } from './types';
+import { PaperProps } from './paper';
 
-export interface AppBarProps {
+export interface AppBarProps extends StandardProps<PaperProps> {
     /** @name Color @default Primary */
     color: ColorWithInherit;
 

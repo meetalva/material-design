@@ -20,6 +20,8 @@ export interface BadgeProps {
 
     /** @name Variant @default Standard */
     variant?: BadgeVariant;
+
+    children: React.ReactNode;
 }
 
 export enum BadgeVariant {

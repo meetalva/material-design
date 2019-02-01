@@ -1,16 +1,10 @@
 import * as React from 'react';
 import FormComponent from '@material-ui/core/FormControlLabel';
-import Radio from '@material-ui/core/Radio';
-import Checkbox from '@material-ui/core/Checkbox';
-import Switch from '@material-ui/core/Switch';
 import { LabelPlacement } from './types';
 
 export interface SelectionControlProps {
-    /** @name Type @default Switch */
-    type: SelectionControlType;
-
     /** @name Label @default Label */
-    label: string;
+    label: React.ReactNode;
 
     /** @name Checked */
     checked?: boolean;
@@ -20,12 +14,21 @@ export interface SelectionControlProps {
 
     /** @name Label Position @default End */
     labelPlacement?: LabelPlacement;
-}
 
-export enum SelectionControlType {
-    Checkbox,
-    RadioButton,
-    Switch
+    /** @name Control */
+    control: React.ReactElement<any>;
+
+    /** @name Input Ref */
+    inputRef?: React.Ref<any>;
+
+    /** @name Name */
+    name?: string;
+
+    /** @name On Change */
+    onChange?: (event: React.ChangeEvent<{}>, checked: boolean) => void;
+
+    /** @name Value */
+    value?: string;
 }
 
 /**
@@ -35,17 +38,6 @@ export enum SelectionControlType {
  */
 export const SelectionControl: React.SFC<SelectionControlProps> = props => {
     return (
-        <FormComponent {...props} control={getType(props.type)} />
+        <FormComponent {...props} />
     )
-}
-
-function getType(type: SelectionControlType): JSX.Element {
-	switch (type) {
-        case SelectionControlType.Checkbox:
-            return <Checkbox />;
-        case SelectionControlType.RadioButton:
-            return <Radio />;
-        case SelectionControlType.Switch:
-            return <Switch />;
-	}
 }

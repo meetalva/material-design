@@ -1,7 +1,9 @@
 import * as React from 'react';
 import FilledInputComponent from '@material-ui/core/FilledInput';
+import { InputBaseProps } from './input';
+import { StandardProps } from './types';
 
-export interface FilledInputProps {
+export interface FilledInputProps extends StandardProps<InputBaseProps> {
     /** @name Disable Underline */
     disableUnderline?: boolean;
 }

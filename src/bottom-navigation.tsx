@@ -1,6 +1,8 @@
 import * as React from 'react';
 import BottomNavigationComponent from '@material-ui/core/BottomNavigation';
 import BottomNavigationActionComponent from '@material-ui/core/BottomNavigationAction';
+import { ButtonBaseProps } from './button';
+import { StandardProps } from './types';
 
 export interface BottomNavigationProps {
     /** @name Selected @description Set the selected item. 0 for the first, 1 for the second, etc @default 0 @group Active Item */
@@ -15,7 +17,7 @@ export interface BottomNavigationProps {
     onChange?: (event: React.ChangeEvent<{}>, value: any) => void;
 }
 
-export interface BottomNavigationActionProps {   
+export interface BottomNavigationActionProps extends StandardProps<ButtonBaseProps> {   
     /** @name Label @default Action */
     label?: string;
 
@@ -32,7 +34,7 @@ export interface BottomNavigationActionProps {
     value?: any;
 
     /** @name Icon */
-    icon?: string | React.ReactElement<any>;
+    icon?: React.ReactElement<any>;
 
     /** @name On Change */
     onChange?: (event: React.ChangeEvent<{}>, value: any) => void;

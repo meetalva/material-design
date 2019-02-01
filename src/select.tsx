@@ -1,9 +1,11 @@
 
 import * as React from 'react';
 import SelectComponent from '@material-ui/core/Select';
-import { InputVariant } from './types';
+import { InputVariant, StandardProps } from './types';
+import { InputProps } from './input';
+import { MenuProps } from './menu';
 
-export interface SelectProps {
+export interface SelectProps extends StandardProps<InputProps> {
     /** @name Auto Width */
     autoWidth?: boolean;
 
@@ -36,6 +38,12 @@ export interface SelectProps {
 
     /** @name Value */
     value?: Array<string | number | boolean | object> | string | number | boolean | object;
+
+    /** @name Menu Props */
+    MenuProps?: Partial<MenuProps>;
+
+    /** @name Render Value */
+    renderValue?: (value: SelectProps['value']) => React.ReactNode;
 }
 
 /**

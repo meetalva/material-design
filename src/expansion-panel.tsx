@@ -3,8 +3,11 @@ import ExpansionPanelComponent from '@material-ui/core/ExpansionPanel';
 import ExpansionPanelActionsComponent from '@material-ui/core/ExpansionPanelActions';
 import ExpansionPanelDetailsComponent from '@material-ui/core/ExpansionPanelDetails';
 import ExpansionPanelSummaryComponent from '@material-ui/core/ExpansionPanelSummary';
+import { PaperProps } from './paper';
+import { ButtonBaseProps } from './button';
+import { StandardProps } from './types';
 
-export interface ExpansionPanelProps {
+export interface ExpansionPanelProps extends StandardProps<PaperProps> {
     /** @name Default Expanded */
     defaultExpanded?: boolean;
 
@@ -18,7 +21,7 @@ export interface ExpansionPanelProps {
     onChange?: (event: React.ChangeEvent<{}>, expanded: boolean) => void;
 }
 
-export interface ExpansionPanelSummaryProps {
+export interface ExpansionPanelSummaryProps extends StandardProps<ButtonBaseProps> {
     /** @name Disabled */
     disabled?: boolean;
 

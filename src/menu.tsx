@@ -1,30 +1,33 @@
 import * as React from 'react';
 import MenuComponent from '@material-ui/core/Menu';
 import MenuItemComponent from '@material-ui/core/MenuItem';
+import MenuListComponent from '@material-ui/core/MenuList';
+import { PopoverProps } from './popover';
+import { ListItemProps, ListProps } from './list';
+import { StandardProps } from './types';
+import { PaperProps } from './paper';
 
-export interface MenuProps {
-    /** @name Open @default true */
-    open: boolean;
+export interface MenuProps extends StandardProps<PopoverProps>  {
+    /** @name Disable Auto Focus Item */
+    disableAutoFocusItem?: boolean;
+
+    /** @name Menu List Props */
+    MenuListProps?: Partial<MenuListProps>;
+
+    /** @name Paper Props */
+    PaperProps?: Partial<PaperProps>;
 }
 
-export interface MenuItemProps {
-    /** @name Label @default Menu Item */
-    label?: string;
+export interface MenuItemProps extends StandardProps<ListItemProps> {
+    role?: string;
+}
 
-    /** @name Value @description Used to identify this item in selects */
-    value?: string;
+export interface MenuListProps extends StandardProps<ListProps> {
+    /** @name Disable List Wrap */
+    disableListWrap?: boolean;
 
-    /** @name Selected */
-    selected?: boolean;
-
-    /** @name Show Dividers */
-    divider?: boolean;
-
-    /** @name Disabled */
-    disabled?: boolean;
-
-    /** @name Interaction */
-    onClick?: React.EventHandler<any>;
+    /** @name On Key Down */
+    onKeyDown?: React.ReactEventHandler<React.KeyboardEvent<any>>;
 }
 
 /**
@@ -49,7 +52,21 @@ export const Menu: React.SFC<MenuProps> = props => {
 export const MenuItem: React.SFC<MenuItemProps> = props => {
     return (
         <MenuItemComponent {...props}>
-            {props.label}
+            {props.children}
         </MenuItemComponent>
     )
 }
+
+/**
+ * @name Menu List
+ * @icon Minus
+ * @group Menu
+ */
+export const MenuList: React.SFC<MenuListProps> = props => {
+    return (
+        <MenuListComponent {...props}>
+            {props.children}
+        </MenuListComponent>
+    )
+}
+

@@ -2,8 +2,11 @@
 import * as React from 'react';
 import RadioComponent from '@material-ui/core/Radio';
 import RadioGroupComponent from '@material-ui/core/RadioGroup';
+import { StandardProps } from './types';
+import { SwitchBaseProps } from './switch';
+import { FormGroupProps } from './form';
 
-export interface RadioProps {
+export interface RadioProps extends StandardProps<SwitchBaseProps> {
     /** @name Color */
     color?: RadioColor;
 
@@ -14,7 +17,7 @@ export interface RadioProps {
     icon?: React.ReactNode;
 }
 
-export interface RadioGroupProps {
+export interface RadioGroupProps extends StandardProps<FormGroupProps> {
     /** @name Name */
     name?: string;
 

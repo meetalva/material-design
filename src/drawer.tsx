@@ -1,20 +1,29 @@
 import * as React from 'react';
 import DrawerComponent from '@material-ui/core/Drawer';
+import { ModalProps } from './modal';
+import { PaperProps } from './paper';
+import { StandardProps } from './types';
 
-export interface DrawerProps {
+export interface DrawerProps extends StandardProps<ModalProps> {
     /** @name Anchor @default Left */
     anchor?: DrawerAnchor;
 
     /** @name Elevation @default 16 */
     elevation?: number;
 
-    /** @name Open @default true */
-    open?: boolean;
+    /* @name Open @default true
+    open?: boolean; */
     
     /** @name Variant @default Temporary */
     variant?: DrawerVariant;
 
     children?: React.ReactNode;
+
+    /** @name Modal Props */
+    ModalProps?: Partial<ModalProps>;
+
+    /** @name Paper Props */
+    PaperProps?: Partial<PaperProps>;
 }
 
 export enum DrawerAnchor {

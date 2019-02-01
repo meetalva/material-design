@@ -1,6 +1,8 @@
 import * as React from 'react';
 import SnackbarComponent from '@material-ui/core/Snackbar';
 import SnackbarContentComponent from '@material-ui/core/SnackbarContent';
+import { StandardProps } from './types';
+import { PaperProps } from './paper';
 
 export interface SnackbarProps {
     /** @name Anchor Origin */
@@ -32,9 +34,12 @@ export interface SnackbarProps {
 
     /** @name Resume Hide Duration */
     resumeHideDuration?: number;
+
+    /** @name Content */
+    ContentProps?: Partial<SnackbarContentProps>;
 }
 
-export interface SnackbarContentProps {
+export interface SnackbarContentProps extends StandardProps<PaperProps> {
     /** @name Action */
     action?: React.ReactNode;
 

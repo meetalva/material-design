@@ -1,19 +1,5 @@
-export interface BaseProps {
-    /** @name Width @group Style */
-    width?: string;
-
-    /** @name Height @group Style */
-    height?: string;
-
-    /** @name Margin @group Style */
-    margin?: string;
-
-    /** @name Color @group Style */
-    color?: string;
-
-    /** @name Background Color @group Style */
-    backgroundColor?: string;
-}
+export type StandardProps<C, Removals extends keyof C = never> = Omit<C, 'classes' | Removals>;
+export type Omit<T, K extends keyof any> = T extends any ? Pick<T, Exclude<keyof T, K>> : never;
 
 export enum Color {
     Primary = 'primary',

@@ -6,6 +6,8 @@ import ListItemIconComponent from '@material-ui/core/ListItemIcon';
 import ListItemSecondaryActionComponent from '@material-ui/core/ListItemSecondaryAction';
 import ListItemTextComponent from '@material-ui/core/ListItemText';
 import ListSubheaderComponent from '@material-ui/core/ListSubheader';
+import { StandardProps } from './types';
+import { ButtonBaseProps } from './button';
 
 export interface ListProps {
     /** @name Dense */
@@ -18,7 +20,7 @@ export interface ListProps {
     subheader?: React.ReactElement<any>;
 }
 
-export interface ListItemProps {
+export interface ListItemProps extends StandardProps<ButtonBaseProps> {
     /** @name Button */
     button?: boolean;
 
@@ -161,5 +163,3 @@ export const ListSubheader: React.SFC<ListSubheaderProps> = props => {
         </ListSubheaderComponent>
     )
 }
-
-

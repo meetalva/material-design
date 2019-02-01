@@ -7,7 +7,8 @@ import TableHeadComponent from '@material-ui/core/TableHead';
 import TablePaginationComponent from '@material-ui/core/TablePagination';
 import TableRowComponent from '@material-ui/core/TableRow';
 import TableSortLabelComponent from '@material-ui/core/TableSortLabel';
-import { TypographyAlign } from './types';
+import { TypographyAlign, StandardProps } from './types';
+import { ButtonBaseProps } from './button';
 
 export interface TableProps {
     padding?: TablePadding;
@@ -61,7 +62,7 @@ export interface TableRowProps {
     selected?: boolean;
 }
 
-export interface TableSortLabelProps {
+export interface TableSortLabelProps extends StandardProps<ButtonBaseProps> {
     /** @name Active */
     active?: boolean;
 
