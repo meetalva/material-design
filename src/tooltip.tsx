@@ -35,7 +35,7 @@ export interface TooltipProps {
     /** @name Open */
     open?: boolean;
 
-    children: React.ReactNode;
+    children: React.ReactElement<any>;
 
     /** @name ID */
     id?: string;

@@ -23,7 +23,7 @@ export interface SwitchBaseProps extends StandardProps<IconButtonProps> {
     checked?: boolean;
 
     /** @name Checked Icon */
-    checkedIcon: React.ReactNode;
+    checkedIcon?: React.ReactNode;
 
     /** @name Default Checked */
     defaultChecked?: boolean;
@@ -35,7 +35,7 @@ export interface SwitchBaseProps extends StandardProps<IconButtonProps> {
     disableRipple?: boolean;
 
     /** @name Icon */
-    icon: React.ReactNode;
+    icon?: React.ReactNode;
 
     /** @name Input Props */
     inputProps?: React.InputHTMLAttributes<HTMLInputElement>;

@@ -6,7 +6,7 @@ import { StandardProps } from './types';
 import { SwitchBaseProps } from './switch';
 import { FormGroupProps } from './form';
 
-export interface RadioProps extends StandardProps<SwitchBaseProps> {
+export interface RadioProps extends StandardProps<SwitchBaseProps, 'color'> {
     /** @name Color */
     color?: RadioColor;
 
