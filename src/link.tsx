@@ -1,15 +1,15 @@
 import * as React from 'react';
 import LinkComponent from '@material-ui/core/Link';
 import { TypographyProps } from './typography';
-import { ColorWithInherit, StandardProps } from './types';
+import { StandardProps, ColorWithInherit } from './types';
 
 
-export interface LinkProps extends StandardProps<TypographyProps> {
+export interface LinkProps extends StandardProps<TypographyProps, 'color'> {
     /** @name Block */
     block?: boolean;
 
     /** @name Color */
-    color: ColorWithInherit;
+    color?: ColorWithInherit;
 
     /** @name Underline @default Hover */
     underline?: LinkUnderline;
