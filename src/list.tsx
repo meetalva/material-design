@@ -10,37 +10,78 @@ import { StandardProps } from './types';
 import { ButtonBaseProps } from './button';
 
 export interface ListProps {
-    /** @name Dense */
-    dense?: boolean;
 
-    /** @name Disable Padding */
-    disablePadding?: boolean;
+    /**
+     * @name List
+     * @description Lists are a continuous group of text or images. They are composed of items containing primary and supplemental actions, which are represented by icons and text.
+     */
 
-    /** @name Subheader */
-    subheader?: React.ReactElement<any>;
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { ListSubheader, ListItem, ListItemText } from './';
+    * import { Text } from '@meetalva/essentials';
+    * 
+    * export default () => (
+    *   <>
+    *       <ListSubheader>
+    *           <Text text="List Items" />
+    *       <ListSubheader>
+    *       <ListItem button="true">
+    *           <ListItemText>
+    *               <Text text="Option 1" />
+    *           </ListItemText>
+    *       </ListItem>
+    *       <ListItem button="true">
+    *           <ListItemText>
+    *               <Text text="Option 2" />
+    *           </ListItemText>
+    *       </ListItem>
+    *   <>
+    * );
+    * ```
+    **/
+    children?: React.ReactNode;
 }
 
 export interface ListItemProps extends StandardProps<ButtonBaseProps> {
-    /** @name Button */
+
+    /**
+     * @name Button
+     * @group List Item
+     * */
     button?: boolean;
 
-    /** @name Dense */
+    /**
+     * @name Dense
+     * @group List Item
+     * */
     dense?: boolean;
 
-    /** @name Disabled */
+    /**
+     * @name Disabled
+     * @group List Item
+     * */
     disabled?: boolean;
 
-    /** @name Disable Gutters */
-    disableGutters?: boolean;
-
-    /** @name Divider */
+    /**
+     * @name Divider
+     * @group List Item
+     * */
     divider?: boolean;
 
-    /** @name Focus Visible Class */
-    focusVisibleClassName?: string;
-
-    /** @name Selected */
+    /**
+     * @name Selected
+     * @group List Item
+     * */
     selected?: boolean;
+
+    /**
+     * @name Interaction
+     * @description Set an interaction that happens on Click.
+     * */
+    onClick?: React.MouseEventHandler<HTMLElement>;
 }
 
 export interface ListItemIconProps {
@@ -64,9 +105,6 @@ export interface ListItemTextProps {
 export interface ListSubheaderProps {
     color?: ListSubheaderColor;
 
-    /** @name Disable Gutters */
-    disableGutters?: boolean;
-
     /** @name Disable Sticky */
     disableSticky?: boolean;
 
@@ -83,6 +121,7 @@ export enum ListSubheaderColor {
 /**
  * @name List
  * @group List
+ * @description Continuous, vertical indexes of text or images
  */
 export const List: React.SFC<ListProps> = props => {
     return (

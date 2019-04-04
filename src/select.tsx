@@ -52,6 +52,7 @@ export interface SelectProps extends StandardProps<InputProps, 'onChange'> {
 /**
  * @name Select
  * @description Used for collecting user provided information from a list of options.
+ * @group Form
  */
 
 export const Select: React.SFC<SelectProps> = props => {

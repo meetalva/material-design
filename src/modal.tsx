@@ -1,50 +1,33 @@
 import * as React from 'react';
 import ModalComponent from '@material-ui/core/Modal';
-import { BackdropProps } from './backdrop';
 
 export interface ModalProps {
-    /** @name Backdrop Props */
-    BackdropProps?: Partial<BackdropProps>;
 
-    /** @name Close After Transition */
-    closeAfterTransition?: boolean;
-
-    /** @name Disable Auto Focus */
-    disableAutoFocus?: boolean;
-
-    /** @name Disable Backdrop Click */
-    disableBackdropClick?: boolean;
-
-    /** @name Disable Enforce Focus */
-    disableEnforceFocus?: boolean;
-
-    /** @name Disable Escape Key Down */
-    disableEscapeKeyDown?: boolean;
-
-    /** @name Disable Restore Focus */
-    disableRestoreFocus?: boolean;
-
-    /** @name Hide Backdrop */
-    hideBackdrop?: boolean;
-
-    /** @name Keep Mounted */
-    keepMounted?: boolean;
-
-    /** @ãme On Backdrop Click */
+    /**
+     * @name On Backdrop Click
+     * @description Callback fired when the backdrop is clicked.
+     * */
     onBackdropClick?: React.ReactEventHandler<{}>;
 
-    /** @name On Close */
+    /**
+     * @name On Close
+     * @description Callback fired when the component requests to be closed.
+     * */
     onClose?: React.ReactEventHandler<{}>;
 
-    /** @name On Escape Key Down */
+    /**
+     * @name On Escape Key Down
+     * @description Callback fired when the escape key is pressed.
+     * */
     onEscapeKeyDown?: React.ReactEventHandler<{}>;
 
-    /** @name Open */
+    /** @name Modal open */
     open: boolean;
 }
 
 /**
  * @name Modal
+ * @group Modals
  */
 export const Modal: React.SFC<ModalProps> = props => {
     return (

@@ -1,8 +1,5 @@
 import * as React from 'react';
 import GridComponent from '@material-ui/core/Grid';
-import GridListComponent from '@material-ui/core/GridList';
-import GridListTileComponent from '@material-ui/core/GridListTile';
-import GridListTileBarComponent from '@material-ui/core/GridListTileBar';
 
 export interface GridProps {
     /** @name Align Content */
@@ -31,42 +28,6 @@ export interface GridProps {
 
     /** @name Zero Min Width */
     zeroMinWidth?: boolean;
-}
-
-export interface GridListProps {
-    /** @name Cell Height */
-    cellHeight?: number;
-
-    /** @name Cols */
-    cols?: number;
-
-    /** @name Spacing */
-    spacing?: number;
-}
-
-export interface GridListTileProps {
-    /** @name Cols */
-    cols?: number;
-
-    /** @name Rows */
-    rows?: number;
-}
-
-export interface GridListTileBarProps {
-    /** @name Action Icon */
-    actionIcon?: React.ReactNode;
-
-    /** @name Action Position */
-    actionPosition?: GridListTileBarActionPosition;
-
-    /** @name Subtitle */
-    subtitle?: React.ReactNode;
-
-    /** @name Title */
-    title?: React.ReactNode;
-
-    /** @name Title Position */
-    titlePosition?: GridListTileBarTitlePosition;
 }
 
 export enum GridJustification {
@@ -131,61 +92,15 @@ export enum GridSpacing {
     Spacing32 = 32,
     Spacing40 = 40
 }
-
-export enum GridListTileBarActionPosition {
-    Left = 'left',
-    Right = 'right'
-}
-
-export enum GridListTileBarTitlePosition  {
-    Top = 'top',
-    Bottom = 'bottom'
-}
-
 /**
  * @name Grid
  * @group Grid
+ * @description Responsive layout grid
  */
 export const Grid: React.SFC<GridProps> = props => {
     return (
         <GridComponent {...props}>
             {props.children}
         </GridComponent>
-    )
-}
-
-/**
- * @name Grid List
- * @group Grid
- */
-export const GridList: React.SFC<GridListProps> = props => {
-    return (
-        <GridListComponent {...props}>
-            {props.children}
-        </GridListComponent>
-    )
-}
-
-/**
- * @name Grid List Tile
- * @group Grid
- */
-export const GridListTile: React.SFC<GridListTileProps> = props => {
-    return (
-        <GridListTileComponent {...props}>
-            {props.children}
-        </GridListTileComponent>
-    )
-}
-
-/**
- * @name Grid List Tile Bar
- * @group Grid
- */
-export const GridListTileBar: React.SFC<GridListTileBarProps> = props => {
-    return (
-        <GridListTileBarComponent {...props}>
-            {props.children}
-        </GridListTileBarComponent>
     )
 }

@@ -10,7 +10,12 @@ import { TypographyProps } from './typography';
 import { StandardProps } from './types';
 
 export interface CardProps extends StandardProps<PaperProps> {
-    /** @name Raised */
+
+    /**
+     * @name Raised
+     * @description If true, the card will use raised styling.
+     * @group Style
+     * */
     raised?: boolean;
 }
 
@@ -35,6 +40,20 @@ export interface CardHeaderProps {
 
     /** @name Title Typography Props */
     titleTypographyProps?: TypographyProps;
+
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { CardHeader, Avatar, IconButton } from './';
+    * import { Text } from '@meetalva/essentials';
+    * 
+    * export default () => (
+    * 
+    * );
+    * ```
+    **/
+    children?: React.ReactNode;
 }
 
 export interface CardMediaProps {
@@ -99,6 +118,7 @@ export const CardContent: React.SFC = props => {
 /**
  * @name Card Media
  * @group Card
+ * @icon Image
  */
 export const CardMedia: React.SFC<CardMediaProps> = props => {
     return (

@@ -13,6 +13,7 @@ export interface PaperProps {
  * @name Paper
  * @description Physical properties of paper translated to the screen
  * @icon File
+ * @group Style
  */
 export const Paper: React.SFC<PaperProps> = props => {
     return (

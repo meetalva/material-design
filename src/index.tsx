@@ -8,17 +8,15 @@ export * from './chip';
 export * from './dialog';
 export * from './divider';
 export * from './drawer';
-export * from './grid';
+export * from './grid-list';
 export * from './expansion-panel';
 export * from './fab';
 export * from './filled-input';
 export * from './form';
 export * from './grid';
-export * from './hidden';
-export * from './icon';
+export * from './grid-list';
 export * from './input';
 export * from './linear-progress';
-export * from './link';
 export * from './list';
 export * from './menu';
 export * from './modal';
@@ -27,7 +25,6 @@ export * from './popover';
 export * from './progress';
 export * from './radio'
 export * from './select';
-export * from './selection-control';
 export * from './snackbar';
 export * from './step';
 export * from './switch'

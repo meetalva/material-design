@@ -9,21 +9,63 @@ import { TypographyProps } from './typography';
 import { StandardProps } from './types';
 
 export interface DialogProps extends StandardProps<ModalProps> {
-    /** @name Open @default true */
+    /**
+     * @name Open
+     * @default true
+     * @group Dialog
+     * */
     open: boolean;
 
-    /** @name Full Width @default true */
+    /**
+     * @name Full Width
+     * @default false
+     * @group Style
+     * */
     fullWidth?: boolean;
 
-    /** @name Full Screen */
+    /**
+     * @name Full Screen
+     * @default false
+     * @group Style
+     * */
     fullScreen: boolean;
 
-    /** @name Max Width */
+    /**
+     * @name Max Width
+     * @control ButtonGroup
+     * @group Style
+     * */
     maxWidth: DialogMaxWidth;
 
-    /** @name Scroll */
-    scroll?: DialogScroll;
-
+     /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { DialogTitle, DialogContent, DialogContentText, DialogActions, Button } from './';
+    * import { Text } from '@meetalva/essentials';
+    * 
+    * export default () => (
+    *   <>
+    *       <DialogTitle>
+    *           <Text text="Dialog Title">    
+    *       </DialogTitle>
+    *       <DialogContent>
+    *           <DialogContentText>
+    *                <Text text="Dialog Text lorem ipsum dolor sit..."> 
+    *           </DialogContentText>
+    *       </DialogContent>
+    *        <DialogActions>
+    *           <Button variant="text" color="primary">
+    *               <Text text="Disagree"> 
+    *           </Button>
+    *           <Button variant="text" color="primary" autoFocus>
+    *               <Text text="Agree">
+    *           </Button>
+    *      </DialogActions>
+    *   <>
+    * );
+    * ```
+    **/
     children?: React.ReactNode;
 }
 
@@ -47,16 +89,16 @@ export enum DialogScroll {
 }
 
 export enum DialogMaxWidth {
-    XSmall = 'xs',
-    Small = 'sm',
-    Medium = 'md',
-    Large = 'lg',
-    XLarge = 'xl',
+    XS = 'xs',
+    S = 'sm',
+    M = 'md',
+    L = 'lg',
+    XL = 'xl',
 }
 
 /**
  * @name Dialog
- * @description Inform users about a task and can contain critical information, require decisions, or involve multiple tasks
+ * @description Modal window that appears in front of app content
  * @icon MessageSquare
  * @group Dialog
  */

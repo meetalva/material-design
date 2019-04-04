@@ -2,29 +2,39 @@ import * as React from 'react';
 import AvatarComponent from '@material-ui/core/Avatar';
 
 export interface AvatarProps  {
-    /** @name Alt */
-    alt?: string;
-
-    /** @name Children Class Name */
-    childrenClassName?: string;
-
-    /** @name Sizes */
-    sizes?: string;
 
     /** @name Src */
     src?: string;
 
-    /** @name SrcSet */
-    srcSet?: string;
+    /**
+     * @name Color
+     * @group Style
+     * @default #2196f3
+     * @control color
+     */
+    color?: string
+
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { Text } from '@meetalva/essentials';
+    * 
+    * export default () => (
+    * <Text text="A">
+    * );
+    * ```
+    **/
+    children?: React.ReactNode;
 }
 
 /**
  * @name Avatar
- * @description Used in everything from tables to dialog menus
+ * @description For images, icons and initials
  */
 export const Avatar: React.SFC<AvatarProps> = props => {
     return (
-        <AvatarComponent {...props}>
+        <AvatarComponent {...props} style={{backgroundColor: props.color}}>
             {props.children}
         </AvatarComponent>
     )

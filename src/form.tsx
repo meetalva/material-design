@@ -67,23 +67,40 @@ export interface FormGroupProps {
 }
 
 export interface FormHelperTextProps {
-    /** @name Disabled */
+
+    /**
+     * @name Disabled
+     * @group Helper text
+     * @description If true, the helper text should be displayed in a disabled state.
+     * */
     disabled?: boolean;
 
-    /** @name Error */
+    /**
+     * @name Error
+     * @group Helper text
+     * @description If true, helper text should be displayed in an error state.
+     * */
     error?: boolean;
 
-    /** @name Filled */
-    filled?: boolean;
-
-    /** @name Focused */
-    focused?: boolean;
-
-    /** @name Required */
-    required?: boolean;
-
-    /** @name Variant */
+    /**
+     * @name Variant
+     * @group Helper text
+     * @control ButtonGroup
+     * */
     variant?: FormVariant;
+
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { Text } from '@meetalva/essentials';
+    * 
+    * export default () => (
+    * <Text text="Helper Text">
+    * );
+    * ```
+    **/
+    children?: React.ReactNode;
 }
 
 export interface FormLabelProps {

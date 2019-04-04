@@ -1,69 +1,102 @@
 import * as React from 'react';
 import ButtonComponent from '@material-ui/core/Button';
-import ButtonBaseComponent from '@material-ui/core/ButtonBase';
 import IconButtonComponent from '@material-ui/core/IconButton';
 import { ColorWithInherit, StandardProps } from './types';
 
 export interface ButtonProps extends StandardProps<ButtonBaseProps> {
-    /** @name Color @default Primary */
+
+
+    /**
+     * @name Color
+     * @default Primary
+     * @group Style
+     * */
     color?: ColorWithInherit;
 
-    /** @name Disabled */
-    disabled?: boolean;
+    /**
+     * @name Variant
+     * @default Contained
+     * @group Style
+     * */
+    variant?: ButtonVariant;
 
-    /** @name Disable Focus Ripple */
-    disableFocusRipple?: boolean;
-
-    /** @name Disable Ripple */
-    disableRipple?: boolean;
-
-    /** @name Full Width */
-    fullWidth?: boolean;
-
-    /** @name Href */
-    href?: string;
-
-    /** @name Mini */
-    mini?: boolean;
-
-    /** @name Size @default Medium */
+    /**
+     * @name Size
+     * @default Medium
+     * @group Style
+     * @control ButtonGroup
+     * */
     size?: ButtonSize;
 
-    /** @name Type */
-    type?: string;
+    /**
+     * @name Full Width
+     * @group Style
+     * */
+    fullWidth?: boolean;
 
-    /** @name Variant @default Contained */
-    variant?: ButtonVariant;
+    /**
+     * @name Mini
+     * @description If true, and variant is 'fab', will use mini floating action button styling.
+     * @group Style
+     * */
+    mini?: boolean;
+
+    /**
+     * @name Disabled
+     * @group Disabled
+     * */
+    disabled?: boolean;
+
+    /**
+     * @name Disable Ripple
+     * @group Disabled
+     * */
+    disableRipple?: boolean;
+
+
+    /**
+     * @name Interaction
+     * @description Set an interaction that happens on Click.
+     * */
+	onClick?: React.MouseEventHandler<HTMLElement>;
+
+
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { Text } from '@meetalva/essentials';
+    * 
+    * export default () => (
+    * <Text text="Call to action" />
+    * );
+    * ```
+    **/
+    children?: React.ReactNode;
 }
 
 export interface ButtonBaseProps {
-    /** @name Center Ripple */
-    centerRipple?: boolean;
-
-    /** @name Disable Ripple */
+    /**
+     * @name Disable Ripple
+     * @group Disabled
+     * */
     disableRipple?: boolean;
-
-    /** @name Disable Touch Ripple */
-    disableTouchRipple?: boolean;
-
-    /** @name Focus Ripple */
-    focusRipple?: boolean;
-
-    /** @name Focus Visible Class Name */
-    focusVisibleClassName?: string;
-
-    /** @name On Focus Visible */
-    onFocusVisible?: React.FocusEventHandler<any>;
 }
 
 export interface IconButtonProps extends StandardProps<ButtonBaseProps> {
     /** @name Color */
     color?: ColorWithInherit;
 
-    /** @name Disabled */
+    /**
+     * @name Disabled
+     * @group Disabled
+     * */
     disabled?: boolean;
 
-    /** @name Disable Ripple */
+    /**
+     * @name Disable Ripple
+     * @group Disabled
+     * */
     disableRipple?: boolean;
 }
 
@@ -75,10 +108,8 @@ export enum ButtonSize {
 
 export enum ButtonVariant {
     Text = 'text',
-    Flat = 'flat',
     Outlined = 'outlined',
     Contained = 'contained',
-    Raised = 'raised',
     Fab = 'fab',
     ExtendedFab = 'extendedFab'
 }
@@ -87,7 +118,7 @@ export enum ButtonVariant {
  * @name Button
  * @description Allow users to take actions and make choices, with a single tap
  * @icon MinusSquare
- * @group Button
+ * @group Buttons
  */
 export const Button: React.SFC<ButtonProps> = props => {
     return (
@@ -98,20 +129,9 @@ export const Button: React.SFC<ButtonProps> = props => {
 }
 
 /**
- * @name Button Base
- * @group Button
- */
-export const ButtonBase: React.SFC<ButtonBaseProps> = props => {
-    return (
-        <ButtonBaseComponent {...props}>
-            {props.children}
-        </ButtonBaseComponent>
-    )
-}
-
-/**
  * @name Icon Button
- * @group Button
+ * @group Buttons
+ * @description Nest icon from an icon package
  */
 export const IconButton: React.SFC<IconButtonProps> = props => {
     return (

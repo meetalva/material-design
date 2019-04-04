@@ -4,11 +4,45 @@ import { ColorWithInherit, StandardProps } from './types';
 import { PaperProps } from './paper';
 
 export interface AppBarProps extends StandardProps<PaperProps> {
-    /** @name Color @default Primary */
+
+    /**
+     * @name Position
+     * @default Sticky
+     * @group Styling
+     * */
+    position?: AppBarPosition;
+
+    /**
+     * @name Color
+     * @default Primary
+     * @group Styling
+     * */
     color: ColorWithInherit;
 
-    /** @name Position @default Sticky */
-    position?: AppBarPosition;
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { Toolbar, IconButton, Typography, Button } from './';
+    * import { Text, Box } from '@meetalva/essentials';
+    * 
+    * export default () => (
+    * <Toolbar>
+    *       <IconButton color="inherit">
+    *       </IconButton>
+    *       <Typography variant="h6" color="inherit">
+    *           <Text text="Title" />
+    *       </Typography>
+    *       <Box width="100%" flexDirection="row" justifyContent="flex-end">
+    *           <Button color="inherit" variant="text">
+    *               <Text text="Call to action" />
+    *           </Button>
+    *       </Box>
+    *</Toolbar>
+    * );
+    * ```
+    **/
+    children?: React.ReactNode;
 }
 
 export enum AppBarPosition {
@@ -23,6 +57,7 @@ export enum AppBarPosition {
  * @name App Bar
  * @description Displays information and actions relating to the current screen
  * @icon CreditCard
+ * @group Navigation
  */
 export const AppBar: React.SFC<AppBarProps> = props => {
     return (

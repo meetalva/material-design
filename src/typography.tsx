@@ -38,6 +38,7 @@ export enum TypographyColor {
 /**
  * @name Typography
  * @icon Type
+ * @group Style
  */
 export const Typography: React.SFC<TypographyProps> = props => {
     return (

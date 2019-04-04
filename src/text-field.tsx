@@ -4,26 +4,57 @@ import TextFieldComponent from '@material-ui/core/TextField';
 import { Margin } from './types';
 
 export interface TextFieldProps {
-    /** @name Label @default Label */
-    label?: React.ReactNode;
 
-    /** @name Placeholder Text */
+    /**
+     * @name Placeholder Text
+     * @group Text Field
+     * */
     placeholder?: string;
 
-    /** @name Helper Text */
-    helperText?: React.ReactNode;
+    /**
+     * @name Value
+     * @description Required for a controlled component.
+     * @group Text Field
+     * */
+    value?: Array<string | number | boolean> | string | number | boolean;
 
-    /** @name Multiline */
-    multiline?: boolean;
-
-    /** @name Autofocus */
+    /**
+     * @name Autofocus
+     * @group Text Field
+     * */
     autoFocus?: boolean;
 
-    /** @name Required */
+    /**
+     * @name Required
+     * @group Text Field
+     * */
     required?: boolean;
 
-    /** @name Full Width */
+     /**
+     * @name Select
+     * @description Render a Select element
+     * @group Input Type
+     * */
+    select?: boolean;
+
+    /**
+     * @name HTMl5 Type
+     * @group Input Type
+     * */
+    type?: string;
+
+    /**
+     * @name Full Width
+     * @group Style
+     * */
     fullWidth?: boolean;
+
+    /**
+     * @name Margin
+     * @group Style
+     * @control ButtonGroup
+     * */
+    margin?: Margin;
 
     /** @name Disabled @group State */
     disabled?: boolean;
@@ -31,45 +62,40 @@ export interface TextFieldProps {
     /** @name Error @group State */
     error?: boolean;
 
-    /** @name Auto Complete */
-    autoComplete?: string;
-
-    children?: React.ReactNode;
-
-    /** @name Default Value */
-    defaultValue?: string;
-
-    /** @name ID */
-    id?: string;
-
-    /** @name Margin */
-    margin?: Margin;
-
-    /** @name Name */
-    name?: string;
-
     /** @name On Change */
     onChange?: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>;
 
-    /** @name Number */
+    /**
+     * @name Multiline
+     * @group Multiline
+     * @description If true, a textarea element will be rendered instead of an input.
+     * */
+    multiline?: boolean;
+
+    /**
+     * @name Number of Rows
+     * @group Multiline
+     * */
     rows?: number;
 
-    /** @name Rows Max */
+    /**
+     * @name Rows Max
+     * @group Multiline
+     * */
     rowsMax?: number;
 
-    /** @name Select */
-    select?: boolean;
+    /** @name Label @default Label */
+    label?: React.ReactNode;
 
-    /** @name Type */
-    type?: string;
+    /** @name Helper Text */
+    helperText?: React.ReactNode;
 
-    /** @name Value */
-    value?: Array<string | number | boolean> | string | number | boolean;
 }
 
 /**
- * @name TextField
+ * @name Text field
  * @description Let users enter and edit text
+ * @group Input
  * @icon MessageSquare
  */
 export const TextField: React.SFC<TextFieldProps> = props => {

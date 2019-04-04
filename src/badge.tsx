@@ -3,22 +3,26 @@ import BadgeComponent from '@material-ui/core/Badge';
 import { ColorWithInheritAndError } from './types';
 
 export interface BadgeProps {
-    /** @name Color @default Primary */
+    /**
+     * @name Color
+     * @default Primary
+     * */
     color?: ColorWithInheritAndError;
 
-    /** @name Content @default 1 */
+    /**
+     * @name Content
+     * @default 1
+     * */
     badgeContent?: string;
    
     /** @name Invisible */
     invisible?: boolean;
 
-    /** @name Maximum @default 99 */
-    max?: number;
-
-    /** @name Show Zero */
-    showZero?: boolean;
-
-    /** @name Variant @default Standard */
+    /**
+     * @name Variant
+     * @default Standard
+     * @control ButtonGroup
+     **/
     variant?: BadgeVariant;
 
     children: React.ReactNode;

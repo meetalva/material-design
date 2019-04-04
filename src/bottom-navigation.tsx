@@ -5,16 +5,37 @@ import { ButtonBaseProps } from './button';
 import { StandardProps } from './types';
 
 export interface BottomNavigationProps {
-    /** @name Selected @description Set the selected item. 0 for the first, 1 for the second, etc @default 0 @group Active Item */
+    /**
+     * @name Selected
+     * @description Set the selected item. 0 for the first, 1 for the second, etc
+     * @default 0
+     * @group Active Item
+     * */
     value?: number;
 
-    /** @name Show Labels @default true @group Style */  
+    /**
+     * @name Show Labels
+     * @default true
+     * @group Styl
+     *  */  
     showLabels?: boolean;
 
-    children: React.ReactNode;
-
-    /** @name On Change */
-    onChange?: (event: React.ChangeEvent<{}>, value: any) => void;
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { BottomNavigationAction } from './';
+    * 
+    * export default () => (
+    *   <>
+    *       <BottomNavigationAction label="Action 1"/>
+    *       <BottomNavigationAction label="Action 2"/>
+    *       <BottomNavigationAction label="Action 3"/>
+    *   <>
+    * );
+    * ```
+    **/
+    children?: React.ReactNode;
 }
 
 export interface BottomNavigationActionProps extends StandardProps<ButtonBaseProps> {   
@@ -24,25 +45,13 @@ export interface BottomNavigationActionProps extends StandardProps<ButtonBasePro
     /** @name On Click */
     onClick?: React.ReactEventHandler<any>;
 
-    /** @name Selected */
-    selected?: boolean;
-
-    /** @name Show Label */
-    showLabel?: boolean;
-
-    /** @name Value */
-    value?: any;
-
     /** @name Icon */
     icon?: React.ReactElement<any>;
-
-    /** @name On Change */
-    onChange?: (event: React.ChangeEvent<{}>, value: any) => void;
 }
 
 /**
  * @name Bottom Navigation
- * @group Bottom Navigation
+ * @group Navigation
  */
 export const BottomNavigation: React.SFC<BottomNavigationProps> = props => {
     return (
@@ -54,7 +63,7 @@ export const BottomNavigation: React.SFC<BottomNavigationProps> = props => {
 
 /**
  * @name Bottom Navigation Action
- * @group Bottom Navigation
+ * @group Navigation
  */
 export const BottomNavigationAction: React.SFC<BottomNavigationActionProps> = props => {
     return (

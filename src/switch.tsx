@@ -16,50 +16,41 @@ export interface SwitchProps {
 
 
 export interface SwitchBaseProps extends StandardProps<IconButtonProps> {
-    /** @name Auto Focus */
-    autoFocus?: boolean;
 
-    /** @name Checked */
+    /**
+     * @name Value
+     * */
+    value?: string | number | boolean;
+
+    /**
+     * @name Checked
+     * @group State
+     * */
     checked?: boolean;
 
-    /** @name Checked Icon */
-    checkedIcon?: React.ReactNode;
-
-    /** @name Default Checked */
-    defaultChecked?: boolean;
-
-    /** @name Disabled */
+    /**
+     * @name Disabled
+     * @group State
+     * */
     disabled?: boolean;
 
-    /** @name Disable Ripple */
+    /**
+     * @name Disable Ripple
+     * @group Ripple
+     * */
     disableRipple?: boolean;
 
-    /** @name Icon */
-    icon?: React.ReactNode;
-
-    /** @name Input Props */
-    inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
-
-    /** @name Input Ref */
-    inputRef?: React.Ref<any>;
-
-    /** @name Name */
-    name?: string;
-
-    /** @name On Change */
+    /**
+     * @name On Change
+     * @description Callback fired when the state is changed.
+     * */
     onChange?: (event: React.ChangeEvent<HTMLInputElement>, checked: boolean) => void;
 
-    /** @name Read Only */
-    readOnly?: boolean;
+     /** @name Icon */
+     icon?: React.ReactNode;
 
-    /** @name Required */
-    required?: boolean;
-
-    /** @name Tab Index */
-    tabIndex?: number;
-
-    /** @name Value */
-    value?: string | number | boolean;
+     /** @name Input Ref */
+     inputRef?: React.Ref<any>;
 }
 
 export enum SwitchColor {
@@ -70,6 +61,7 @@ export enum SwitchColor {
 
 /**
  * @name Switch
+ * @group Form
  */
 export const Switch: React.SFC<SwitchProps> = props => {
     return (
