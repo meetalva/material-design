@@ -1,10 +1,10 @@
 {
   "name": "@meetalva/material-design",
-  "description": "Material Design for Alva",
+  "description": "Components that implement Google's Material Design.",
   "version": "1.0.0",
   "main": "lib/index.js",
   "alva": {
-    "name": "Material Design",
+    "name": "Material UI",
     "color": "#009688"
   },
   "scripts": {

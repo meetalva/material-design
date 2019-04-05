@@ -16,6 +16,8 @@ export enum ToolbarVariant {
 
 /**
  * @name Toolbar
+ * @group Navigation
+ * 
  */
 export const Toolbar: React.SFC<ToolbarProps> = props => {
     return (

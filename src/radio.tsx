@@ -25,13 +25,13 @@ export interface RadioGroupProps extends StandardProps<FormGroupProps> {
     /**
      * @name Name
      * @description The name used to reference the value of the control.
-     * @group Radio Group
+     * @group Selection Controls
      * */
     name?: string;
 
      /**
      * @name Value
-     * @group Radio Group
+     * @group Selection Controls
      * */
     value?: string;
 

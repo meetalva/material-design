@@ -1,11 +1,11 @@
 import * as React from 'react';
 import MenuComponent from '@material-ui/core/Menu';
 import MenuItemComponent from '@material-ui/core/MenuItem';
-import { PopoverProps } from './popover';
+import { ModalProps } from './modal';
 import { ListItemProps, ListProps } from './list';
 import { StandardProps } from './types';
 
-export interface MenuProps extends StandardProps<PopoverProps>  {
+export interface MenuProps extends StandardProps<ModalProps>  {
 
     /**
     * @default
@@ -66,7 +66,7 @@ export const Menu: React.SFC<MenuProps> = props => {
 
 /**
  * @name Menu Item
- * @icon Minus
+ * @icon MinusSquare
  * @group Menu
  */
 export const MenuItem: React.SFC<MenuItemProps> = props => {

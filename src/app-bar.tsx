@@ -35,7 +35,6 @@ export interface AppBarProps extends StandardProps<PaperProps> {
     *       </Typography>
     *       <Box width="100%" flexDirection="row" justifyContent="flex-end">
     *           <Button color="inherit" variant="text">
-    *               <Text text="Call to action" />
     *           </Button>
     *       </Box>
     *</Toolbar>

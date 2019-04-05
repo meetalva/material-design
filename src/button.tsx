@@ -49,7 +49,7 @@ export interface ButtonProps extends StandardProps<ButtonBaseProps> {
 
     /**
      * @name Disable Ripple
-     * @group Disabled
+     * @group Ripple
      * */
     disableRipple?: boolean;
 
@@ -78,7 +78,7 @@ export interface ButtonProps extends StandardProps<ButtonBaseProps> {
 export interface ButtonBaseProps {
     /**
      * @name Disable Ripple
-     * @group Disabled
+     * @group Ripple
      * */
     disableRipple?: boolean;
 }
@@ -95,7 +95,7 @@ export interface IconButtonProps extends StandardProps<ButtonBaseProps> {
 
     /**
      * @name Disable Ripple
-     * @group Disabled
+     * @group Ripple
      * */
     disableRipple?: boolean;
 }
@@ -131,6 +131,7 @@ export const Button: React.SFC<ButtonProps> = props => {
 /**
  * @name Icon Button
  * @group Buttons
+ * @icon Circle
  * @description Nest icon from an icon package
  */
 export const IconButton: React.SFC<IconButtonProps> = props => {

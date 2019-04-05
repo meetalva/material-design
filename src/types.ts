@@ -70,9 +70,14 @@ export enum Margin {
 }
 
 export enum TypographyAlign {
+    /** @name Left @icon AlignLeft */
     Left = 'left',
+    /** @name Center @icon AlignCenter */
     Center = 'center',
+    /** @name Right @icon AlignRight */
     Right = 'right',
+    /** @name Justify @icon AlignJustify */
     Justify = 'justify',
+    /** @name Inherit  */
     Inherit = 'inherit'
 }

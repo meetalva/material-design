@@ -65,7 +65,8 @@ export enum DrawerVariant {
 /**
  * @name Drawer
  * @description Provide access to destinations in your app
- * @group Modals
+ * @icon Sidebar
+ * @group Navigation
  */
 export const Drawer: React.SFC<DrawerProps> = props => {
     return (

@@ -11,24 +11,88 @@ import { TypographyAlign, StandardProps } from './types';
 import { ButtonBaseProps } from './button';
 
 export interface TableProps {
+
+    /**
+     * @name Padding
+     * @group Table
+     * */
     padding?: TablePadding;
+
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { TableHead, TableRow, TableBody, TableCell } from './';
+    * import { Text } from '@meetalva/essentials';
+    *  
+    * export default () => (
+    * <>
+    *    <TableHead>
+    *      <TableRow>
+    *        <TableCell />
+    *        <TableCell align="right" />
+    *        <TableCell align="right" />
+    *      </TableRow>
+    *    </TableHead>
+    *    <TableBody>
+    *        <TableRow>
+    *          <TableCell component="th" scope="row" />
+    *          <TableCell align="right" />
+    *          <TableCell align="right" />
+    *        </TableRow>
+    *    </TableBody>
+    * <>
+    * );
+    * ```
+    **/
+    children?: React.ReactNode;
 }
 
 export interface TableCellProps {
-    /** @name Align */
-    align?: TypographyAlign;
 
-    /** @name Numeric */
-    numeric?: boolean;
+    /**
+     * @name Variant
+     * @group Table Cell
+     * @control ButtonGroup
+     * */
+    variant?: TableCellVariant;
 
-    /** @name Padding */
-    padding?: TablePadding;
-
-    /** @name Sort Direction */
+    /**
+     * @name Sort Direction
+     * @group Table Cell
+     * @control ButtonGroup
+     * */
     sortDirection?: TableSortDirection;
 
-    /** @name Variant */
-    variant?: TableCellVariant;
+
+    /**
+     * @name Align
+     * @description Set the text-align on the table cell content.
+     * @group Style
+     * */
+    align?: TypographyAlign;
+
+    /**
+     * @name Padding
+     * @group Style
+     * */
+    padding?: TablePadding;
+
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { Typography } from './';
+    * import { Text  } from '@meetalva/essentials';
+    *  
+    * export default () => (
+    *   <Typography >
+    *        <Text text="Content" />
+    *    </Typography>
+    * );
+    * ```
+    **/
+    children?: React.ReactNode;
 }
 
 export interface TablePaginagionProps {
@@ -55,10 +119,19 @@ export interface TablePaginagionProps {
 }
 
 export interface TableRowProps {
-    /** @name Hover */
+
+    /**
+     * @name Hover
+     * @group Table Row
+     * @description If true, the table row will shade on hover.
+     * */
     hover?: boolean;
 
-    /** @name Selected */
+    /**
+     * @name Selected
+     * @group Table Row
+     * @description If true, the table row will have the selected shading.
+     * */
     selected?: boolean;
 }
 
@@ -99,6 +172,8 @@ export enum TableSortLabelDirection {
 /**
  * @name Table
  * @group Table
+ * @icon Columns
+ * @ignore 
  */
 export const Table: React.SFC<TableProps> = props => {
     return (
@@ -111,6 +186,7 @@ export const Table: React.SFC<TableProps> = props => {
 /**
  * @name Table Body
  * @group Table
+ * @ignore 
  */
 export const TableBody: React.SFC = props => {
     return (
@@ -123,6 +199,7 @@ export const TableBody: React.SFC = props => {
 /**
  * @name Table Cell
  * @group Table
+ * @ignore 
  */
 export const TableCell: React.SFC<TableCellProps> = props => {
     return (
@@ -135,6 +212,7 @@ export const TableCell: React.SFC<TableCellProps> = props => {
 /**
  * @name Table Footer
  * @group Table
+ * @ignore 
  */
 export const TableFooter: React.SFC = props => {
     return (
@@ -147,6 +225,7 @@ export const TableFooter: React.SFC = props => {
 /**
  * @name Table Head
  * @group Table
+ * @ignore 
  */
 export const TableHead: React.SFC = props => {
     return (
@@ -159,6 +238,7 @@ export const TableHead: React.SFC = props => {
 /**
  * @name Table Pagination
  * @group Table
+ * @ignore 
  */
 export const TablePagination: React.SFC<TablePaginagionProps> = props => {
     return (
@@ -171,6 +251,7 @@ export const TablePagination: React.SFC<TablePaginagionProps> = props => {
 /**
  * @name Table Row
  * @group Table
+ * @ignore 
  */
 export const TableRow: React.SFC<TableRowProps> = props => {
     return (
@@ -183,6 +264,7 @@ export const TableRow: React.SFC<TableRowProps> = props => {
 /**
  * @name Table Sort Label
  * @group Table
+ * @ignore 
  */
 export const TableSortLabel: React.SFC<TableSortLabelProps> = props => {
     return (

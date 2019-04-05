@@ -4,13 +4,21 @@ import { StandardProps } from './types';
 import { IconButtonProps } from './button';
 
 export interface SwitchProps {
-    /** @name Icon */
+
+    /**
+     * @name Icon
+     * */
     icon?: React.ReactNode;
 
-    /** @name Checked Icon */
+    /**
+     * @name Checked Icon
+     * */
     checkedIcon?: React.ReactNode;
 
-    /** @name Color */
+    /**
+     * @name Color
+     * @control ButtonGroup
+     * */
     color?: SwitchColor;
 }
 
@@ -19,6 +27,7 @@ export interface SwitchBaseProps extends StandardProps<IconButtonProps> {
 
     /**
      * @name Value
+     * @group State
      * */
     value?: string | number | boolean;
 
@@ -61,7 +70,7 @@ export enum SwitchColor {
 
 /**
  * @name Switch
- * @group Form
+ * @group Selection Controls
  */
 export const Switch: React.SFC<SwitchProps> = props => {
     return (

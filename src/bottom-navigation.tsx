@@ -52,6 +52,7 @@ export interface BottomNavigationActionProps extends StandardProps<ButtonBasePro
 /**
  * @name Bottom Navigation
  * @group Navigation
+ * @icon CreditCard
  */
 export const BottomNavigation: React.SFC<BottomNavigationProps> = props => {
     return (
@@ -64,6 +65,7 @@ export const BottomNavigation: React.SFC<BottomNavigationProps> = props => {
 /**
  * @name Bottom Navigation Action
  * @group Navigation
+ * @icon MinusSquare
  */
 export const BottomNavigationAction: React.SFC<BottomNavigationActionProps> = props => {
     return (

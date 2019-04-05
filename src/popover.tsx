@@ -9,6 +9,7 @@ export interface PopoverProps extends StandardProps<ModalProps> {
      * @name Open
      * @group Popover
      * @description If true, the popover is visible.
+     * @default true
      * */
     open: boolean;
 
@@ -34,7 +35,7 @@ export interface PopoverProps extends StandardProps<ModalProps> {
 
 /**
  * @name Popover
- * @group Modals
+ * @group Utils
  */
 export const Popover: React.SFC<PopoverProps> = props => {
     return (

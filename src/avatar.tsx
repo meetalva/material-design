@@ -3,7 +3,10 @@ import AvatarComponent from '@material-ui/core/Avatar';
 
 export interface AvatarProps  {
 
-    /** @name Src */
+    /**
+     * @name Src
+     * @asset
+    */
     src?: string;
 
     /**
@@ -31,6 +34,7 @@ export interface AvatarProps  {
 /**
  * @name Avatar
  * @description For images, icons and initials
+ * @icon Smile
  */
 export const Avatar: React.SFC<AvatarProps> = props => {
     return (

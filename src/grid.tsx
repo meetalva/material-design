@@ -94,7 +94,7 @@ export enum GridSpacing {
 }
 /**
  * @name Grid
- * @group Grid
+ * @group Layout
  * @description Responsive layout grid
  */
 export const Grid: React.SFC<GridProps> = props => {

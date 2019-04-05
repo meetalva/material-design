@@ -21,13 +21,18 @@ export interface ModalProps {
      * */
     onEscapeKeyDown?: React.ReactEventHandler<{}>;
 
-    /** @name Modal open */
+    /**
+     * @name  Open
+     * @default true
+     * @group Modal
+     * @description If true, the modal is open.
+     * */
     open: boolean;
 }
 
 /**
  * @name Modal
- * @group Modals
+ * @group Utils
  */
 export const Modal: React.SFC<ModalProps> = props => {
     return (

@@ -33,6 +33,7 @@ export enum DividerVariant {
 /**
  * @name Divider
  * @group Style
+ * @icon Minus
  * @description Separates content into clear groups.
  */
 export const Divider: React.SFC<DividerProps> = props => {

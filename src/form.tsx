@@ -37,7 +37,7 @@ export interface FormControlLabelProps {
     checked?: boolean;
 
     /** @name Control */
-    control: React.ReactElement<any>;
+    control: React.ReactNode;
 
     /** @name Disabled */
     disabled?: boolean;
@@ -151,7 +151,7 @@ export const FormControl: React.SFC<FormControlProps> = props => {
  */
 export const FormControlLabel: React.SFC<FormControlLabelProps> = props => {
     return (
-        <FormControlLabelComponent {...props}>
+        <FormControlLabelComponent {...props} control={<>{props.control}</>}>
             {props.children}
         </FormControlLabelComponent>
     )

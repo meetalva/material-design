@@ -3,26 +3,64 @@ import TypographyComponent from '@material-ui/core/Typography';
 import { Style, TypographyAlign } from './types';
 
 export interface TypographyProps {
-    /** @name Color @default TextPrimary */
+
+    /**
+     * @name Color
+     * @default TextPrimary
+     * @group Typography
+     * */
     color?: TypographyColor;
 
-    /** @name Variant */
+    /**
+     * @name Variant
+     * @group Typography
+     * */
     variant?: Style;
 
-    /** @name Align @default Left */
+    /**
+     * @name Align
+     * @default Inherit
+     * @control ButtonGroup
+     * @group Typography
+     * */
     align?: TypographyAlign;
     
-    /** @name Gutter Bottom */
+    /**
+     * @name Gutter Bottom
+     * @group Display
+     * */
     gutterBottom?: boolean;
 
-    /** @name Inline */
+    /**
+     * @name Inline
+     * @group Display
+     * */
     inline?: boolean;
 
-    /** @name No Wrap */
+    /**
+     * @name No Wrap
+     * @group Display
+     * */
     noWrap?: boolean;
 
-    /** @name Paragraph */
+    /**
+     * @name Paragraph
+     * @group Display
+     * */
     paragraph?: boolean;
+
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { Text } from '@meetalva/essentials';
+    * 
+    * export default () => (
+    * <Text text="Lorem ipsum" />
+    * );
+    * ```
+    **/
+    children?: React.ReactNode;
 }
 
 export enum TypographyColor {

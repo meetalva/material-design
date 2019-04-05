@@ -2,49 +2,89 @@ import * as React from 'react';
 import TooltipComponent from '@material-ui/core/Tooltip';
 
 export interface TooltipProps {
-    /** @name Title */
+
+    /**
+     * @name Title
+     * @group Tooltip
+     * */
     title: React.ReactNode;
 
-    /** @name Placement */
-    placement: TooltipPlacement;
-
-    /** @name Disable Focus Listener */
-    disableFocusListener?: boolean;
-
-    /** @name Disable Hover Listener */
-    disableHoverListener?: boolean;
-
-    /** @name Disable Touch Listener */
-    disableTouchListener?: boolean;
-
-    /** @name Enter Delay */
-    enterDelay?: number;
-
-    /** @name Enter Touch Delay */
-    enterTouchDelay?: number;
-
-    /** @name Interactive */
-    interactive?: boolean;
-
-    /** @name Leave Delay */
-    leaveDelay?: number;
-
-    /** @name Leave Touch Delay */
-    leaveTouchDelay?: number;
-
-    /** @name Open */
+    /**
+     * @name Open
+     * @group Tooltip
+     * @description If true, the tooltip is shown.
+     * */
     open?: boolean;
 
-    children: React.ReactElement<any>;
+    /**
+     * @name Interactive
+     * @group Tooltip
+     * @description Makes a tooltip interactive, i.e. will not close when the user hovers over the tooltip before the leaveDelay is expired.
+     * */
+    interactive?: boolean;
 
-    /** @name ID */
-    id?: string;
+    /**
+     * @name Placement
+     * @group Tooltip
+     * */
+    placement: TooltipPlacement;
 
-    /** @name On Close */
+    /**
+     * @name Disable Focus Listener
+     * @group Listener
+     * */
+    disableFocusListener?: boolean;
+
+    /**
+     * @name Disable Hover Listener
+     * @group Listener
+     * */
+    disableHoverListener?: boolean;
+
+    /**
+     * @name Disable Touch Listener
+     * @group Listener
+     * */
+    disableTouchListener?: boolean;
+
+    /**
+     * @name Enter Delay
+     * @group Delay
+     * */
+    enterDelay?: number;
+
+    /**
+     * @name Enter Touch Delay
+     * @group Delay
+     * */
+    enterTouchDelay?: number;
+
+    /**
+     * @name Leave Delay
+     * @group Delay
+    */
+    leaveDelay?: number;
+
+    /**
+     * @name Leave Touch Delay
+     * @group Delay
+     * */
+    leaveTouchDelay?: number;
+
+    /**
+     * @name On Open
+     * @description Callback fired when the tooltip requests to be open.
+     * */
+    onOpen?: (event: React.ChangeEvent<{}>) => void;
+
+    /**
+     * @name On Close
+     * @description Callback fired when the tooltip requests to be closed.
+     * 
+    */
     onClose?: (event: React.ChangeEvent<{}>) => void;
 
-    /** @name On Open */
-    onOpen?: (event: React.ChangeEvent<{}>) => void;
+    children: React.ReactElement<any>;
 }
 
 export enum TooltipPlacement {

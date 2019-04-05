@@ -8,6 +8,7 @@ export interface FabProps extends StandardProps<ButtonBaseProps> {
     /**
      * @name Color
      * @group Floating Action Button
+     * @default Default
      * */
     color?: ColorWithInherit;
 
@@ -15,6 +16,7 @@ export interface FabProps extends StandardProps<ButtonBaseProps> {
      * @name Size
      * @group Floating Action Button
      * @control ButtonGroup
+     * @default L
      * */
     size?: FabSize;
 
@@ -22,6 +24,7 @@ export interface FabProps extends StandardProps<ButtonBaseProps> {
      * @name Variant
      * @group Floating Action Button
      * @control ButtonGroup
+     * @default Round
      * */
     variant?: FabVariant;
 
@@ -71,6 +74,7 @@ export enum FabVariant {
 /**
  * @name FAB
  * @group Buttons
+ * @icon PlusCircle
  * @description Floating Action Button
  */
 export const Fab: React.SFC<FabProps> = props => {
