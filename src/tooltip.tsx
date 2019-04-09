@@ -4,9 +4,14 @@ import TooltipComponent from '@material-ui/core/Tooltip';
 export interface TooltipProps {
 
     /**
-     * @name Title
-     * @group Tooltip
-     * */
+    /**
+     * @default
+     * ```tsx
+     * import * as React from 'react';
+     * import { Text } from '@meetalva/essentials';
+     * export default () => <Text text="This is a tooltip!" />
+     * ```
+     */
     title: React.ReactNode;
 
     /**
@@ -105,6 +110,7 @@ export enum TooltipPlacement {
 /**
  * @name Tooltip
  * @description Display informative text when users hover over, focus on, or tap an element
+ * @ignore
  */
 export const Tooltip: React.SFC<TooltipProps> = props => {
     return (

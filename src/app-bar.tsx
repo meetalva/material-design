@@ -23,19 +23,10 @@ export interface AppBarProps extends StandardProps<PaperProps> {
     * @default
     * ```tsx
     * import * as React from 'react';
-    * import { Toolbar, IconButton, Typography, Button } from './';
-    * import { Text, Box } from '@meetalva/essentials';
+    * import { Toolbar } from './';
     * 
     * export default () => (
-    * <Toolbar>
-    *       <IconButton color="inherit">
-    *       </IconButton>
-    *       <Typography variant="h6" color="inherit">
-    *       </Typography>
-    *       <Box width="100%" flexDirection="row" justifyContent="flex-end">
-    *           <Button color="inherit" variant="text" />
-    *       </Box>
-    *</Toolbar>
+    * <Toolbar />
     * );
     * ```
     **/

@@ -12,11 +12,11 @@ export interface TabsProps extends StandardProps<ButtonBaseProps> {
      * @default 0
      * @group Active Item 
      * */
-    value: any;
+    value: number;
 
     /** 
      * @name Indicator Color 
-     * @default Secondary
+     * @default Primary
      * @group Active Item 
      * @control ButtonGroup
      *  */
@@ -33,6 +33,7 @@ export interface TabsProps extends StandardProps<ButtonBaseProps> {
     /** 
      * @name Variant
      * @control ButtonGroup
+     * @default Standard
      * @group Style
      *  */
     variant?: TabsVariant;
@@ -58,9 +59,9 @@ export interface TabsProps extends StandardProps<ButtonBaseProps> {
     * 
     * export default () => (
     * <>
-    *   <TabItem />
-    *   <TabItem />
-    *   <TabItem />
+    *   <TabItem icon={<Icon icon="Home" />} />
+    *   <TabItem icon={<Icon icon="Favorite" />}/>
+    *   <TabItem icon={<Icon icon="Person" />}/>
     * <>
     * );
     * ```
@@ -73,11 +74,6 @@ export enum TabsIndicatorColor {
     Secondary = 'secondary'
 }
 
-export enum TabsScrollButtons {
-    Auto = 'auto',
-    On = 'on',
-    Off = 'off'
-}
 
 export enum TabsVariant {
     Standard = 'standard',
@@ -94,10 +90,20 @@ export interface TabItemProps extends StandardProps<ButtonBaseProps> {
     disabled?: boolean;
 
 
-     /** @name Label @default Tab */
+    /**
+     * @default
+     * ```tsx
+     * import * as React from 'react';
+     * import { Text } from '@meetalva/essentials';
+     * 
+     * export default () => <Text text="Tab Item" />
+     * ```
+     */
     label?: React.ReactNode;
 
-    /** @name Icon */
+    /**
+     * @name Icon
+     */
     icon?: React.ReactElement<any>;
 }
 

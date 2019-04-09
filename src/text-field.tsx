@@ -87,10 +87,25 @@ export interface TextFieldProps {
      * */
     onChange?: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>;
 
-    /** @name Label @default Label */
+
+    /**
+     * @default
+     * ```tsx
+     * import * as React from 'react';
+     * import { Text } from '@meetalva/essentials';
+     * export default () => <Text text="Label" />
+     * ```
+     */
     label?: React.ReactNode;
 
-    /** @name Helper Text */
+    /**
+     * @default
+     * ```tsx
+     * import * as React from 'react';
+     * import { Text } from '@meetalva/essentials';
+     * export default () => <Text text="This is a help text." />
+     * ```
+     */
     helperText?: React.ReactNode;
 
 }

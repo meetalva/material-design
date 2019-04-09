@@ -26,4 +26,5 @@ export * from './table';
 export * from './text-field';
 export * from './tooltip';
 export * from './typography';
+export * from './toolbar';
 export * from './snackbar';

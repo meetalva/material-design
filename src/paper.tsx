@@ -4,9 +4,6 @@ import PaperComponent from '@material-ui/core/Paper';
 export interface PaperProps {
     /** @name Elevation @default 2 @group Paper */
     elevation?: number;
-
-    /** @name Square @description Do not show rounded corners @group Paper */
-    square?: boolean;
 }
 
 /**

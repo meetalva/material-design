@@ -10,12 +10,20 @@ export interface AvatarProps  {
     src?: string;
 
     /**
-     * @name Color
-     * @group Style
+     * @name Background
+     * @group Color
      * @default #2196f3
      * @control color
      */
-    color?: string
+    backgroundColor?: string
+
+    /**
+     * @name Text
+     * @group Color
+     * @default #fff
+     * @control color
+     */
+    textColor?: string
 
     /**
     * @default
@@ -34,11 +42,11 @@ export interface AvatarProps  {
 /**
  * @name Avatar
  * @description For images, icons and initials
- * @icon Smile
+ * @icon Circle
  */
 export const Avatar: React.SFC<AvatarProps> = props => {
     return (
-        <AvatarComponent {...props} style={{backgroundColor: props.color}}>
+        <AvatarComponent {...props} style={{backgroundColor: props.backgroundColor, color: props.textColor}}>
             {props.children}
         </AvatarComponent>
     )

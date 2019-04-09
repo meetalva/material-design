@@ -36,6 +36,7 @@ export enum BadgeVariant {
 /**
  * @name Badge
  * @description Small badge to the top-right of its child(ren)
+ * @icon Circle
  */
 export const Badge: React.SFC<BadgeProps> = props => {
     return (

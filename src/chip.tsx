@@ -20,6 +20,7 @@ export interface ChipProps {
     /**
      * @name variant
      * @group Style
+     * @control ButtonGroup
      * */
     variant?: ChipVariant;
 
@@ -35,18 +36,24 @@ export interface ChipProps {
      * */
     onDelete?: React.EventHandler<any>;
 
-    /** @name Label */
-    label?: React.ReactElement<any>;
-
     /**
-     * @name Avatar
      * @default
      * ```tsx
      * import * as React from 'react';
-     * import { Typography } from './avatar';
-     * export default () => (
-     *  <Typography />
-     * );
+     * import { Text } from '@meetalva/essentials';
+     * 
+     * export default () => <Text text="Alva" />
+     * ```
+     */
+    label?: React.ReactElement<any>;
+
+    /**
+     * @default
+     * ```tsx
+     * import * as React from 'react';
+     * import { Avatar } from './avatar';
+     * 
+     * export default () => <Avatar />
      * ```
      */
     avatar?: React.ReactElement<any>;
@@ -57,7 +64,6 @@ export interface ChipProps {
     /** @name Icon */
     icon?: React.ReactElement<any>;  
     
-    children?: React.ReactNode;
 }
 
 export enum ChipVariant {

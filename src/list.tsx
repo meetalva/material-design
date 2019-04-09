@@ -12,14 +12,10 @@ import { ButtonBaseProps } from './button';
 export interface ListProps {
 
     /**
-     * @name List
-     */
-
-    /**
     * @default
     * ```tsx
     * import * as React from 'react';
-    * import { ListItem } from './';
+    * import { ListItem } from './list';
     * 
     * export default () => (
     *   <>
@@ -39,6 +35,7 @@ export interface ListItemProps extends StandardProps<ButtonBaseProps> {
      * @name Button
      * @description If true, the list item will be a button
      * @group List Item
+     * @default true
      * */
     button?: boolean;
 
@@ -76,7 +73,7 @@ export interface ListItemProps extends StandardProps<ButtonBaseProps> {
     * @default
     * ```tsx
     * import * as React from 'react';
-    * import { ListItemText } from './';
+    * import { ListItemText } from './list';
     * 
     * export default () => (
     *   <ListItemText />
@@ -97,10 +94,22 @@ export interface ListItemTextProps {
     /** @name Inset */
     inset?: boolean;
 
-    /** @name Main Content */
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { Text } from '@meetalva/essentials';
+    * 
+    * export default () => (
+    *   <Text text="List Item" />
+    * );
+    * ```
+    **/
     primary?: React.ReactNode;
 
-    /** @name Secondary Content */
+    /**
+     * @name Secondary Content
+     */
     secondary?: React.ReactNode;
 
 }

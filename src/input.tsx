@@ -145,6 +145,7 @@ export enum InputBaseMargin {
 /**
  * @name Input
  * @group Input
+ * @ignore
  */
 export const Input: React.SFC<InputProps> = props => {
     return (
@@ -171,6 +172,7 @@ export const InputAdornment: React.SFC<InputAdornmentProps> = props => {
 /**
  * @name Input Base
  * @group Input
+ * @ignore
  */
 export const InputBase: React.SFC<InputBaseProps> = props => {
     return (
@@ -184,6 +186,7 @@ export const InputBase: React.SFC<InputBaseProps> = props => {
  * @name Input Label
  * @group Input
  * @icon Tag
+ * @ignore
  */
 export const InputLabel: React.SFC<InputLabelProps> = props => {
     return (

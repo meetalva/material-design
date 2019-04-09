@@ -6,7 +6,6 @@ import CardHeaderComponent from '@material-ui/core/CardHeader';
 import CardActionAreaComponent from '@material-ui/core/CardActions';
 import CardActionsComponent from '@material-ui/core/CardActions';
 import { PaperProps } from './paper';
-import { TypographyProps } from './typography';
 import { StandardProps } from './types';
 
 export interface CardProps extends StandardProps<PaperProps> {
@@ -22,13 +21,14 @@ export interface CardProps extends StandardProps<PaperProps> {
     * @default
     * ```tsx
     * import * as React from 'react';
-    * import { CardContent, CardActions } from './';
+    * import { CardContent, CardHeader, CardMedia, CardActions } from './';
     * 
     * export default () => (
-    *   <>
-    *        <CardContent />
-    *        <CardActions />
-    *   <>
+    * <>
+    *   <CardHeader />
+    *   <CardContent />
+    *   <CardActions />
+    * <>
     * );
     * ```
     **/
@@ -38,50 +38,57 @@ export interface CardProps extends StandardProps<PaperProps> {
 export interface CardHeaderProps {
     
     /**
-     * @name Disable Typography 
-     * @group Card Header
+     *
+     * @default
+     * ```tsx
+     * import * as React from 'react';
+     * import { Text } from '@meetalva/essentials';
      * 
+     * export default () => (
+     * <Text text="Card Header Title" />
+     * );
+     * ```
      * */
-    disableTypography?: boolean;
-
-    /**
-     * @name Subheader Typography Props 
-     * @group Card Header
-     * */
-    subheaderTypographyProps?: TypographyProps;
-
-    /**
-     * @name Title Typography Props
-     * @group Card Header
-     *  */
-    titleTypographyProps?: TypographyProps;
-
-
-    /** @name Title @default Headline */
     title?: React.ReactNode;
 
-    /** @name Subtitle @default Subtitle */
+    /**
+     * @default
+     * ```tsx
+     * import * as React from 'react';
+     * import { Text } from '@meetalva/essentials';
+     * 
+     * export default () => (
+     * <Text text="Sub Header" />
+     * );
+     * ```
+     * */
     subheader?: React.ReactNode;
 
-    /** @name Action */
+    /**
+     * @default
+     * ```tsx
+     * import * as React from 'react';
+     * import { IconButton } from './button';
+     * 
+     * export default () => (
+     * <IconButton />
+     * );
+     * ```
+     * */
     action?: React.ReactNode;
 
-    /** @name Avatar */
-    avatar?: React.ReactNode;    
-
     /**
-    * @default
-    * ```tsx
-    * import * as React from 'react';
-    * import {  } from './';
-    * import {  } from '@meetalva/essentials';
-    * 
-    * export default () => (
-    * 
-    * );
-    * ```
-    **/
-    children?: React.ReactNode;
+     * @default
+     * ```tsx
+     * import * as React from 'react';
+     * import { Avatar } from './avatar';
+     * 
+     * export default () => (
+     * <Avatar />
+     * );
+     * ```
+     * */
+    avatar?: React.ReactNode;    
 }
 
 

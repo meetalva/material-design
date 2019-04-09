@@ -5,20 +5,13 @@ import { StandardProps } from './types';
 import { PaperProps } from './paper';
 
 export interface SnackbarProps {
-
-
     /**
      * @name Open
      * @group Snackbar
+     * @default true
      * */
     open: boolean;
 
-    /**
-     * @name Anchor Origin
-     * @description The anchor of the Snackbar.
-     * @group Snackbar
-     * */
-    anchorOrigin?: SnackbarOrigin;
 
     /**
      * @name On Close
@@ -27,35 +20,52 @@ export interface SnackbarProps {
     onClose?: (event: React.SyntheticEvent<any>, reason: string) => void;
 
 
-    /** @name Action */
+    /**
+     * @default
+     * ```tsx
+     * import * as React from 'react';
+     * import { Button } from './button';
+     * 
+     * export default () => <Button />
+     * ```
+     */
     action?: React.ReactNode;
 
-    /** @name Message */
+    /**
+     * @default
+     * ```tsx
+     * import * as React from 'react';
+     * import { Text } from '@meetalva/essentials';
+     * export default () => <Text text="This is a message!" />
+     * ```
+     */
      message?: React.ReactNode;
 }
 
 export interface SnackbarContentProps extends StandardProps<PaperProps> {
-    /** @name Action */
+    
+    /**
+     * @default
+     * ```tsx
+     * import * as React from 'react';
+     * import { Button } from './button';
+     * 
+     * export default () => <Button />
+     * ```
+     */
     action?: React.ReactNode;
 
-    /** @name Message */
-    message?: React.ReactNode;
+    /**
+     * @default
+     * ```tsx
+     * import * as React from 'react';
+     * import { Text } from '@meetalva/essentials';
+     * export default () => <Text text="This is a message!" />
+     * ```
+     */
+     message?: React.ReactNode;
 }
 
-export interface SnackbarOrigin {
-    horizontal: SnackbarOriginHorizontal;
-    vertical: SnackbarOriginVertical;
-}
-
-export enum SnackbarOriginHorizontal {
-    Left = 'left',
-    Center = 'center',
-    Right = 'right'
-}
-export enum SnackbarOriginVertical {
-    Top = 'top',
-    Bottom = 'bottom'
-}
 
 /**
  * @name Snackbar

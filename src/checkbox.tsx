@@ -56,6 +56,7 @@ export enum Color {
  * @description Allow the selection of multiple options from a set
  * @icon CheckSquare
  * @group Selection Controls
+ * @ignore
  * */
 export const Checkbox: React.SFC<CheckboxProps> = props => {
     return (

@@ -45,6 +45,7 @@ export interface SelectProps extends StandardProps<InputProps, 'value' | 'onChan
  * @name Select
  * @description Used for collecting user provided information from a list of options.
  * @group Selection Controls
+ * @ignore
  */
 
 export const Select: React.SFC<SelectProps> = props => {
