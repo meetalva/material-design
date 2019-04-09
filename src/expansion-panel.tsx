@@ -54,7 +54,18 @@ export interface ExpansionPanelProps extends StandardProps<PaperProps> {
 
 export interface ExpansionPanelSummaryProps extends StandardProps<ButtonBaseProps> {
 
-    /** @name Expand Icon */
+    /**
+     * @name Expand Icon
+     * @default
+     * ```tsx
+     * import * as React from 'react';
+     * import { Icon } from './icon';
+     * 
+     * export default () => (
+     *   <Icon icon="ExpandMore" />
+     * );
+     * ```
+     */
     expandIcon?: React.ReactNode;
 
     /**
@@ -108,6 +119,7 @@ export interface ExpansionPanelActionsProps {
  * @description Contain creation flows and allow lightweight editing of an element
  * @group Expansion Panel
  * @icon CreditCard
+ * @ignore
  */
 export const ExpansionPanel: React.SFC<ExpansionPanelProps> = props => {
     return (
@@ -121,6 +133,7 @@ export const ExpansionPanel: React.SFC<ExpansionPanelProps> = props => {
  * @name Expansion Panel Actions
  * @group Expansion Panel
  * @icon Square
+ * @ignore
  */
 export const ExpansionPanelActions: React.SFC<ExpansionPanelActionsProps> = props => {
     return (
@@ -134,6 +147,7 @@ export const ExpansionPanelActions: React.SFC<ExpansionPanelActionsProps> = prop
  * @name Expansion Panel Details
  * @group Expansion Panel
  * @icon Square
+ * @ignore
  */
 export const ExpansionPanelDetails: React.SFC<ExpansionPanelDetailsProps> = props => {
     return (
@@ -147,6 +161,7 @@ export const ExpansionPanelDetails: React.SFC<ExpansionPanelDetailsProps> = prop
  * @name Expansion Panel Summary
  * @group Expansion Panel
  * @icon Square
+ * @ignore
  */
 export const ExpansionPanelSummary: React.SFC<ExpansionPanelSummaryProps> = props => {
     return (

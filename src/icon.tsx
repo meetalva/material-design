@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Add from '@material-ui/icons/Add';
+import ExpandMore from '@material-ui/icons/ExpandMore';
 import Favorite from '@material-ui/icons/Favorite';
 import Home from '@material-ui/icons/Home';
 import Menu from '@material-ui/icons/Menu';
@@ -44,6 +45,7 @@ export enum IconFontSize {
 
 export enum IconName {
     Add = 'Add',
+    ExpandMore = 'ExpandMore',
     Favorite = 'Favorite',
     Home = 'Home',
     Menu = 'Menu',
@@ -54,6 +56,8 @@ function getIcon(icon: IconName) {
     switch (icon) {
         case IconName.Add:
             return Add;
+        case IconName.ExpandMore:
+            return ExpandMore;
         case IconName.Favorite:
             return Favorite;
         case IconName.Home:
