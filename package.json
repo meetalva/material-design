@@ -1,12 +1,12 @@
 {
   "name": "@meetalva/material-design",
   "description": "Components that implement Google's Material Design",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "main": "lib/index.js",
   "alva": {
     "name": "Material Design",
     "image": "http://media.meetalva.io/library/material-design/image.svg",
-    "color": "#009688"
+    "color": "#08796f"
   },
   "scripts": {
     "start": "npm run build  -- -w --skipLibCheck",
