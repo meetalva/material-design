@@ -136,7 +136,7 @@ export const Button: React.SFC<ButtonProps> = props => {
 /**
  * @name Icon Button
  * @group Buttons
- * @icon Circle
+ * @icon PlusCircle
  * @description Nest icon from an icon package
  */
 export const IconButton: React.SFC<IconButtonProps> = props => {

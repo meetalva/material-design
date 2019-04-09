@@ -18,7 +18,7 @@ export interface DialogProps extends StandardProps<ModalProps> {
 
     /**
      * @name Full Width
-     * @default false
+     * @default true
      * @group Style
      * */
     fullWidth?: boolean;
@@ -60,13 +60,6 @@ export interface DialogProps extends StandardProps<ModalProps> {
 }
 
 export interface DialogTitleProps {
-
-    /**
-     * @name Disable Typography
-     * @group Dialog Title
-     * */
-    disableTypography?: boolean;
-
     /**
     * @default
     * ```tsx
@@ -79,7 +72,6 @@ export interface DialogTitleProps {
     * ```
     **/
     children?: React.ReactNode;
-
 }
 
 export interface DialogActionProps {

@@ -55,7 +55,7 @@ export interface TabsProps extends StandardProps<ButtonBaseProps> {
     * @default
     * ```tsx
     * import * as React from 'react';
-    * import { TabItem } from './';
+    * import { TabItem } from './tab';
     * 
     * export default () => (
     * <>

@@ -88,55 +88,19 @@ export interface MobileStepperProps extends StandardProps<PaperProps> {
 }
 
 export interface StepProps {
-
-    /** 
-     * @name Disabled 
-     * @group Step
-     * @description Mark the step as disabled, will also disable the button if StepButton is a child of Step.
-     * */
-    disabled?: boolean;
-
-    /** 
-     * @name Active
-     * @group Step
-     * @description Sets the step as active.
-     *  */
-    active?: boolean;
-
-    /** 
-     * @name Completed
-     * @group Step
-     * @description Mark the step as completed.
-     * */
-    completed?: boolean;
-
     /**
     * @default
     * ```tsx
     * import * as React from 'react';
-    * import { StepButton } from './';
+    * import { StepLabel } from './step';
     * 
-    * export default () => (
-    * <StepButton />
-    * );
+    * export default () => <StepLabel />);
     * ```
     **/
     children?: React.ReactNode;
 }
 
 export interface StepButtonProps extends StandardProps<ButtonBaseProps> {
-
-    /**
-    * @default
-    * ```tsx
-    * import * as React from 'react';
-    * import { StepLabel } from './';
-    * 
-    * export default () => (
-    * <StepLabel />
-    * );
-    * ```
-    **/
     children?: React.ReactNode;
 }
 
@@ -161,21 +125,11 @@ export interface StepConnectorProps {
 }
 
 export interface StepLabelProps {
-
-    /** 
-     * @name Disabled 
-     * @description Mark the step as disabled, will also disable the button
-     * */
-    disabled?: boolean;
-
     /** 
      * @name Error 
      * @description Mark the step as failed.
      * */
     error?: boolean;
-
-    /** @name Optional */
-    optional?: React.ReactNode;
 
     /**
     * @default
@@ -299,6 +253,7 @@ export const StepConnector: React.SFC<StepConnectorProps> = props => {
 /** 
  * @name Step Icon
  * @group Stepper
+ * @ignore
  * */
 export const StepIcon: React.SFC<StepIconProps> = props => {
     return (
@@ -312,6 +267,7 @@ export const StepIcon: React.SFC<StepIconProps> = props => {
  * @name Step Content
  * @group Stepper
  * @icon Square
+ * @ignore
  * */
 export const StepContent: React.SFC<StepContentProps> = props => {
     return (
