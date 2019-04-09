@@ -8,37 +8,118 @@ import { ButtonBaseProps } from './button';
 import { StandardProps } from './types';
 
 export interface ExpansionPanelProps extends StandardProps<PaperProps> {
-    /** @name Default Expanded */
+
+    /**
+     * @name Default Expanded
+     * @group Expansion Panel
+     * */
     defaultExpanded?: boolean;
 
-    /** @name Disabled */
+    /**
+     * @name Disabled
+     * @group Expansion Panel
+     * */
     disabled?: boolean;
 
-    /** @name Expanded */
+    /**
+     * @name Expanded
+     * @group Expansion Panel
+     * @default true
+     * */
     expanded?: boolean;
 
-    /** @name On Change */
+    /**
+     * @name On Change
+     * @description Callback fired when the expand/collapse state is changed.
+     * */
     onChange?: (event: React.ChangeEvent<{}>, expanded: boolean) => void;
+
+
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { ExpansionPanelSummary, ExpansionPanelDetails } from './';
+    * 
+    * export default () => (
+    * <>
+    *   <ExpansionPanelSummary />
+    *   <ExpansionPanelDetails />
+    * <>
+    * );
+    * ```
+    **/
+    children?: React.ReactNode;
 }
 
 export interface ExpansionPanelSummaryProps extends StandardProps<ButtonBaseProps> {
-    /** @name Disabled */
-    disabled?: boolean;
 
-    /** @name Expanded */
-    expanded?: boolean;
-
-    /** @name Expand Icon */
+    /**
+     * @name Expand Icon
+     * @default
+     * ```tsx
+     * import * as React from 'react';
+     * import { Icon } from './icon';
+     * 
+     * export default () => (
+     *   <Icon icon="ExpandMore" />
+     * );
+     * ```
+     */
     expandIcon?: React.ReactNode;
 
-    /** @name On Change */
-    onChange?: React.ReactEventHandler<{}>;
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { Typography } from './';
+    * 
+    * export default () => (
+    *   <Typography variant="subtitle1" />
+    * );
+    * ```
+    **/
+    children?: React.ReactNode;
+}
+
+export interface ExpansionPanelDetailsProps {
+
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { Typography } from './';
+    * 
+    * export default () => (
+    *   <Typography variant="body1" />
+    * );
+    * ```
+    **/
+    children?: React.ReactNode;
+}
+
+export interface ExpansionPanelActionsProps {
+
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { Button } from './';
+    * 
+    * export default () => (
+    *   <Button variant="text" />
+    * );
+    * ```
+    **/
+    children?: React.ReactNode;
 }
 
 /**
- * @name Expension Panel
+ * @name Expansion Panel
  * @description Contain creation flows and allow lightweight editing of an element
- * @group Expension Panel
+ * @group Expansion Panel
+ * @icon CreditCard
+ * @ignore
  */
 export const ExpansionPanel: React.SFC<ExpansionPanelProps> = props => {
     return (
@@ -49,10 +130,12 @@ export const ExpansionPanel: React.SFC<ExpansionPanelProps> = props => {
 }
 
 /**
- * @name Expension Panel Actions
- * @group Expension Panel
+ * @name Expansion Panel Actions
+ * @group Expansion Panel
+ * @icon Square
+ * @ignore
  */
-export const ExpensionPanelActions: React.SFC = props => {
+export const ExpansionPanelActions: React.SFC<ExpansionPanelActionsProps> = props => {
     return (
         <ExpansionPanelActionsComponent {...props}>
             {props.children}
@@ -61,10 +144,12 @@ export const ExpensionPanelActions: React.SFC = props => {
 }
 
 /**
- * @name Expension Panel Details
- * @group Expension Panel
+ * @name Expansion Panel Details
+ * @group Expansion Panel
+ * @icon Square
+ * @ignore
  */
-export const ExpensionPanelDetails: React.SFC = props => {
+export const ExpansionPanelDetails: React.SFC<ExpansionPanelDetailsProps> = props => {
     return (
         <ExpansionPanelDetailsComponent {...props}>
             {props.children}
@@ -73,10 +158,12 @@ export const ExpensionPanelDetails: React.SFC = props => {
 }
 
 /**
- * @name Expension Panel Summary
- * @group Expension Panel
+ * @name Expansion Panel Summary
+ * @group Expansion Panel
+ * @icon Square
+ * @ignore
  */
-export const ExpensionPanelSummary: React.SFC<ExpansionPanelSummaryProps> = props => {
+export const ExpansionPanelSummary: React.SFC<ExpansionPanelSummaryProps> = props => {
     return (
         <ExpansionPanelSummaryComponent {...props}>
             {props.children}

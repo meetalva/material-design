@@ -23,77 +23,90 @@ export interface InputAdornmentProps {
 
     /** @name Variant */
     variant?: InputVariant;
+
+    children?: React.ReactNode;
 }
 
 export interface InputBaseProps {
-    /** @name Auto Complete */
-    autoComplete?: string;
 
-    /** @name Auto Focus */
-    autoFocus?: boolean;
+    /** 
+     * @name Value 
+     * @group Input Base
+     * */
+    value?: string;
 
-    /** @name Default Value */
-    defaultValue?: Array<string | number | boolean | object> | string | number | boolean | object;
-
-    /** @name Disabled */
-    disabled?: boolean;
-
-    /** @name End Adornment */
-    endAdornment?: React.ReactNode;
-
-    /** @name Error */
-    error?: boolean;
-
-    /** @name Full Width */
-    fullWidth?: boolean;
-
-    /** @name ID */
-    id?: string;
-
-    /** @name Input Ref */
-    inputRef?: React.Ref<any> | React.RefObject<any>;
-
-    /** @name Margin */
-    margin?: InputBaseMargin;
-
-    /** @name Multiline */
-    multiline?: boolean;
-
-    /** @name Name */
-    name?: string;
-
-    /** @name Placeholder */
+    /**
+     * @name Placeholder 
+     * @group Input Base
+     * */
     placeholder?: string;
 
-    /** @name Read Only */
-    readOnly?: boolean;
-
-    /** @name Required */
-    required?: boolean;
-
-    /** @name Rows */
-    rows?: number;
-
-    /** @name Rows Max */
-    rowsMax?: number;
-
-    /** @name Start Adornment */
-    startAdornment?: React.ReactNode;
-
-    /** @name Type */
+    /**
+     * @name HTML5 Type
+     * @group Input Base
+     * */
     type?: string;
 
-    /** @name Value */
-    value?: Array<string | number | boolean | object> | string | number | boolean | object;
+    /**
+     * @name Required 
+     * @group Input Base
+     * */
+    required?: boolean;
 
-    /** @name On Change */
+    /** 
+     * @name Read Only
+     * @group State
+     *  */
+    readOnly?: boolean;
+
+    /**
+     * @name Disabled 
+     * @group State
+     * */
+    disabled?: boolean;
+
+    /** 
+     * @name Error
+     * @group State
+     * */
+    error?: boolean;
+
+
+    /**
+     * @name Full Width
+     * @group Style
+     * */
+    fullWidth?: boolean;
+
+    /**
+     * @name Margin 
+     * @group Style
+     * */
+    margin?: InputBaseMargin;
+
+    /**
+     * @name Multiline
+     * @group Text Area
+     * */
+    multiline?: boolean;
+
+    /**
+     * @name Rows 
+     * @group Text Area
+     * */
+    rows?: number;
+
+    /**
+     * @name Rows Max 
+     * @group Text Area
+     * */
+    rowsMax?: number;
+
+    /**
+     * @name On Change 
+     * @description Callback fired when the value is changed.
+     * */
     onChange?: React.ChangeEventHandler<HTMLTextAreaElement | HTMLInputElement>;
-
-    /** @name On Key Down */
-    onKeyDown?: React.KeyboardEventHandler<HTMLTextAreaElement | HTMLInputElement>;
-
-    /** @name On Key Up */
-    onKeyUp?: React.KeyboardEventHandler<HTMLTextAreaElement | HTMLInputElement>;
 }
 
 export interface InputLabelProps extends StandardProps<FormLabelProps> {
@@ -132,6 +145,7 @@ export enum InputBaseMargin {
 /**
  * @name Input
  * @group Input
+ * @ignore
  */
 export const Input: React.SFC<InputProps> = props => {
     return (
@@ -144,6 +158,8 @@ export const Input: React.SFC<InputProps> = props => {
 /**
  * @name Input Adornment
  * @group Input
+ * @description Place inside Adornment slot
+ * @ignore
  */
 export const InputAdornment: React.SFC<InputAdornmentProps> = props => {
     return (
@@ -156,6 +172,7 @@ export const InputAdornment: React.SFC<InputAdornmentProps> = props => {
 /**
  * @name Input Base
  * @group Input
+ * @ignore
  */
 export const InputBase: React.SFC<InputBaseProps> = props => {
     return (
@@ -168,6 +185,8 @@ export const InputBase: React.SFC<InputBaseProps> = props => {
 /**
  * @name Input Label
  * @group Input
+ * @icon Tag
+ * @ignore
  */
 export const InputLabel: React.SFC<InputLabelProps> = props => {
     return (

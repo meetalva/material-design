@@ -36,6 +36,7 @@ export enum ProgressColor {
 /**
  * @name Progress
  * @description Express an unspecified wait time or display the length of a process
+ * @group Progress indicators
  * @icon RotateCw
  */
 export const Progress: React.SFC<ProgressProps> = props => {

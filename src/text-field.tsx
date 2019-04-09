@@ -4,72 +4,122 @@ import TextFieldComponent from '@material-ui/core/TextField';
 import { Margin } from './types';
 
 export interface TextFieldProps {
-    /** @name Label @default Label */
-    label?: React.ReactNode;
 
-    /** @name Placeholder Text */
+    /**
+     * @name Placeholder Text
+     * @group Text Field
+     * */
     placeholder?: string;
 
-    /** @name Helper Text */
-    helperText?: React.ReactNode;
+    /**
+     * @name Value
+     * @description Required for a controlled component.
+     * @group Text Field
+     * */
+    value?: string;
 
-    /** @name Multiline */
-    multiline?: boolean;
-
-    /** @name Autofocus */
-    autoFocus?: boolean;
-
-    /** @name Required */
+    /**
+     * @name Required
+     * @group Text Field
+     * */
     required?: boolean;
 
-    /** @name Full Width */
-    fullWidth?: boolean;
+    /**
+     * @name HTML5 Type
+     * @group Type
+     * @default Text
+     * */
+    type?: TextFieldType;
 
-    /** @name Disabled @group State */
-    disabled?: boolean;
+    /**
+     * @name Multiline
+     * @group Multiline
+     * @description If true, a textarea element will be rendered instead of an input.
+     * */
+    multiline?: boolean;
 
-    /** @name Error @group State */
-    error?: boolean;
-
-    /** @name Auto Complete */
-    autoComplete?: string;
-
-    children?: React.ReactNode;
-
-    /** @name Default Value */
-    defaultValue?: string;
-
-    /** @name ID */
-    id?: string;
-
-    /** @name Margin */
-    margin?: Margin;
-
-    /** @name Name */
-    name?: string;
-
-    /** @name On Change */
-    onChange?: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>;
-
-    /** @name Number */
+    /**
+     * @name Number of Rows
+     * @group Multiline
+     * */
     rows?: number;
 
-    /** @name Rows Max */
+    /**
+     * @name Rows Max
+     * @group Multiline
+     * */
     rowsMax?: number;
 
-    /** @name Select */
-    select?: boolean;
+    /**
+     * @name Full Width
+     * @group Style
+     * */
+    fullWidth?: boolean;
 
-    /** @name Type */
-    type?: string;
+    /**
+     * @name Margin
+     * @group Style
+     * @control ButtonGroup
+     * @default None
+     * */
+    margin?: Margin;
 
-    /** @name Value */
-    value?: Array<string | number | boolean> | string | number | boolean;
+    /**
+     * @name Disabled
+     * @group State 
+     * */
+    disabled?: boolean;
+
+    /**
+     * @name Error
+     * @group State 
+     * */
+    error?: boolean;
+
+
+    /**
+     * @name On Change
+     * */
+    onChange?: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>;
+
+
+    /**
+     * @default
+     * ```tsx
+     * import * as React from 'react';
+     * import { Text } from '@meetalva/essentials';
+     * export default () => <Text text="Label" />
+     * ```
+     */
+    label?: React.ReactNode;
+
+    /**
+     * @default
+     * ```tsx
+     * import * as React from 'react';
+     * import { Text } from '@meetalva/essentials';
+     * export default () => <Text text="This is a help text." />
+     * ```
+     */
+    helperText?: React.ReactNode;
+
+}
+
+export enum TextFieldType {
+    Date = 'date',
+    Email = 'email',
+    Number = 'number',
+    Password = 'password',
+    Range = 'range',
+    Tel = 'tel',
+    Text = 'text',
+    Time = 'time'
 }
 
 /**
- * @name TextField
+ * @name Text field
  * @description Let users enter and edit text
+ * @group Input
  * @icon MessageSquare
  */
 export const TextField: React.SFC<TextFieldProps> = props => {

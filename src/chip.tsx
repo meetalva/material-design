@@ -3,32 +3,67 @@ import ChipComponent from '@material-ui/core/Chip';
 import { ColorWithInherit } from './types';
 
 export interface ChipProps {
-    /** @name Label */
-    label?: React.ReactNode;
 
-    /** @name Delete */
-    delete?: boolean;
+    /**
+     * @name Clickable
+     * @group Chip
+     * 
+    */
+    clickable?: boolean;
 
-    /** @name Color */
+    /**
+     * @name Color
+     * @group Style
+     * */
     color?: ColorWithInherit;
 
-    /** @name Style */
+    /**
+     * @name variant
+     * @group Style
+     * @control ButtonGroup
+     * */
     variant?: ChipVariant;
 
-    /** @name Avatar */
-    avatar?: React.ReactElement<any>;
+    /**
+     * @name Show Delete Icon
+     * @group Style
+     * */
+    delete?: boolean;
 
-    /** @name On Delete */
+    /**
+     * @name On Delete
+     * @description Set an interaction that happens "On Delete"
+     * */
     onDelete?: React.EventHandler<any>;
 
-    /** @name Clickable */
-    clickable?: boolean;
+    /**
+     * @default
+     * ```tsx
+     * import * as React from 'react';
+     * import { Text } from '@meetalva/essentials';
+     * 
+     * export default () => <Text text="Alva" />
+     * ```
+     */
+    label?: React.ReactElement<any>;
+
+    /**
+     * @default
+     * ```tsx
+     * import * as React from 'react';
+     * import { Avatar } from './avatar';
+     * 
+     * export default () => <Avatar />
+     * ```
+     */
+    avatar?: React.ReactElement<any>;
 
     /** @name Delete Icon */
     deleteIcon?: React.ReactElement<any>;
 
     /** @name Icon */
-    icon?: React.ReactElement<any>;    
+    icon?: React.ReactElement<any>;  
+    
 }
 
 export enum ChipVariant {
@@ -40,9 +75,12 @@ export enum ChipVariant {
  * @name Chip
  * @description Compact elements that represent an input, attribute, or action
  * @icon ToggleLeft
+ * @group Selection Controls
  */
 export const Chip: React.SFC<ChipProps> = props => {
     return (
+        <>
         <ChipComponent {...props} onDelete={props.delete ? (() => console.log): undefined} />
+        </>
     )
 }

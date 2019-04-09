@@ -1,29 +1,50 @@
 import * as React from 'react';
 import DrawerComponent from '@material-ui/core/Drawer';
 import { ModalProps } from './modal';
-import { PaperProps } from './paper';
 import { StandardProps } from './types';
 
 export interface DrawerProps extends StandardProps<ModalProps> {
-    /** @name Anchor @default Left */
-    anchor?: DrawerAnchor;
 
-    /** @name Elevation @default 16 */
-    elevation?: number;
-
-    /* @name Open @default true
-    open?: boolean; */
-    
-    /** @name Variant @default Temporary */
-    variant?: DrawerVariant;
-
-    children?: React.ReactNode;
-
-    /** @name Modal Props */
+    /**
+     * @name Modal Props
+     * @group Drawer
+     * */
     ModalProps?: Partial<ModalProps>;
 
-    /** @name Paper Props */
-    PaperProps?: Partial<PaperProps>;
+    /**
+     * @name Anchor
+     * @default Left
+     * @control ButtonGroup
+     * @group Drawer
+     * */
+    anchor?: DrawerAnchor;
+
+    /**
+     * @name Elevation
+     * @default 16
+     * @group Drawer
+     * */
+    elevation?: number;
+    
+    /**
+     * @name Variant
+     * @default Temporary
+     * @group Drawer
+     * */
+    variant?: DrawerVariant;
+
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { List } from './list';
+    * 
+    * export default () => (
+    *   <List />
+    * );
+    * ```
+    **/
+    children?: React.ReactNode;
 }
 
 export enum DrawerAnchor {
@@ -42,6 +63,8 @@ export enum DrawerVariant {
 /**
  * @name Drawer
  * @description Provide access to destinations in your app
+ * @icon Sidebar
+ * @group Navigation
  */
 export const Drawer: React.SFC<DrawerProps> = props => {
     return (

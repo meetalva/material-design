@@ -3,46 +3,70 @@ import TabsComponent from '@material-ui/core/Tabs';
 import TabItemComponent from '@material-ui/core/Tab';
 import { ColorWithInherit, StandardProps } from './types';
 import { ButtonBaseProps } from './button';
-import { TabIndicatorProps } from '@material-ui/core/Tabs/TabIndicator';
 
 export interface TabsProps extends StandardProps<ButtonBaseProps> {
-    /** @name Selected @description Set the selected item. 0 for the first, 1 for the second, etc @default 0 @group Active Item */
-    value: any;
 
-    /** @name Indicator Color @default Secondary @group Active Item  */
+    /** 
+     * @name Selected 
+     * @description Set the selected item. 0 for the first, 1 for the second, etc 
+     * @default 0
+     * @group Active Item 
+     * */
+    value: number;
+
+    /** 
+     * @name Indicator Color 
+     * @default Primary
+     * @group Active Item 
+     * @control ButtonGroup
+     *  */
     indicatorColor?: TabsIndicatorColor;
 
-    /** @name Text Color @default Inherit @group Active Item */
+    /** 
+     * @name Text Color 
+     * @default Inherit 
+     * @group Active Item 
+     * 
+     * */
     textColor?: ColorWithInherit;
+
+    /** 
+     * @name Variant
+     * @control ButtonGroup
+     * @default Standard
+     * @group Style
+     *  */
+    variant?: TabsVariant;
     
-    /** @name Centered @default true @group Style */
+    /** 
+     * @name Centered 
+     * @default true
+     * @group Style
+     * */
     centered?: boolean;
 
-    /** @name Full Width @group Style */
+    /** 
+     * @name Full Width 
+     * @group Style
+     * */
     fullWidth?: boolean;
-
-    /** @name Scrollable @group Style */
-    scrollable?: boolean; 
-
-    children?: React.ReactNode;
     
-    /** @name On Change */
-    onChange?: (event: React.ChangeEvent<{}>, value: any) => void;
-
-    /** @name Scroll Buttons */
-    scrollButtons?: TabsScrollButtons;
-
-    /** @name Variant */
-    variant?: TabsVariant;
-
-    /** @name Width */
-    width?: string;
-
-    /** @name Scroll Button */
-    ScrollButtonComponent?: React.ReactType;
-
-    /** @name Tab Indicator Props */
-    TabIndicatorProps?: Partial<TabIndicatorProps>;
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { TabItem } from './tab';
+    * 
+    * export default () => (
+    * <>
+    *   <TabItem icon={<Icon icon="Home" />} />
+    *   <TabItem icon={<Icon icon="Favorite" />}/>
+    *   <TabItem icon={<Icon icon="Person" />}/>
+    * <>
+    * );
+    * ```
+    **/
+    children?: React.ReactNode;
 }
 
 export enum TabsIndicatorColor {
@@ -50,11 +74,6 @@ export enum TabsIndicatorColor {
     Secondary = 'secondary'
 }
 
-export enum TabsScrollButtons {
-    Auto = 'auto',
-    On = 'on',
-    Off = 'off'
-}
 
 export enum TabsVariant {
     Standard = 'standard',
@@ -63,33 +82,29 @@ export enum TabsVariant {
 }
 
 export interface TabItemProps extends StandardProps<ButtonBaseProps> {
-    /** @name Label @default Tab */
-    label?: React.ReactNode;
 
-    /** @name Disabled */
+    /** 
+     * @name Disabled 
+     * @group Tab
+     * */
     disabled?: boolean;
 
 
-    /** @name Full Width */
-    fullWidth?: boolean;
+    /**
+     * @default
+     * ```tsx
+     * import * as React from 'react';
+     * import { Text } from '@meetalva/essentials';
+     * 
+     * export default () => <Text text="Tab Item" />
+     * ```
+     */
+    label?: React.ReactNode;
 
-    /** @name Icon */
+    /**
+     * @name Icon
+     */
     icon?: React.ReactElement<any>;
-
-    /** @name Value */
-    value?: any;
-
-    /** @name On Change */
-    onChange?: (event: React.ChangeEvent<{ checked: boolean }>, value: any) => void;
-
-    /** @name On Click */
-    onClick?: React.EventHandler<any>;
-
-    /** @name Selected */
-    selected?: boolean;
-
-    /** @name Color */
-    textColor?: TabsColor;
 }
 
 export enum TabsColor {
@@ -100,8 +115,9 @@ export enum TabsColor {
 
 /**
  * @name Tabs
- * @description Make it easy to explore and switch between different views
+ * @description Allow navigation between groups of content
  * @group Tabs
+ * @icon Sidebar
  */
 export const Tabs: React.SFC<TabsProps> = props => {
     return (
@@ -112,8 +128,9 @@ export const Tabs: React.SFC<TabsProps> = props => {
 }
 
 /**
- * @name Tab Item
+ * @name Tab
  * @group Tabs
+ * @icon Square
  */
 export const TabItem: React.SFC<TabItemProps> = props => {
     return (

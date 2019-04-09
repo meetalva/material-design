@@ -4,11 +4,33 @@ import { ColorWithInherit, StandardProps } from './types';
 import { PaperProps } from './paper';
 
 export interface AppBarProps extends StandardProps<PaperProps> {
-    /** @name Color @default Primary */
+
+    /**
+     * @name Position
+     * @default Sticky
+     * @group App Bar
+     * */
+    position?: AppBarPosition;
+
+    /**
+     * @name Color
+     * @default Primary
+     * @group App Bar
+     * */
     color: ColorWithInherit;
 
-    /** @name Position @default Sticky */
-    position?: AppBarPosition;
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { Toolbar } from './';
+    * 
+    * export default () => (
+    * <Toolbar />
+    * );
+    * ```
+    **/
+    children?: React.ReactNode;
 }
 
 export enum AppBarPosition {
@@ -23,6 +45,7 @@ export enum AppBarPosition {
  * @name App Bar
  * @description Displays information and actions relating to the current screen
  * @icon CreditCard
+ * @group Navigation
  */
 export const AppBar: React.SFC<AppBarProps> = props => {
     return (

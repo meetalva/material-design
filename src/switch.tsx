@@ -4,62 +4,62 @@ import { StandardProps } from './types';
 import { IconButtonProps } from './button';
 
 export interface SwitchProps {
-    /** @name Icon */
+
+    /**
+     * @name Icon
+     * */
     icon?: React.ReactNode;
 
-    /** @name Checked Icon */
+    /**
+     * @name Checked Icon
+     * */
     checkedIcon?: React.ReactNode;
 
-    /** @name Color */
+    /**
+     * @name Color
+     * @control ButtonGroup
+     * */
     color?: SwitchColor;
 }
 
 
 export interface SwitchBaseProps extends StandardProps<IconButtonProps> {
-    /** @name Auto Focus */
-    autoFocus?: boolean;
 
-    /** @name Checked */
+    /**
+     * @name Value
+     * @group State
+     * */
+    value?: string | number | boolean;
+
+    /**
+     * @name Checked
+     * @group State
+     * */
     checked?: boolean;
 
-    /** @name Checked Icon */
-    checkedIcon?: React.ReactNode;
-
-    /** @name Default Checked */
-    defaultChecked?: boolean;
-
-    /** @name Disabled */
+    /**
+     * @name Disabled
+     * @group State
+     * */
     disabled?: boolean;
 
-    /** @name Disable Ripple */
+    /**
+     * @name Disable Ripple
+     * @group Ripple
+     * */
     disableRipple?: boolean;
 
-    /** @name Icon */
-    icon?: React.ReactNode;
-
-    /** @name Input Props */
-    inputProps?: React.InputHTMLAttributes<HTMLInputElement>;
-
-    /** @name Input Ref */
-    inputRef?: React.Ref<any>;
-
-    /** @name Name */
-    name?: string;
-
-    /** @name On Change */
+    /**
+     * @name On Change
+     * @description Callback fired when the state is changed.
+     * */
     onChange?: (event: React.ChangeEvent<HTMLInputElement>, checked: boolean) => void;
 
-    /** @name Read Only */
-    readOnly?: boolean;
+     /** @name Icon */
+     icon?: React.ReactNode;
 
-    /** @name Required */
-    required?: boolean;
-
-    /** @name Tab Index */
-    tabIndex?: number;
-
-    /** @name Value */
-    value?: string | number | boolean;
+     /** @name Input Ref */
+     inputRef?: React.Ref<any>;
 }
 
 export enum SwitchColor {
@@ -70,6 +70,7 @@ export enum SwitchColor {
 
 /**
  * @name Switch
+ * @group Selection Controls
  */
 export const Switch: React.SFC<SwitchProps> = props => {
     return (

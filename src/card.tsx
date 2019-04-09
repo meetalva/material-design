@@ -6,57 +6,176 @@ import CardHeaderComponent from '@material-ui/core/CardHeader';
 import CardActionAreaComponent from '@material-ui/core/CardActions';
 import CardActionsComponent from '@material-ui/core/CardActions';
 import { PaperProps } from './paper';
-import { TypographyProps } from './typography';
 import { StandardProps } from './types';
 
 export interface CardProps extends StandardProps<PaperProps> {
-    /** @name Raised */
+
+    /**
+     * @name Raised
+     * @description If true, the card will use raised styling.
+     * @group Card
+     * */
     raised?: boolean;
+
+    /**
+     * @name Width
+     * @group Card
+     * @default 300px
+     */
+    width?: string;
+
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { CardContent, CardHeader, CardMedia, CardActions } from './';
+    * 
+    * export default () => (
+    * <>
+    *   <CardHeader />
+    *   <CardMedia />
+    *   <CardContent />
+    *   <CardActions />
+    * <>
+    * );
+    * ```
+    **/
+    children?: React.ReactNode;
 }
 
 export interface CardHeaderProps {
-    /** @name Title @default Headline */
+    
+    /**
+     *
+     * @default
+     * ```tsx
+     * import * as React from 'react';
+     * import { Text } from '@meetalva/essentials';
+     * 
+     * export default () => (
+     * <Text text="Card Header Title" />
+     * );
+     * ```
+     * */
     title?: React.ReactNode;
 
-    /** @name Subtitle @default Subtitle */
+    /**
+     * @default
+     * ```tsx
+     * import * as React from 'react';
+     * import { Text } from '@meetalva/essentials';
+     * 
+     * export default () => (
+     * <Text text="Sub Header" />
+     * );
+     * ```
+     * */
     subheader?: React.ReactNode;
 
-    /** @name Action */
+    /**
+     * @default
+     * ```tsx
+     * import * as React from 'react';
+     * import { IconButton } from './button';
+     * 
+     * export default () => (
+     * <IconButton />
+     * );
+     * ```
+     * */
     action?: React.ReactNode;
 
-    /** @name Avatar */
-    avatar?: React.ReactNode;
-
-    /** @name Disable Typography */
-    disableTypography?: boolean;
-
-    /** @name Subheader Typography Props */
-    subheaderTypographyProps?: TypographyProps;
-
-    /** @name Title Typography Props */
-    titleTypographyProps?: TypographyProps;
+    /**
+     * @default
+     * ```tsx
+     * import * as React from 'react';
+     * import { Avatar } from './avatar';
+     * 
+     * export default () => (
+     * <Avatar />
+     * );
+     * ```
+     * */
+    avatar?: React.ReactNode;    
 }
 
+
+export interface CardContentProps {
+
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { Typography } from './';
+    * 
+    * export default () => (
+    *   <>
+    *       <Typography variant="h6" color="textPrimary"  />
+    *       <Typography color="textSecondary" gutterBottom="true" />
+    *   <>
+    * );
+    * ```
+    **/
+    children?: React.ReactNode;
+}
+
+
 export interface CardMediaProps {
-    /** @name Image @default https://images.unsplash.com/photo-1542838775-961894306368?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=360 @asset */
+    /**
+     * @name Image
+     * @default https://source.unsplash.com/300x200/?cat
+     * @asset
+     * */
     image?: string;
 
-    /** @name Src */
+    /**
+     * @name Src
+     * */
     src?: string;
 
-    /** @name Height @default 120px */
+    /**
+     * @name Height
+     * @default 200px
+     * */
     height?: string;
 }
 
+
 export interface CardActionAreaProps {
-    /** @name Disable Action Spacing */
+
+    /**
+     * @name Disable Action Spacing
+     * @group Card ActionArea
+     * 
+     * */
     disableActionSpacing?: boolean;
 }
 
+
 export interface CardActionsProps {
-    /** @name Disable Action Spacing */
+
+    /**
+     * @name Disable Action Spacing
+     * @group Card Actions
+     * 
+     * */
     disableActionSpacing?: boolean;
+
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { Button } from './';
+    * 
+    * export default () => (
+    *   <Button variant="text"  />
+    * );
+    * ```
+    **/
+    children?: React.ReactNode;
 }
+
+
 
 /**
  * @name Card
@@ -68,6 +187,7 @@ export const Card: React.SFC<CardProps> = props => {
     return (
         <CardComponent
             raised={props.raised}
+            style={{ width: props.width }}
         >
             {props.children}
         </CardComponent>
@@ -76,6 +196,7 @@ export const Card: React.SFC<CardProps> = props => {
 
 /**
  * @name Card Header
+ * @icon Square
  * @group Card
  */
 export const CardHeader: React.SFC<CardHeaderProps> = props => {
@@ -86,9 +207,10 @@ export const CardHeader: React.SFC<CardHeaderProps> = props => {
 
 /**
  * @name Card Content
+ * @icon Square
  * @group Card
  */
-export const CardContent: React.SFC = props => {
+export const CardContent: React.SFC<CardContentProps> = props => {
     return (
         <CardContentComponent>
             {props.children}
@@ -99,6 +221,7 @@ export const CardContent: React.SFC = props => {
 /**
  * @name Card Media
  * @group Card
+ * @icon Image
  */
 export const CardMedia: React.SFC<CardMediaProps> = props => {
     return (
@@ -111,6 +234,7 @@ export const CardMedia: React.SFC<CardMediaProps> = props => {
 /**
  * @name Card Actions
  * @group Card
+ * @icon MinusSquare
  */
 export const CardActionArea: React.SFC<CardActionAreaProps> = props => {
     return (
@@ -122,6 +246,7 @@ export const CardActionArea: React.SFC<CardActionAreaProps> = props => {
 
 /**
  * @name Card Action Area
+ * @icon Square
  * @group Card
  */
 export const CardActions: React.SFC<CardActionsProps> = props => {

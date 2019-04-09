@@ -4,35 +4,64 @@ import { ColorWithInherit, StandardProps } from './types';
 import { ButtonBaseProps } from './button';
 
 export interface FabProps extends StandardProps<ButtonBaseProps> {
-    /** @name Color */
+
+    /**
+     * @name Color
+     * @group Floating Action Button
+     * @default Primary
+     * */
     color?: ColorWithInherit;
 
-    /** @name Disabled */
-    disabled?: boolean;
-
-    /** @name Disable Focus Ripple */
-    disableFocusRipple?: boolean;
-
-    /** @name Disable Ripple */
-    disableRipple?: boolean;
-
-    /** @name Href */
-    href?: string;
-
-    /** @name Size */
+    /**
+     * @name Size
+     * @group Floating Action Button
+     * @control ButtonGroup
+     * @default M
+     * */
     size?: FabSize;
 
-    /** @name Type */
-    type?: string;
-
-    /** @name Variant */
+    /** 
+     * @name Variant
+     * @group Floating Action Button
+     * @control ButtonGroup
+     * @default Round
+     * */
     variant?: FabVariant;
+
+    /**
+     * @name Disabled
+     * @group Disabled
+     * */
+    disabled?: boolean;
+
+    /**
+     * @name Disable Ripple
+     * @group Disabled
+     * */
+    disableRipple?: boolean;
+
+    /**
+     * @name Interaction
+     * @description Set an interaction that happens on Click.
+     * */
+    onClick?: React.MouseEventHandler<HTMLElement>;
+    
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { Icon } from './icon';
+    * 
+    * export default () => <Icon icon="Add" />;
+    * ```
+    **/
+    children?: React.ReactNode;
 }
 
 export enum FabSize {
-    Small = 'small',
-    Medium = 'medium',
-    Large = 'large'
+    S = 'small',
+    M = 'medium',
+    L = 'large'
 }
 
 export enum FabVariant {
@@ -41,7 +70,10 @@ export enum FabVariant {
 }
 
 /**
- * @name Fab
+ * @name FAB
+ * @group Buttons
+ * @icon PlusCircle
+ * @description Floating Action Button
  */
 export const Fab: React.SFC<FabProps> = props => {
     return (

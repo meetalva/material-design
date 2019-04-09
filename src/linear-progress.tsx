@@ -2,17 +2,33 @@ import * as React from 'react';
 import LinearProgressComponent from '@material-ui/core/LinearProgress';
 
 export interface LinearProgressProps {
-    /** @name Color */
-    color?: LinearProgressColor;
 
-    /** @name Value */
+    /**
+     * @name Variant
+     * @group Linear Progress
+     * */
+    variant?: LinearProgressVariant;
+
+    /**
+     * @name Value
+     * @group Linear Progress
+     * @description The progress value (1-100) for the determinate and buffer variants.
+     * */
     value?: number;
 
-    /** @name Value Buffer */
+    /**
+     * @name Value Buffer
+     * @group Linear Progress
+     * @description The value (1-100) for the buffer variant.
+     * */
     valueBuffer?: number;
 
-    /** @name Variant */
-    variant?: LinearProgressVariant;
+     /**
+     * @name Color
+     * @group Style
+     * @control ButtonGroup
+     * */
+    color?: LinearProgressColor;
 }
 
 export enum LinearProgressColor {
@@ -29,6 +45,8 @@ export enum LinearProgressVariant {
 
 /**
  * @name Linear Progress
+ * @description Describes a loading progress
+ * @group Progress indicators
  */
 export const LinearProgress: React.SFC<LinearProgressProps> = props => {
     return (

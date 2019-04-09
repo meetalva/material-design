@@ -1,14 +1,15 @@
 {
   "name": "@meetalva/material-design",
-  "description": "Material Design for Alva",
-  "version": "1.0.0",
+  "description": "Components that implement Google's Material Design",
+  "version": "1.1.0",
   "main": "lib/index.js",
   "alva": {
     "name": "Material Design",
+    "image": "http://media.meetalva.io/library/material-design/image.svg",
     "color": "#009688"
   },
   "scripts": {
-    "start": "npm run build  -- -w",
+    "start": "npm run build  -- -w --skipLibCheck",
     "build": "tsc",
     "clean": "rm -rf lib"
   },
@@ -22,8 +23,9 @@
     "typescript": "^3.0.3"
   },
   "dependencies": {
-    "@material-ui/core": "^3.9.1",
+    "@material-ui/core": "^3.9.2",
     "@material-ui/icons": "^3.0.2",
+    "@meetalva/essentials": "^1.0.0",
     "@types/node": "^8.0.53",
     "@types/react": "^16.4.14",
     "@types/react-dom": "^16.0.7",

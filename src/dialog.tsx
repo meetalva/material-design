@@ -9,36 +9,112 @@ import { TypographyProps } from './typography';
 import { StandardProps } from './types';
 
 export interface DialogProps extends StandardProps<ModalProps> {
-    /** @name Open @default true */
+    /**
+     * @name Open
+     * @default true
+     * @group Dialog
+     * */
     open: boolean;
 
-    /** @name Full Width @default true */
+    /**
+     * @name Full Width
+     * @default true
+     * @group Style
+     * */
     fullWidth?: boolean;
 
-    /** @name Full Screen */
+    /**
+     * @name Full Screen
+     * @default false
+     * @group Style
+     * */
     fullScreen: boolean;
 
-    /** @name Max Width */
+    /**
+     * @name Max Width
+     * @control ButtonGroup
+     * @group Style
+     * @default SM
+     * */
     maxWidth: DialogMaxWidth;
 
-    /** @name Scroll */
-    scroll?: DialogScroll;
-
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { DialogTitle, DialogContent, DialogContentText, DialogActions } from './';
+    * import { Text } from '@meetalva/essentials';
+    * 
+    * export default () => (
+    *   <>
+    *       <DialogTitle />
+    *       <DialogContent>
+    *           <DialogContentText />
+    *       </DialogContent>
+    *        <DialogActions />
+    *   <>
+    * );
+    * ```
+    **/
     children?: React.ReactNode;
 }
 
 export interface DialogTitleProps {
-    /** @name Disable Typography */
-    disableTypography?: boolean;
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { Text } from '@meetalva/essentials';
+    * 
+    * export default () => (
+    *   <Text text="Dialog Title">    
+    * );
+    * ```
+    **/
+    children?: React.ReactNode;
 }
 
 export interface DialogActionProps {
-    /** @name Disable Action Spacing */
+
+    /**
+     * @name Disable Action Spacing
+     * @group Dialog Action
+     * */
     disableActionSpacing?: boolean;
+
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { Button } from './';
+    * 
+    * export default () => (
+    *   <Button variant="text" />
+    * );
+    * ```
+    **/
+    children?: React.ReactNode;
+}
+
+export interface DialogContentProps {
+    
+    children?: React.ReactNode;
 }
 
 export interface DialogContentTextProps extends StandardProps<TypographyProps> {
     
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { Text } from '@meetalva/essentials';
+    * 
+    * export default () => (
+    *   <Text text="Dialog Text lorem ipsum dolor sit..."> 
+    * );
+    * ```
+    **/
+    children?: React.ReactNode;
 }
 
 export enum DialogScroll {
@@ -47,16 +123,16 @@ export enum DialogScroll {
 }
 
 export enum DialogMaxWidth {
-    XSmall = 'xs',
-    Small = 'sm',
-    Medium = 'md',
-    Large = 'lg',
-    XLarge = 'xl',
+    XS = 'xs',
+    SM = 'sm',
+    MD = 'md',
+    LG = 'lg',
+    XL = 'xl',
 }
 
 /**
  * @name Dialog
- * @description Inform users about a task and can contain critical information, require decisions, or involve multiple tasks
+ * @description Modal window that appears in front of app content
  * @icon MessageSquare
  * @group Dialog
  */
@@ -71,6 +147,7 @@ export const Dialog: React.SFC<DialogProps> = props => {
 /**
  * @name Dialog Actions
  * @group Dialog
+ * @icon MinusSquare
  */
 export const DialogActions: React.SFC<DialogActionProps> = props => {
     return (
@@ -83,6 +160,7 @@ export const DialogActions: React.SFC<DialogActionProps> = props => {
 /**
  * @name Dialog Title
  * @group Dialog
+ * @icon Type
  */
 export const DialogTitle: React.SFC<DialogTitleProps> = props => {
     return (
@@ -95,8 +173,10 @@ export const DialogTitle: React.SFC<DialogTitleProps> = props => {
 /**
  * @name Dialog Content
  * @group Dialog
+ * @icon Square
+ * 
  */
-export const DialogContent: React.SFC = props => {
+export const DialogContent: React.SFC<DialogContentProps> = props => {
     return (
         <DialogContentComponent>
             {props.children}
@@ -107,6 +187,7 @@ export const DialogContent: React.SFC = props => {
 /**
  * @name Dialog Content Text
  * @group Dialog
+ * @icon Type
  */
 export const DialogContentText: React.SFC<DialogContentTextProps> = props => {
     return (

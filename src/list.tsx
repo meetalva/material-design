@@ -10,41 +10,109 @@ import { StandardProps } from './types';
 import { ButtonBaseProps } from './button';
 
 export interface ListProps {
-    /** @name Dense */
-    dense?: boolean;
 
-    /** @name Disable Padding */
-    disablePadding?: boolean;
-
-    /** @name Subheader */
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { ListSubheader } from './list';
+    * 
+    * export default () => (
+    *   <ListSubheader />
+    * );
+    * ```
+    **/
     subheader?: React.ReactElement<any>;
+
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { ListItem } from './list';
+    * 
+    * export default () => (
+    *   <>
+    *       <ListItem />
+    *       <ListItem />
+    *       <ListItem />
+    *   <>
+    * );
+    * ```
+    **/
+    children?: React.ReactNode;
 }
 
 export interface ListItemProps extends StandardProps<ButtonBaseProps> {
-    /** @name Button */
+
+    /**
+     * @name Button
+     * @description If true, the list item will be a button
+     * @group List Item
+     * @default true
+     * */
     button?: boolean;
 
-    /** @name Dense */
+    /**
+     * @name Dense
+     * @group List Item
+     * */
     dense?: boolean;
 
-    /** @name Disabled */
+    /**
+     * @name Disabled
+     * @group List Item
+     * */
     disabled?: boolean;
 
-    /** @name Disable Gutters */
-    disableGutters?: boolean;
-
-    /** @name Divider */
+    /**
+     * @name Divider
+     * @group List Item
+     * */
     divider?: boolean;
 
-    /** @name Focus Visible Class */
-    focusVisibleClassName?: string;
-
-    /** @name Selected */
+    /**
+     * @name Selected
+     * @group List Item
+     * */
     selected?: boolean;
+
+    /**
+     * @name On Click
+     * @description Set an interaction that happens on Click.
+     * */
+    onClick?: React.MouseEventHandler<HTMLElement>;
+
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { ListItemText, ListItemIcon } from './list';
+    * 
+    * export default () => (
+    * <>
+    *   <ListItemIcon />
+    *   <ListItemText />
+    * <>
+    * );
+    * ```
+    **/
+   children?: React.ReactNode;
 }
 
 export interface ListItemIconProps {
-    children: React.ReactElement<any>;
+
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { Icon } from './icon';
+    * 
+    * export default () => (
+    *   <Icon icon="Add" />
+    * );
+    * ```
+    **/
+    children: React.ReactElement;
 }
 
 export interface ListItemTextProps {
@@ -54,24 +122,60 @@ export interface ListItemTextProps {
     /** @name Inset */
     inset?: boolean;
 
-    /** @name Primary */
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { Text } from '@meetalva/essentials';
+    * 
+    * export default () => (
+    *   <Text text="List Item" />
+    * );
+    * ```
+    **/
     primary?: React.ReactNode;
 
-    /** @name Secondary */
+    /**
+     * @name Secondary Content
+     */
     secondary?: React.ReactNode;
+
 }
 
 export interface ListSubheaderProps {
+
+    /**
+     * @name Color
+     * @control ButtonGroup
+     * @group List Subheader
+     * @ignore
+     */
     color?: ListSubheaderColor;
 
-    /** @name Disable Gutters */
-    disableGutters?: boolean;
-
-    /** @name Disable Sticky */
+    /** 
+     * @name Disable Sticky 
+     * @group List Subheader
+     * */
     disableSticky?: boolean;
 
-    /** @name Inset */
+    /**
+     * @name Inset
+     * @group List Subheader
+     *  */
     inset?: boolean;
+
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { Text } from '@meetalva/essentials';
+    * 
+    * export default () => (
+    *   <Text text="Subheader" />
+    * );
+    * ```
+    **/
+    children?: React.ReactNode;
 }
 
 export enum ListSubheaderColor {
@@ -83,6 +187,8 @@ export enum ListSubheaderColor {
 /**
  * @name List
  * @group List
+ * @description Continuous, vertical indexes of text or images
+ * @icon Menu
  */
 export const List: React.SFC<ListProps> = props => {
     return (
@@ -95,6 +201,8 @@ export const List: React.SFC<ListProps> = props => {
 /**
  * @name List Item
  * @group List
+ * @icon Minus
+ * 
  */
 export const ListItem: React.SFC<ListItemProps> = props => {
     return (
@@ -107,6 +215,7 @@ export const ListItem: React.SFC<ListItemProps> = props => {
 /**
  * @name List Item Avatar
  * @group List
+ * @ignore
  */
 export const ListItemAvatar: React.SFC = props => {
     return (
@@ -119,6 +228,7 @@ export const ListItemAvatar: React.SFC = props => {
 /**
  * @name List Item Icon
  * @group List
+ * @icon Heart
  */
 export const ListItemIcon: React.SFC<ListItemIconProps> = props => {
     return (
@@ -131,6 +241,7 @@ export const ListItemIcon: React.SFC<ListItemIconProps> = props => {
 /**
  * @name List Item Secondary Action
  * @group List
+ * @ignore
  */
 export const ListItemSecondaryAction: React.SFC= props => {
     return (
@@ -143,6 +254,7 @@ export const ListItemSecondaryAction: React.SFC= props => {
 /**
  * @name List Item Text
  * @group List
+ * @icon Type
  */
 export const ListItemText: React.SFC<ListItemTextProps> = props => {
     return (

@@ -37,7 +37,7 @@ export interface FormControlLabelProps {
     checked?: boolean;
 
     /** @name Control */
-    control: React.ReactElement<any>;
+    control: React.ReactNode;
 
     /** @name Disabled */
     disabled?: boolean;
@@ -67,26 +67,44 @@ export interface FormGroupProps {
 }
 
 export interface FormHelperTextProps {
-    /** @name Disabled */
+
+    /**
+     * @name Disabled
+     * @group Helper text
+     * @description If true, the helper text should be displayed in a disabled state.
+     * */
     disabled?: boolean;
 
-    /** @name Error */
+    /**
+     * @name Error
+     * @group Helper text
+     * @description If true, helper text should be displayed in an error state.
+     * */
     error?: boolean;
 
-    /** @name Filled */
-    filled?: boolean;
-
-    /** @name Focused */
-    focused?: boolean;
-
-    /** @name Required */
-    required?: boolean;
-
-    /** @name Variant */
+    /**
+     * @name Variant
+     * @group Helper text
+     * @control ButtonGroup
+     * */
     variant?: FormVariant;
+
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { Text } from '@meetalva/essentials';
+    * 
+    * export default () => (
+    * <Text text="Helper Text">
+    * );
+    * ```
+    **/
+    children?: React.ReactNode;
 }
 
 export interface FormLabelProps {
+
     /** @name Disabled */
     disabled?: boolean;
 
@@ -101,6 +119,8 @@ export interface FormLabelProps {
 
     /** @name Required */
     required?: boolean;
+
+    children?: React.ReactNode;
 }
 
 export enum FormVariant {
@@ -119,6 +139,7 @@ export enum FormControlLabelPlacement {
 /**
  * @name Form Control
  * @group Form
+ * @ignore
  */
 export const FormControl: React.SFC<FormControlProps> = props => {
     return (
@@ -131,10 +152,12 @@ export const FormControl: React.SFC<FormControlProps> = props => {
 /**
  * @name Form Control Label
  * @group Form
+ * @icon Tag
+ * @ignore
  */
 export const FormControlLabel: React.SFC<FormControlLabelProps> = props => {
     return (
-        <FormControlLabelComponent {...props}>
+        <FormControlLabelComponent {...props} control={<>{props.control}</>}>
             {props.children}
         </FormControlLabelComponent>
     )
@@ -143,6 +166,7 @@ export const FormControlLabel: React.SFC<FormControlLabelProps> = props => {
 /**
  * @name Form Group
  * @group Form
+ * @ignore
  */
 export const FormGroup: React.SFC<FormGroupProps> = props => {
     return (
@@ -155,6 +179,7 @@ export const FormGroup: React.SFC<FormGroupProps> = props => {
 /**
  * @name Form Helper Text
  * @group Form
+ * @ignore
  */
 export const FormHelperText: React.SFC<FormHelperTextProps> = props => {
     return (
@@ -167,6 +192,8 @@ export const FormHelperText: React.SFC<FormHelperTextProps> = props => {
 /**
  * @name Form Label
  * @group Form
+ * @icon Tag
+ * @ignore
  */
 export const FormLabel: React.SFC<FormLabelProps> = props => {
     return (

@@ -7,7 +7,10 @@ import { SwitchBaseProps } from './switch';
 import { FormGroupProps } from './form';
 
 export interface RadioProps extends StandardProps<SwitchBaseProps, 'color'> {
-    /** @name Color */
+
+    /**
+     * @name Color
+     * */
     color?: RadioColor;
 
     /** @name Checked Icon */
@@ -18,14 +21,25 @@ export interface RadioProps extends StandardProps<SwitchBaseProps, 'color'> {
 }
 
 export interface RadioGroupProps extends StandardProps<FormGroupProps> {
-    /** @name Name */
+
+    /**
+     * @name Name
+     * @description The name used to reference the value of the control.
+     * @group Selection Controls
+     * */
     name?: string;
 
-    /** @name On Change */
-    onChange?: (event: React.ChangeEvent<{}>, value: string) => void;
-
-    /** @name Value */
+     /**
+     * @name Value
+     * @group Selection Controls
+     * */
     value?: string;
+
+    /**
+     * @name On Change
+     * @description Callback fired when a radio button is selected.
+     * */
+    onChange?: (event: React.ChangeEvent<{}>, value: string) => void;
 }
 
 export enum RadioColor {
@@ -36,7 +50,7 @@ export enum RadioColor {
 
 /**
  * @name Radio
- * @group Radio
+ * @group Form
  */
 
 export const Radio: React.SFC<RadioProps> = props => {
@@ -49,7 +63,7 @@ export const Radio: React.SFC<RadioProps> = props => {
 
 /**
  * @name Radio Group
- * @group Radio
+ * @group Form
  */
 
 export const RadioGroup: React.SFC<RadioGroupProps> = props => {

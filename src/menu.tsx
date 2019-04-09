@@ -1,28 +1,48 @@
 import * as React from 'react';
 import MenuComponent from '@material-ui/core/Menu';
 import MenuItemComponent from '@material-ui/core/MenuItem';
-import MenuListComponent from '@material-ui/core/MenuList';
-import { PopoverProps } from './popover';
+import { ModalProps } from './modal';
 import { ListItemProps, ListProps } from './list';
 import { StandardProps } from './types';
-import { PaperProps } from './paper';
 
-export interface MenuProps extends StandardProps<PopoverProps>  {
-    /** @name Disable Auto Focus Item */
-    disableAutoFocusItem?: boolean;
+export interface MenuProps extends StandardProps<ModalProps>  {
 
-    /** @name Menu List Props */
-    MenuListProps?: Partial<MenuListProps>;
-
-    /** @name Paper Props */
-    PaperProps?: Partial<PaperProps>;
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { MenuItem } from './';
+    * 
+    * export default () => (
+    * <>
+    *   <MenuItem button="true" selected="true" />
+    *   <MenuItem button="true" />
+    *   <MenuItem button="true" />
+    * <>
+    * );
+    * ```
+    **/
+    children?: React.ReactNode;
 }
 
 export interface MenuItemProps extends StandardProps<ListItemProps> {
-    role?: string;
+
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { Text } from '@meetalva/essentials';
+    * 
+    * export default () => (
+    *   <Text text="Option" />
+    * );
+    * ```
+    **/
+    children?: React.ReactNode;
 }
 
 export interface MenuListProps extends StandardProps<ListProps> {
+
     /** @name Disable List Wrap */
     disableListWrap?: boolean;
 
@@ -32,7 +52,7 @@ export interface MenuListProps extends StandardProps<ListProps> {
 
 /**
  * @name Menu
- * @description Display a list of choices on temporary surfaces
+ * @description List of choices on temporary surfaces
  * @icon Menu
  * @group Menu
  */
@@ -46,7 +66,7 @@ export const Menu: React.SFC<MenuProps> = props => {
 
 /**
  * @name Menu Item
- * @icon Minus
+ * @icon MinusSquare
  * @group Menu
  */
 export const MenuItem: React.SFC<MenuItemProps> = props => {
@@ -56,17 +76,3 @@ export const MenuItem: React.SFC<MenuItemProps> = props => {
         </MenuItemComponent>
     )
 }
-
-/**
- * @name Menu List
- * @icon Minus
- * @group Menu
- */
-export const MenuList: React.SFC<MenuListProps> = props => {
-    return (
-        <MenuListComponent {...props}>
-            {props.children}
-        </MenuListComponent>
-    )
-}
-

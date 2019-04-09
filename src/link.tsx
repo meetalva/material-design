@@ -23,6 +23,8 @@ export enum LinkUnderline {
 
 /**
  * @name Link
+ * @group Style
+ * @ignore 
  */
 export const Link: React.SFC<LinkProps> = props => {
     return (

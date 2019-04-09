@@ -13,19 +13,56 @@ import { LinearProgressProps } from './linear-progress';
 import { ButtonBaseProps } from './button';
 
 export interface StepperProps extends StandardProps<PaperProps> {
-    /** @name Active Step @description Set the selected item. 0 for the first, 1 for the second, etc @default 0 */
+
+    /**
+     * @name Active Step
+     * @description Set the selected item. 0 for the first, 1 for the second, etc
+     * @default 0 
+     * @group Stepper
+     * */
     activeStep?: number;
 
-    /** @name Alternative Label */
-    alternativeLabel?: boolean;
-
-    /** @name Non Linear */
-    nonLinear?: boolean;
-
-    /** @name Orientation @default Horizontal */
+    /** 
+     * @name Orientation 
+     * @default Horizontal 
+     * @control ButtonGroup
+     * @group Stepper
+     * */
     orientation?: Orientation;
 
-    children: React.ReactNode;
+    /** 
+     * @name Alt. Label 
+     * @default false
+     * @group Stepper
+     * @description If set to 'true' and orientation is horizontal, then the step label will be positioned under the icon.
+     * */
+    alternativeLabel?: boolean;
+
+    /** 
+     * @name Non Linear 
+     * @group Stepper
+     * @description If set the Stepper will not assist in controlling steps for linear flow.
+     * 
+     * */
+    nonLinear?: boolean;
+
+
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { Step } from './';
+    * 
+    * export default () => (
+    * <>
+    *   <Step />
+    *   <Step />
+    *   <Step />
+    * <>
+    * );
+    * ```
+    **/
+    children?: React.ReactNode;
 }
 
 export interface MobileStepperProps extends StandardProps<PaperProps> {
@@ -51,54 +88,20 @@ export interface MobileStepperProps extends StandardProps<PaperProps> {
 }
 
 export interface StepProps {
-    /** @name Disabled */
-    disabled?: boolean;
-
-    /** @name Active */
-    active?: boolean;
-
-    /** @name Alternative Label */
-    alternativeLabel?: boolean;
-
-    /** @name Completed */
-    completed?: boolean;
-
-    /** @name Index */
-    index?: number;
-
-    /** @name Last */
-    last?: boolean;
-
-    /** @name Orientation */
-    orientation?: Orientation;
-
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { StepLabel } from './step';
+    * 
+    * export default () => <StepLabel />);
+    * ```
+    **/
     children?: React.ReactNode;
 }
 
 export interface StepButtonProps extends StandardProps<ButtonBaseProps> {
-    /** @name Active */
-    active?: boolean;
-
-    /** @name Alternative Label */
-    alternativeLabel?: boolean;
-
-    /** @name Completed */
-    completed?: boolean;
-
-    /** @name Disabled */
-    disabled?: boolean;
-
-    /** @name  */
-    icon?: React.ReactElement<any>;
-
-    /** @name Last */
-    last?: boolean;
-
-    /** @name Optional */
-    optional?: React.ReactNode;
-
-    /** @name Orientation */
-    orientation?: Orientation;
+    children?: React.ReactNode;
 }
 
 export interface StepConnectorProps {
@@ -122,50 +125,47 @@ export interface StepConnectorProps {
 }
 
 export interface StepLabelProps {
-    /** @name Disabled */
-    disabled?: boolean;
-
-    /** @name Error */
+    /** 
+     * @name Error 
+     * @description Mark the step as failed.
+     * */
     error?: boolean;
 
-    /** @name Active */
-    active?: boolean;
-
-    /** @name Alternative Label */
-    alternativeLabel?: boolean;
-
-    children: React.ReactNode;
-
-    /** @name Completed */
-    completed?: boolean;
-    
-    /** @name Icon */
-    icon?: React.ReactElement<any>;
-
-    /** @name Last */
-    last?: boolean;
-
-    /** @name Optional */
-    optional?: React.ReactNode;
-
-    /** @name Orientation */
-    orientation?: Orientation;
-
-    /** @name Step Icon Component */
-    StepIconComponent?: React.ReactType;
-
-    /** @name Step Icon */
-    StepIconProps?: Partial<StepIconProps>;
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { Text } from '@meetalva/essentials';
+    * 
+    * export default () => (
+    * <Text text="Step Title" />
+    * );
+    * ```
+    **/
+    children?: React.ReactNode;
 }
 
 export interface StepIconProps {
-    /** @name Active */
+
+    /** 
+     * @name Active 
+     * @description Whether this step is active.
+     * @group Step Icon
+     * */
     active?: boolean;
 
-    /** @name Completed */
+    /** 
+     * @name Completed 
+     * @description Mark the step as completed.
+     * @group Step Icon
+     * */
     completed?: boolean;
 
-    /** @name Error */
+    /** 
+     * @name Error 
+     * @description Mark the step as failed.
+     * @group Step Icon
+     * */
     error?: boolean;
 
     /** @name Icon */
@@ -173,25 +173,8 @@ export interface StepIconProps {
 }
 
 export interface StepContentProps {
-    /** @name Active */
-    active?: boolean;
-
-    /** @name Alternative Label */
-    alternativeLabel?: boolean;
-
     children: React.ReactNode;
 
-    /** @name Completed */
-    completed?: boolean;
-
-    /** @name Last */
-    last?: boolean;
-
-    /** @name Optional */
-    optional?: boolean;
-
-    /** @name Orientation */
-    orientation?: Orientation;
 }
 
 export enum MobileStepperVariant {
@@ -204,7 +187,7 @@ export enum MobileStepperVariant {
  * @name Stepper
  * @description Convey progress through numbered steps
  * @icon MoreHorizontal
- * @group Step
+ * @group Stepper
  */
 export const Stepper: React.SFC<StepperProps> = props => {
     return (
@@ -216,7 +199,8 @@ export const Stepper: React.SFC<StepperProps> = props => {
 
 /**
  * @name Mobile Stepper
- * @group Step
+ * @group Stepper
+ * @ignore
  */
 export const MobileStepper: React.SFC<MobileStepperProps> = props => {
     return (
@@ -228,7 +212,8 @@ export const MobileStepper: React.SFC<MobileStepperProps> = props => {
 
 /** 
  * @name Step
- * @group Step
+ * @group Stepper
+ * @icon Square
  * */
 export const Step: React.SFC<StepProps> = props => {
     return (
@@ -240,7 +225,8 @@ export const Step: React.SFC<StepProps> = props => {
 
 /** 
  * @name Step Button
- * @group Step
+ * @group Stepper
+ * @icon MinusSquare
  * */
 export const StepButton: React.SFC<StepButtonProps> = props => {
     return (
@@ -252,7 +238,9 @@ export const StepButton: React.SFC<StepButtonProps> = props => {
 
 /** 
  * @name Step Connector
- * @group Step
+ * @group Stepper
+ * @icon Minus
+ * @ignore
  * */
 export const StepConnector: React.SFC<StepConnectorProps> = props => {
     return (
@@ -264,7 +252,8 @@ export const StepConnector: React.SFC<StepConnectorProps> = props => {
 
 /** 
  * @name Step Icon
- * @group Step
+ * @group Stepper
+ * @ignore
  * */
 export const StepIcon: React.SFC<StepIconProps> = props => {
     return (
@@ -276,7 +265,9 @@ export const StepIcon: React.SFC<StepIconProps> = props => {
 
 /** 
  * @name Step Content
- * @group Step
+ * @group Stepper
+ * @icon Square
+ * @ignore
  * */
 export const StepContent: React.SFC<StepContentProps> = props => {
     return (
@@ -288,7 +279,8 @@ export const StepContent: React.SFC<StepContentProps> = props => {
 
 /** 
  * @name Step Label
- * @group Step
+ * @group Stepper
+ * @icon Tag
  * */
 export const StepLabel: React.SFC<StepLabelProps> = props => {
     return (
