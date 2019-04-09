@@ -12,13 +12,19 @@ export interface SnackbarProps {
      * */
     open: boolean;
 
+    /**
+     * @name Position
+     * @group Snackbar
+     * @default Bottom
+     * @control ButtonGroup
+     */
+    anchorOriginVertical: SnackbarOriginVertical;
 
     /**
      * @name On Close
      * @description Callback fired when the component requests to be closed.
      * */
     onClose?: (event: React.SyntheticEvent<any>, reason: string) => void;
-
 
     /**
      * @default
@@ -66,6 +72,10 @@ export interface SnackbarContentProps extends StandardProps<PaperProps> {
      message?: React.ReactNode;
 }
 
+export enum SnackbarOriginVertical {
+    Top = 'top',
+    Bottom = 'bottom',
+}
 
 /**
  * @name Snackbar
@@ -75,7 +85,10 @@ export interface SnackbarContentProps extends StandardProps<PaperProps> {
  */
 export const Snackbar: React.SFC<SnackbarProps> = props => {
     return (
-        <SnackbarComponent {...props}>
+        <SnackbarComponent {...props} anchorOrigin={{
+            horizontal: 'center',
+            vertical: props.anchorOriginVertical
+        }}>
             {props.children}
         </SnackbarComponent>
     )
