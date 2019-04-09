@@ -9,8 +9,8 @@
     "color": "#08796f"
   },
   "scripts": {
-    "start": "npm run build  -- -w --skipLibCheck",
     "build": "tsc",
+    "built:watch": "npm run build  -- -w --skipLibCheck",
     "clean": "rm -rf lib"
   },
   "repository": {
