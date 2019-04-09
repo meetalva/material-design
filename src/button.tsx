@@ -17,6 +17,7 @@ export interface ButtonProps extends StandardProps<ButtonBaseProps> {
      * @name Variant
      * @default Contained
      * @group Style
+     * @control ButtonGroup
      * */
     variant?: ButtonVariant;
 
@@ -35,13 +36,6 @@ export interface ButtonProps extends StandardProps<ButtonBaseProps> {
     fullWidth?: boolean;
 
     /**
-     * @name Mini
-     * @description If true, and variant is 'fab', will use mini floating action button styling.
-     * @group Style
-     * */
-    mini?: boolean;
-
-    /**
      * @name Disabled
      * @group Disabled
      * */
@@ -52,13 +46,6 @@ export interface ButtonProps extends StandardProps<ButtonBaseProps> {
      * @group Ripple
      * */
     disableRipple?: boolean;
-
-
-    /**
-     * @name Interaction
-     * @description Set an interaction that happens on Click.
-     * */
-	onClick?: React.MouseEventHandler<HTMLElement>;
 
 
     /**
@@ -81,6 +68,14 @@ export interface ButtonBaseProps {
      * @group Ripple
      * */
     disableRipple?: boolean;
+
+    /**
+     * @name On Click
+     * @description Set an interaction that happens on Click.
+     * */
+    onClick?: React.MouseEventHandler<HTMLElement>;
+    
+    children?: React.ReactNode;
 }
 
 export interface IconButtonProps extends StandardProps<ButtonBaseProps> {
@@ -110,8 +105,6 @@ export enum ButtonVariant {
     Text = 'text',
     Outlined = 'outlined',
     Contained = 'contained',
-    Fab = 'fab',
-    ExtendedFab = 'extendedFab'
 }
 
 /**

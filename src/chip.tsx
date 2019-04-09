@@ -38,7 +38,17 @@ export interface ChipProps {
     /** @name Label */
     label?: React.ReactElement<any>;
 
-    /** @name Avatar */
+    /**
+     * @name Avatar
+     * @default
+     * ```tsx
+     * import * as React from 'react';
+     * import { Typography } from './avatar';
+     * export default () => (
+     *  <Typography />
+     * );
+     * ```
+     */
     avatar?: React.ReactElement<any>;
 
     /** @name Delete Icon */
@@ -47,17 +57,6 @@ export interface ChipProps {
     /** @name Icon */
     icon?: React.ReactElement<any>;  
     
-    /**
-    * @default
-    * ```tsx
-    * import * as React from 'react';
-    * /*import {  } from './';
-    * /*import {  } from '@meetalva/essentials';
-    * 
-    * export default () => (
-    * );
-    * ```
-    **/
     children?: React.ReactNode;
 }
 
@@ -75,7 +74,6 @@ export enum ChipVariant {
 export const Chip: React.SFC<ChipProps> = props => {
     return (
         <>
-        {console.log(props.avatar)}
         <ChipComponent {...props} onDelete={props.delete ? (() => console.log): undefined} />
         </>
     )

@@ -8,14 +8,14 @@ export interface AppBarProps extends StandardProps<PaperProps> {
     /**
      * @name Position
      * @default Sticky
-     * @group Styling
+     * @group App Bar
      * */
     position?: AppBarPosition;
 
     /**
      * @name Color
      * @default Primary
-     * @group Styling
+     * @group App Bar
      * */
     color: ColorWithInherit;
 
@@ -31,11 +31,9 @@ export interface AppBarProps extends StandardProps<PaperProps> {
     *       <IconButton color="inherit">
     *       </IconButton>
     *       <Typography variant="h6" color="inherit">
-    *           <Text text="Title" />
     *       </Typography>
     *       <Box width="100%" flexDirection="row" justifyContent="flex-end">
-    *           <Button color="inherit" variant="text">
-    *           </Button>
+    *           <Button color="inherit" variant="text" />
     *       </Box>
     *</Toolbar>
     * );

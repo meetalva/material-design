@@ -11,6 +11,7 @@ export interface FilledInputProps extends StandardProps<InputBaseProps> {
 /**
  * @name Filled Input
  * @group Input
+ * @ignore 
  */
 export const FilledInput: React.SFC<FilledInputProps> = props => {
     return (

@@ -16,13 +16,7 @@ export interface TextFieldProps {
      * @description Required for a controlled component.
      * @group Text Field
      * */
-    value?: Array<string | number | boolean> | string | number | boolean;
-
-    /**
-     * @name Autofocus
-     * @group Text Field
-     * */
-    autoFocus?: boolean;
+    value?: string;
 
     /**
      * @name Required
@@ -33,15 +27,34 @@ export interface TextFieldProps {
      /**
      * @name Select
      * @description Render a Select element
-     * @group Input Type
+     * @group Type
      * */
     select?: boolean;
 
     /**
      * @name HTMl5 Type
-     * @group Input Type
+     * @group Type
      * */
     type?: string;
+
+    /**
+     * @name Multiline
+     * @group Type
+     * @description If true, a textarea element will be rendered instead of an input.
+     * */
+    multiline?: boolean;
+
+    /**
+     * @name Number of Rows
+     * @group Type
+     * */
+    rows?: number;
+
+    /**
+     * @name Rows Max
+     * @group Type
+     * */
+    rowsMax?: number;
 
     /**
      * @name Full Width
@@ -56,33 +69,23 @@ export interface TextFieldProps {
      * */
     margin?: Margin;
 
-    /** @name Disabled @group State */
+    /**
+     * @name Disabled
+     * @group State 
+     * */
     disabled?: boolean;
 
-    /** @name Error @group State */
+    /**
+     * @name Error
+     * @group State 
+     * */
     error?: boolean;
 
-    /** @name On Change */
+
+    /**
+     * @name On Change
+     * */
     onChange?: React.ChangeEventHandler<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>;
-
-    /**
-     * @name Multiline
-     * @group Multiline
-     * @description If true, a textarea element will be rendered instead of an input.
-     * */
-    multiline?: boolean;
-
-    /**
-     * @name Number of Rows
-     * @group Multiline
-     * */
-    rows?: number;
-
-    /**
-     * @name Rows Max
-     * @group Multiline
-     * */
-    rowsMax?: number;
 
     /** @name Label @default Label */
     label?: React.ReactNode;

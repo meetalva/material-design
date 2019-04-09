@@ -181,6 +181,7 @@ export const DialogTitle: React.SFC<DialogTitleProps> = props => {
 /**
  * @name Dialog Content
  * @group Dialog
+ * @icon Square
  * 
  */
 export const DialogContent: React.SFC<DialogContentProps> = props => {

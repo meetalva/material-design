@@ -13,31 +13,19 @@ export interface ListProps {
 
     /**
      * @name List
-     * @description Lists are a continuous group of text or images. They are composed of items containing primary and supplemental actions, which are represented by icons and text.
      */
 
     /**
     * @default
     * ```tsx
     * import * as React from 'react';
-    * import { ListSubheader, ListItem, ListItemText } from './';
-    * import { Text } from '@meetalva/essentials';
+    * import { ListItem } from './';
     * 
     * export default () => (
     *   <>
-    *       <ListSubheader>
-    *           <Text text="List Items" />
-    *       <ListSubheader>
-    *       <ListItem button="true">
-    *           <ListItemText>
-    *               <Text text="Option 1" />
-    *           </ListItemText>
-    *       </ListItem>
-    *       <ListItem button="true">
-    *           <ListItemText>
-    *               <Text text="Option 2" />
-    *           </ListItemText>
-    *       </ListItem>
+    *       <ListItem />
+    *       <ListItem />
+    *       <ListItem />
     *   <>
     * );
     * ```
@@ -49,6 +37,7 @@ export interface ListItemProps extends StandardProps<ButtonBaseProps> {
 
     /**
      * @name Button
+     * @description If true, the list item will be a button
      * @group List Item
      * */
     button?: boolean;
@@ -78,14 +67,27 @@ export interface ListItemProps extends StandardProps<ButtonBaseProps> {
     selected?: boolean;
 
     /**
-     * @name Interaction
+     * @name On Click
      * @description Set an interaction that happens on Click.
      * */
     onClick?: React.MouseEventHandler<HTMLElement>;
+
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { ListItemText } from './';
+    * 
+    * export default () => (
+    *   <ListItemText />
+    * );
+    * ```
+    **/
+   children?: React.ReactNode;
 }
 
 export interface ListItemIconProps {
-    children: React.ReactElement<any>;
+    children: React.ReactElement;
 }
 
 export interface ListItemTextProps {
@@ -95,21 +97,37 @@ export interface ListItemTextProps {
     /** @name Inset */
     inset?: boolean;
 
-    /** @name Primary */
+    /** @name Main Content */
     primary?: React.ReactNode;
 
-    /** @name Secondary */
+    /** @name Secondary Content */
     secondary?: React.ReactNode;
+
 }
 
 export interface ListSubheaderProps {
+
+    /**
+     * @name Color
+     * @control ButtonGroup
+     * @group List Subheader
+     * @ignore
+     */
     color?: ListSubheaderColor;
 
-    /** @name Disable Sticky */
+    /** 
+     * @name Disable Sticky 
+     * @group List Subheader
+     * */
     disableSticky?: boolean;
 
-    /** @name Inset */
+    /**
+     * @name Inset
+     * @group List Subheader
+     *  */
     inset?: boolean;
+
+    children?: React.ReactNode;
 }
 
 export enum ListSubheaderColor {
@@ -122,6 +140,7 @@ export enum ListSubheaderColor {
  * @name List
  * @group List
  * @description Continuous, vertical indexes of text or images
+ * @icon Menu
  */
 export const List: React.SFC<ListProps> = props => {
     return (
@@ -134,6 +153,8 @@ export const List: React.SFC<ListProps> = props => {
 /**
  * @name List Item
  * @group List
+ * @icon Minus
+ * 
  */
 export const ListItem: React.SFC<ListItemProps> = props => {
     return (
@@ -146,6 +167,7 @@ export const ListItem: React.SFC<ListItemProps> = props => {
 /**
  * @name List Item Avatar
  * @group List
+ * @ignore
  */
 export const ListItemAvatar: React.SFC = props => {
     return (
@@ -158,6 +180,7 @@ export const ListItemAvatar: React.SFC = props => {
 /**
  * @name List Item Icon
  * @group List
+ * @icon
  */
 export const ListItemIcon: React.SFC<ListItemIconProps> = props => {
     return (
@@ -170,6 +193,7 @@ export const ListItemIcon: React.SFC<ListItemIconProps> = props => {
 /**
  * @name List Item Secondary Action
  * @group List
+ * @ignore
  */
 export const ListItemSecondaryAction: React.SFC= props => {
     return (
@@ -182,6 +206,7 @@ export const ListItemSecondaryAction: React.SFC= props => {
 /**
  * @name List Item Text
  * @group List
+ * @icon Type
  */
 export const ListItemText: React.SFC<ListItemTextProps> = props => {
     return (

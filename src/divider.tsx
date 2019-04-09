@@ -20,6 +20,7 @@ export interface DividerProps {
      * @name Variant
      * @control ButtonGroup
      * @group Divider
+     * @default FullWidth
      * */
     variant?: DividerVariant;
 }

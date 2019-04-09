@@ -1,13 +1,8 @@
 import * as React from 'react';
 import HiddenComponent from '@material-ui/core/Hidden';
-import { Breakpoint } from '@material-ui/core/styles/createBreakpoints';
 
 export interface HiddenProps {
-    /** @name Implementation @description */
-    implementation?: HiddenImplementation;
 
-    /** @name Initial Width */
-    initialWidth?: Breakpoint;
 
     /** @name Large Down */
     lgDown?: boolean;
@@ -20,9 +15,6 @@ export interface HiddenProps {
 
     /** @name Medium Up */
     mdUp?: boolean;
-
-    /** @name Only */
-    only?: Breakpoint | Breakpoint[];
 
     /** @name Small Down */
     smDown?: boolean;
@@ -43,14 +35,10 @@ export interface HiddenProps {
     xsUp?: boolean;
 }
 
-export enum HiddenImplementation {
-    JS = 'js',
-    CSS = 'css'
-}
-
 /**
  * @name Hidden
  * @group Layout
+ * @ignore
  */
 export const Hidden: React.SFC<HiddenProps> = props => {
     return (

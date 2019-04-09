@@ -33,6 +33,7 @@ export interface ModalProps {
 /**
  * @name Modal
  * @group Utils
+ * @ignore
  */
 export const Modal: React.SFC<ModalProps> = props => {
     return (

@@ -104,6 +104,7 @@ export interface FormHelperTextProps {
 }
 
 export interface FormLabelProps {
+
     /** @name Disabled */
     disabled?: boolean;
 
@@ -118,6 +119,8 @@ export interface FormLabelProps {
 
     /** @name Required */
     required?: boolean;
+
+    children?: React.ReactNode;
 }
 
 export enum FormVariant {
@@ -148,6 +151,7 @@ export const FormControl: React.SFC<FormControlProps> = props => {
 /**
  * @name Form Control Label
  * @group Form
+ * @icon Tag
  */
 export const FormControlLabel: React.SFC<FormControlLabelProps> = props => {
     return (
@@ -184,6 +188,7 @@ export const FormHelperText: React.SFC<FormHelperTextProps> = props => {
 /**
  * @name Form Label
  * @group Form
+ * @icon Tag
  */
 export const FormLabel: React.SFC<FormLabelProps> = props => {
     return (

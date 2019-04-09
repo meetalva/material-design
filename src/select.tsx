@@ -5,7 +5,7 @@ import { InputVariant, StandardProps } from './types';
 import { InputProps } from './input';
 import { MenuProps } from './menu';
 
-export interface SelectProps extends StandardProps<InputProps, 'onChange'> {
+export interface SelectProps extends StandardProps<InputProps, 'value' | 'onChange'> {
     /** @name Auto Width */
     autoWidth?: boolean;
 
@@ -30,22 +30,14 @@ export interface SelectProps extends StandardProps<InputProps, 'onChange'> {
     /** @name Native */
     native?: boolean;
 
-    /** @name On Close */
-    onClose?: (event: React.ChangeEvent<{}>) => void;
-
-    /** @name On Open */
-    onOpen?: (event: React.ChangeEvent<{}>) => void;
-
-    /** @name Value */
-    value?: Array<string | number | boolean | object> | string | number | boolean | object;
 
     /** @name Menu Props */
     MenuProps?: Partial<MenuProps>;
 
-    /** @name Render Value */
-    renderValue?: (value: SelectProps['value']) => React.ReactNode;
-
-    /** @name On Change */
+    /**
+     * @name On Change 
+     * @description Callback fired when the value is changed.
+     * */
     onChange?: React.ChangeEventHandler<HTMLSelectElement>;
 }
 
