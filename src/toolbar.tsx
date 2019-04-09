@@ -12,19 +12,17 @@ export interface ToolbarProps {
     * @default
     * ```tsx
     * import * as React from 'react';
-    * import { IconButton, Typography, Button } from './';
+    * import { Icon, IconButton, Typography, Button } from './';
     * import { Text, Box } from '@meetalva/essentials';
     * 
     * export default () => (
-    * <>
-    *       <IconButton color="inherit">
-    *       </IconButton>
-    *       <Typography variant="h6" color="inherit">
-    *       </Typography>
-    *       <Box width="100%" flexDirection="row" justifyContent="flex-end">
-    *           <Button color="inherit" variant="text" />
+    *   <>
+    *       <IconButton color="inherit"></IconButton>
+    *       <Box flexGrow="1" flexDirection="horizontal" justifyContent="flex-start">
+    *           <Typography variant="h6" color="inherit" />
     *       </Box>
-    *</>
+    *       <Button color="inherit" variant="text" />
+    *   </>
     * );
     * ```
     **/

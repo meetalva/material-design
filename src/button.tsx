@@ -4,8 +4,6 @@ import IconButtonComponent from '@material-ui/core/IconButton';
 import { ColorWithInherit, StandardProps } from './types';
 
 export interface ButtonProps extends StandardProps<ButtonBaseProps> {
-
-
     /**
      * @name Color
      * @default Primary
@@ -79,7 +77,10 @@ export interface ButtonBaseProps {
 }
 
 export interface IconButtonProps extends StandardProps<ButtonBaseProps> {
-    /** @name Color */
+    /**
+     * @name Color
+     * @default Inherit
+     */
     color?: ColorWithInherit;
 
     /**
@@ -93,6 +94,17 @@ export interface IconButtonProps extends StandardProps<ButtonBaseProps> {
      * @group Ripple
      * */
     disableRipple?: boolean;
+
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { Icon } from './icon';
+    * 
+    * export default () => <Icon icon="Menu" />;
+    * ```
+    **/
+    children?: React.ReactNode;
 }
 
 export enum ButtonSize {

@@ -24,13 +24,13 @@ export interface BottomNavigationProps {
     * @default
     * ```tsx
     * import * as React from 'react';
-    * import { BottomNavigationAction } from './';
+    * import { BottomNavigationAction, Icon } from './';
     * 
     * export default () => (
     *   <>
-    *       <BottomNavigationAction label="Action 1"/>
-    *       <BottomNavigationAction label="Action 2"/>
-    *       <BottomNavigationAction label="Action 3"/>
+    *       <BottomNavigationAction label="Home" icon={<Icon icon="Home" />} />
+    *       <BottomNavigationAction label="Favorites" icon={<Icon icon="Favorite" />}/>
+    *       <BottomNavigationAction label="Profile" icon={<Icon icon="Person" />}/>
     *   <>
     * );
     * ```

@@ -8,7 +8,7 @@ export interface FabProps extends StandardProps<ButtonBaseProps> {
     /**
      * @name Color
      * @group Floating Action Button
-     * @default Default
+     * @default Primary
      * */
     color?: ColorWithInherit;
 
@@ -16,7 +16,7 @@ export interface FabProps extends StandardProps<ButtonBaseProps> {
      * @name Size
      * @group Floating Action Button
      * @control ButtonGroup
-     * @default L
+     * @default M
      * */
     size?: FabSize;
 
@@ -50,11 +50,9 @@ export interface FabProps extends StandardProps<ButtonBaseProps> {
     * @default
     * ```tsx
     * import * as React from 'react';
-    * import { Text } from '@meetalva/essentials';
+    * import { Icon } from './icon';
     * 
-    * export default () => (
-    * <Text text="+" />
-    * );
+    * export default () => <Icon icon="Add" />;
     * ```
     **/
     children?: React.ReactNode;
