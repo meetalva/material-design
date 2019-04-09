@@ -24,35 +24,29 @@ export interface TextFieldProps {
      * */
     required?: boolean;
 
-     /**
-     * @name Select
-     * @description Render a Select element
-     * @group Type
-     * */
-    select?: boolean;
-
     /**
-     * @name HTMl5 Type
+     * @name HTML5 Type
      * @group Type
+     * @default Text
      * */
-    type?: string;
+    type?: TextFieldType;
 
     /**
      * @name Multiline
-     * @group Type
+     * @group Multiline
      * @description If true, a textarea element will be rendered instead of an input.
      * */
     multiline?: boolean;
 
     /**
      * @name Number of Rows
-     * @group Type
+     * @group Multiline
      * */
     rows?: number;
 
     /**
      * @name Rows Max
-     * @group Type
+     * @group Multiline
      * */
     rowsMax?: number;
 
@@ -66,6 +60,7 @@ export interface TextFieldProps {
      * @name Margin
      * @group Style
      * @control ButtonGroup
+     * @default None
      * */
     margin?: Margin;
 
@@ -108,6 +103,17 @@ export interface TextFieldProps {
      */
     helperText?: React.ReactNode;
 
+}
+
+export enum TextFieldType {
+    Date = 'date',
+    Email = 'email',
+    Number = 'number',
+    Password = 'password',
+    Range = 'range',
+    Tel = 'tel',
+    Text = 'text',
+    Time = 'time'
 }
 
 /**

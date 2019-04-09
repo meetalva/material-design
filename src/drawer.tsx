@@ -37,12 +37,10 @@ export interface DrawerProps extends StandardProps<ModalProps> {
     * @default
     * ```tsx
     * import * as React from 'react';
-    * import { Text, Box } from '@meetalva/essentials';
+    * import { List } from './list';
     * 
     * export default () => (
-    *   <Box width="200px">
-    *       <Text text="This is a drawer modal" />
-    *   </Box>
+    *   <List />
     * );
     * ```
     **/

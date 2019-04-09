@@ -18,6 +18,13 @@ export interface CardProps extends StandardProps<PaperProps> {
     raised?: boolean;
 
     /**
+     * @name Width
+     * @group Card
+     * @default 300px
+     */
+    width?: string;
+
+    /**
     * @default
     * ```tsx
     * import * as React from 'react';
@@ -26,6 +33,7 @@ export interface CardProps extends StandardProps<PaperProps> {
     * export default () => (
     * <>
     *   <CardHeader />
+    *   <CardMedia />
     *   <CardContent />
     *   <CardActions />
     * <>
@@ -102,7 +110,7 @@ export interface CardContentProps {
     * 
     * export default () => (
     *   <>
-    *       <Typography variant="h4" color="textPrimary"  />
+    *       <Typography variant="h6" color="textPrimary"  />
     *       <Typography color="textSecondary" gutterBottom="true" />
     *   <>
     * );
@@ -115,7 +123,7 @@ export interface CardContentProps {
 export interface CardMediaProps {
     /**
      * @name Image
-     * @default https://images.unsplash.com/photo-1542838775-961894306368?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=360
+     * @default https://source.unsplash.com/300x200/?cat
      * @asset
      * */
     image?: string;
@@ -127,7 +135,7 @@ export interface CardMediaProps {
 
     /**
      * @name Height
-     * @default 120px
+     * @default 200px
      * */
     height?: string;
 }
@@ -179,6 +187,7 @@ export const Card: React.SFC<CardProps> = props => {
     return (
         <CardComponent
             raised={props.raised}
+            style={{ width: props.width }}
         >
             {props.children}
         </CardComponent>

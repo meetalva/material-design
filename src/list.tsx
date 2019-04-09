@@ -15,6 +15,19 @@ export interface ListProps {
     * @default
     * ```tsx
     * import * as React from 'react';
+    * import { ListSubheader } from './list';
+    * 
+    * export default () => (
+    *   <ListSubheader />
+    * );
+    * ```
+    **/
+    subheader?: React.ReactElement<any>;
+
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
     * import { ListItem } from './list';
     * 
     * export default () => (
@@ -73,10 +86,13 @@ export interface ListItemProps extends StandardProps<ButtonBaseProps> {
     * @default
     * ```tsx
     * import * as React from 'react';
-    * import { ListItemText } from './list';
+    * import { ListItemText, ListItemIcon } from './list';
     * 
     * export default () => (
+    * <>
+    *   <ListItemIcon />
     *   <ListItemText />
+    * <>
     * );
     * ```
     **/
@@ -84,6 +100,18 @@ export interface ListItemProps extends StandardProps<ButtonBaseProps> {
 }
 
 export interface ListItemIconProps {
+
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { Icon } from './icon';
+    * 
+    * export default () => (
+    *   <Icon icon="Add" />
+    * );
+    * ```
+    **/
     children: React.ReactElement;
 }
 
@@ -136,6 +164,17 @@ export interface ListSubheaderProps {
      *  */
     inset?: boolean;
 
+    /**
+    * @default
+    * ```tsx
+    * import * as React from 'react';
+    * import { Text } from '@meetalva/essentials';
+    * 
+    * export default () => (
+    *   <Text text="Subheader" />
+    * );
+    * ```
+    **/
     children?: React.ReactNode;
 }
 
@@ -189,7 +228,7 @@ export const ListItemAvatar: React.SFC = props => {
 /**
  * @name List Item Icon
  * @group List
- * @icon
+ * @icon Heart
  */
 export const ListItemIcon: React.SFC<ListItemIconProps> = props => {
     return (

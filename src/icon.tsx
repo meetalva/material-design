@@ -68,7 +68,7 @@ function getIcon(icon: IconName) {
 /**
  * @name Icon
  * @group Style
- * @icon Hexagon
+ * @icon Heart
  */
 export const Icon: React.SFC<IconProps> = props => {
     const IconComponent = getIcon(props.icon);

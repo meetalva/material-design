@@ -31,7 +31,7 @@ export interface ChipProps {
     delete?: boolean;
 
     /**
-     * @name Interaction
+     * @name On Delete
      * @description Set an interaction that happens "On Delete"
      * */
     onDelete?: React.EventHandler<any>;
