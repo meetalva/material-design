@@ -1,16 +1,16 @@
 {
   "name": "@meetalva/material-design",
   "description": "Components that implement Google's Material Design",
-  "version": "1.1.1",
+  "version": "1.1.3",
   "main": "lib/index.js",
   "alva": {
-    "name": "Material Design",
-    "image": "http://media.meetalva.io/library/material-design/image.svg",
-    "color": "#08796f"
+    "name": "Material UI",
+    "image": "http://media.meetalva.io/library/material-design/image.png",
+    "color": "#3F51B5"
   },
   "scripts": {
-    "build": "tsc",
-    "built:watch": "npm run build  -- -w --skipLibCheck",
+    "build": "tsc --skipLibCheck",
+    "build:watch": "npm run build  -- -w --skipLibCheck",
     "clean": "rm -rf lib"
   },
   "repository": {
