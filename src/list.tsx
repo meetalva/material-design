@@ -112,7 +112,7 @@ export interface ListItemIconProps {
     * );
     * ```
     **/
-    children: React.ReactElement;
+    children: React.ReactElement<any>;
 }
 
 export interface ListItemTextProps {

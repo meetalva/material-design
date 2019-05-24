@@ -1,7 +1,7 @@
 {
   "name": "@meetalva/material-design",
   "description": "Components that implement Google's Material Design",
-  "version": "1.1.4",
+  "version": "1.1.6",
   "main": "lib/index.js",
   "alva": {
     "name": "Material UI",
@@ -26,12 +26,12 @@
   "license": "MIT",
   "devDependencies": {
     "concurrently": "^3.5.1",
-    "typescript": "^3.0.3"
+    "typescript": "^3.0.3",
+    "@meetalva/analyzer-cli": "^1.0.1-alpha.4"
   },
   "dependencies": {
     "@material-ui/core": "^3.9.2",
     "@material-ui/icons": "^3.0.2",
-    "@meetalva/analyzer-cli": "^1.0.1-alpha.3",
     "@meetalva/essentials": "^1.0.0",
     "@types/node": "^8.0.53",
     "@types/react": "^16.4.14",
